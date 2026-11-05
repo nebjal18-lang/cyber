@@ -22,6 +22,8 @@ Les niveaux de service, les capacités et les délais ne sont pas inventés. Le 
 
 ## Direction visuelle
 
-La palette associe terre cuite pour la cybersécurité, vert pour les data centers et bleu pour les télécommunications. L’or et l’ivoire apportent chaleur et lisibilité. Les motifs géométriques légers évoquent le tissage, tandis que la silhouette de Dakar et les coordonnées géographiques ancrent le site au Sénégal. La couleur distingue les domaines et aide à la navigation ; aucun territoire africain n’est réduit à une identité uniforme.
+Le logo fourni fixe la palette bleu nuit et vert. Un accueil photographique grand format, une typographie forte et des contenus hiérarchisés remplacent les blocs multicolores précédents. Les illustrations montrent des environnements techniques génériques et ne sont pas présentées comme des équipements ou des sites appartenant à la société.
+
+Le mouvement suit la lecture : entrée courte du visuel et des textes, apparition unique des sections au défilement, décalage coordonné des trois domaines et retours visuels au survol. Le mode de mouvement réduit affiche les contenus directement. Les panneaux de catalogue, de comparaison et d’organisation sont contrôlés par le visiteur pour alléger le parcours initial.
 
 Voir `REFERENCES-TECHNIQUES.md` pour les documents techniques consultés. Les textes commerciaux sont rédigés de manière originale ; aucune page externe n’est reproduite.

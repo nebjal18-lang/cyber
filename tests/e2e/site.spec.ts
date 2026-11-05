@@ -3,15 +3,17 @@ import AxeBuilder from "@axe-core/playwright";
 test("catalogue, filtres, choix de solution et responsive", async ({
   page,
 }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Sécuriser.",
+    "vos ambitions.",
   );
   await expect(page.locator(".product")).toHaveCount(21);
   await page.screenshot({
     path: `docs/previews/accueil-${test.info().project.name}.png`,
     fullPage: true,
   });
+  await page.locator(".catalogue-panel > summary").click();
   await page.getByRole("button", { name: "Data centers", exact: true }).click();
   await expect(page.locator(".product")).toHaveCount(6);
   await expect(page).toHaveURL(/categorie=datacenter/);
@@ -90,6 +92,7 @@ test("navigation mobile et informations légales", async ({ page }, info) => {
   await expect(page.getByRole("dialog")).toHaveCount(0);
 });
 test("accessibilité automatique de la page", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   const result = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
@@ -105,7 +108,7 @@ test("version anglaise complète, liens partageables et retour navigateur", asyn
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await expect(page).toHaveTitle(/Cybersecurity, data centers/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Secure.",
+    "your ambitions.",
   );
   await expect(page.locator(".product")).toHaveCount(9);
   await expect(page).toHaveURL(/lang=en/);
@@ -136,7 +139,7 @@ test("vingt-et-un guides détaillés et ressources disponibles dans les deux lan
     const values = await picker
       .locator("option")
       .evaluateAll((options) =>
-        options.map((o) => (o as HTMLOptionElement).value),
+        options.map((o) => (o as HTMLOptionElement).value).filter(Boolean),
       );
     expect(values).toHaveLength(21);
     for (const id of values) {
@@ -199,6 +202,7 @@ test("changement de langue préserve les champs du formulaire", async ({
   await expect(page.getByLabel("Your name *")).toHaveValue("Awa Diop");
 });
 test("accessibilité et mise en page anglaises", async ({ page }, info) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/?lang=en");
   const results = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
@@ -283,6 +287,7 @@ test("trois domaines, offres génériques et demandes préremplies", async ({
 }) => {
   for (const language of ["fr", "en"]) {
     await page.goto(`/?lang=${language}#solutions`);
+    await page.locator(".catalogue-panel > summary").click();
     const groups = [
       {
         label: language === "en" ? "Cybersecurity" : "Cybersécurité",
@@ -313,4 +318,37 @@ test("trois domaines, offres génériques et demandes préremplies", async ({
       new RegExp(["ten", "able"].join("") + "|" + ["nes", "sus"].join(""), "i"),
     );
   }
+});
+
+test("logo chargé, animation de lecture et préférence de mouvement réduit", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const logo = page.locator("header .brand-logo");
+  await expect(logo).toBeVisible();
+  await expect(logo).toHaveJSProperty("complete", true);
+  expect(
+    await logo.evaluate((image) => (image as HTMLImageElement).naturalWidth),
+  ).toBeGreaterThan(0);
+  await page
+    .getByRole("link", { name: "Découvrir nos domaines", exact: true })
+    .first()
+    .click();
+  await expect(page.locator(".expertise-card").first()).toHaveCSS(
+    "opacity",
+    "1",
+  );
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(page.locator(".hero-media")).toHaveCSS("animation-name", "none");
+  const running = await page.evaluate(
+    () =>
+      document.getAnimations().filter((a) => a.playState === "running").length,
+  );
+  expect(running).toBe(0);
+  await expect(page.locator(".catalogue-panel")).not.toHaveAttribute(
+    "open",
+    "",
+  );
+  await page.locator(".catalogue-panel > summary").click();
+  await expect(page.locator(".catalogue-panel")).toHaveAttribute("open", "");
 });

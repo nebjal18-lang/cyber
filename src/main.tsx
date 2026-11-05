@@ -40,6 +40,7 @@ import "@fontsource/manrope/600.css";
 import "@fontsource/manrope/700.css";
 import "./style.css";
 import "./theme.css";
+import { useOrganizedMotion } from "./useOrganizedMotion";
 
 const icons = { cyber: ShieldCheck, datacenter: Server, telecom: Radio };
 const filters = [
@@ -53,11 +54,12 @@ function validCategory() {
   return filters.some((f) => f.id === id) ? id! : "toutes";
 }
 function App() {
+  useOrganizedMotion();
   const [language, setLanguage] = useState(readLanguage);
   const t = translator(language);
   const products = getProducts(language);
   const [guide, setGuide] = useState(
-    new URLSearchParams(location.search).get("fiche") || "exposure",
+    new URLSearchParams(location.search).get("fiche") || "",
   );
   function chooseGuide(id: string) {
     setGuide(id);
@@ -80,7 +82,7 @@ function App() {
     const sync = () => {
       setLanguage(readLanguage());
       setFilter(validCategory());
-      setGuide(new URLSearchParams(location.search).get("fiche") || "exposure");
+      setGuide(new URLSearchParams(location.search).get("fiche") || "");
     };
     window.addEventListener("popstate", sync);
     return () => window.removeEventListener("popstate", sync);
@@ -88,6 +90,9 @@ function App() {
 
   const [menu, setMenu] = useState(false);
   const [filter, setFilter] = useState(validCategory());
+  const [catalogueOpen, setCatalogueOpen] = useState(() =>
+    new URLSearchParams(location.search).has("categorie"),
+  );
   const [chosen, setChosen] = useState("general");
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
@@ -105,6 +110,7 @@ function App() {
     requestAnimationFrame(() => legalTrigger.current?.focus());
   }
   function selectFilter(id: string) {
+    setCatalogueOpen(true);
     setFilter(id);
     const u = new URL(location.href);
     id === "toutes"
@@ -236,109 +242,58 @@ function App() {
       </header>
       <main id="contenu">
         <section className="hero">
+          <img
+            className="hero-media"
+            src="/images/infrastructure-hero.webp"
+            alt=""
+            aria-hidden="true"
+            width="1672"
+            height="941"
+            fetchPriority="high"
+          />
           <div className="hero-copy">
             <span className="location-tag">
-              <span />
-              {t("Ancrés à Dakar. Tournés vers votre avenir.")}
+              {t("Cybersécurité. Data centers. Télécommunications.")}
             </span>
             <h1>
-              <span>{t("Connecter.")}</span>
-              <span>{t("Sécuriser.")}</span>
-              <span>{t("Faire grandir.")}</span>
+              <span>{t("L’infrastructure")}</span>{" "}
+              <span>{t("de vos ambitions.")}</span>
             </h1>
             <p>
               {t(
-                "ALYAD-DEVELOPPEMENT relie vos ambitions à des solutions de cybersécurité, de data centers et de télécommunications. À Dakar et au Sénégal, construisons un numérique fiable, connecté et prêt à grandir.",
+                "Nous accompagnons vos projets numériques, de la définition des besoins à la préparation des infrastructures. Un interlocuteur à Dakar pour sécuriser, connecter et faire évoluer votre activité.",
               )}
             </p>
             <div className="hero-actions">
               <a className="button" href="#contact">
                 {t("Construire mon projet")}
-                <ArrowUpRight size={18} />
+                <ArrowUpRight size={19} />
               </a>
-              <a className="text-link" href="#solutions">
-                {t("Explorer les solutions")}
-                <ArrowRight size={17} />
+              <a className="text-link" href="#expertises">
+                {t("Découvrir nos domaines")}
+                <ArrowRight size={18} />
               </a>
             </div>
             <div className="hero-proof">
-              <ShieldCheck size={18} />
+              <MapPin size={16} />
               <span>
-                {t("Un ancrage sénégalais. Des projets à votre mesure.")}
+                <span>{t("Dakar, Sénégal")}</span>
+                <span className="hero-proof-separator" aria-hidden="true" />
+                <span>{t("Une vision locale. Un horizon international.")}</span>
               </span>
             </div>
           </div>
-          <div
-            className="hero-art"
-            role="img"
-            aria-label={t(
-              "Illustration d’une architecture numérique reliant cybersécurité, data centers, réseaux et continuité des services.",
-            )}
+          <span className="visual-caption">
+            {t("Illustration d’architecture")}
+          </span>
+          <a
+            className="hero-scroll"
+            href="#expertises"
+            aria-label={t("Découvrir nos domaines")}
           >
-            <div className="art-top">
-              <span className="signal-dot" />
-              {t("Vos projets, connectés")}{" "}
-              <span className="art-caption">{t("Illustration")}</span>
-            </div>
-            <div className="orbit orbit-one" />
-            <div className="orbit orbit-two" />
-            <div className="orbit orbit-three" />
-            <svg
-              className="connections"
-              viewBox="0 0 560 470"
-              aria-hidden="true"
-            >
-              <path d="M280 235L106 115M280 235L443 112M280 235L465 305M280 235L126 349M280 235L300 414" />
-              <path
-                className="path-accent"
-                d="M106 115L443 112L465 305L126 349Z"
-              />
-            </svg>
-            <div className="core">
-              <Layers size={48} />
-              <span>
-                {t("Votre écosystème")}
-                <br />
-                <strong>{t("numérique.")}</strong>
-              </span>
-            </div>
-            <div className="asset asset-cloud">
-              <Cloud />
-              <span>Cloud</span>
-              <i />
-            </div>
-            <div className="asset asset-identity">
-              <ShieldCheck />
-              <span>{t("Cybersécurité")}</span>
-              <i />
-            </div>
-            <div className="asset asset-it">
-              <Server />
-              <span>{t("Data centers")}</span>
-              <i />
-            </div>
-            <div className="asset asset-ot">
-              <Radio />
-              <span>{t("Télécommunications")}</span>
-              <i />
-            </div>
-            <div className="art-note">
-              <span className="art-note-icon">
-                <ScanLine size={18} />
-              </span>
-              <div>
-                {t("Relier. Protéger. Faire évoluer.")}
-                <small>
-                  {t("Trois domaines au service de votre activité.")}
-                </small>
-              </div>
-              <ArrowUpRight size={17} />
-            </div>
-            <div className="art-coordinates">
-              {t("14.7167° N   17.4677° W")}
-              <span>Dakar</span>
-            </div>
-          </div>
+            <span />
+            {t("Explorer")}
+          </a>
         </section>
         <div
           className="solution-ribbon service-ribbon"
@@ -377,75 +332,90 @@ function App() {
               )}
             </p>
           </div>
-          <div
-            className="filters"
-            role="group"
-            aria-label={t("Filtrer les solutions")}
+          <details
+            className="catalogue-panel"
+            open={catalogueOpen}
+            onToggle={(e) => setCatalogueOpen(e.currentTarget.open)}
           >
-            {filters.map((f) => (
-              <button
-                key={f.id}
-                className={`domain-${f.id}`}
-                aria-pressed={filter === f.id}
-                onClick={() => selectFilter(f.id)}
-              >
-                {t(f.name)}
-              </button>
-            ))}
-          </div>
-          <div className="products">
-            {products
-              .filter((p) => filter === "toutes" || p.category === filter)
-              .map((p) => {
-                const Icon = icons[p.category as keyof typeof icons];
-                return (
-                  <article
-                    className={`product domain-${p.category}`}
-                    key={p.id}
-                  >
-                    <div className="product-top">
-                      <span className="product-icon">
-                        <Icon size={25} />
-                      </span>
-                      <span className="product-badge">
-                        {t(filters.find((f) => f.id === p.category)!.name)}
-                      </span>
-                    </div>
-                    <span className="product-label">{p.label}</span>
-                    <h3>{p.name}</h3>
-                    <p>{p.text}</p>
-                    <div className="tags">
-                      {p.tags.map((t) => (
-                        <span key={t}>{t}</span>
-                      ))}
-                    </div>
-                    <a
-                      className="detail-link"
-                      href="#guide"
-                      onClick={() => chooseGuide(p.id)}
+            <summary>
+              <span>
+                {t("Explorer les 21 solutions")}
+                <small>
+                  {t("Des offres détaillées, organisées selon vos besoins.")}
+                </small>
+              </span>
+              <Plus size={25} aria-hidden="true" />
+            </summary>
+            <div
+              className="filters"
+              role="group"
+              aria-label={t("Filtrer les solutions")}
+            >
+              {filters.map((f) => (
+                <button
+                  key={f.id}
+                  className={`domain-${f.id}`}
+                  aria-pressed={filter === f.id}
+                  onClick={() => selectFilter(f.id)}
+                >
+                  {t(f.name)}
+                </button>
+              ))}
+            </div>
+            <div className="products">
+              {products
+                .filter((p) => filter === "toutes" || p.category === filter)
+                .map((p) => {
+                  const Icon = icons[p.category as keyof typeof icons];
+                  return (
+                    <article
+                      className={`product domain-${p.category}`}
+                      key={p.id}
                     >
-                      {t("Découvrir en détail")}
-                      <ArrowRight size={15} />
-                    </a>
-                    <details>
-                      <summary>
-                        {t("Est-ce adapté à mon entreprise ?")}
-                        <Plus size={15} />
-                      </summary>
-                      <p>{p.best}</p>
-                    </details>
-                    <a
-                      className="product-link"
-                      href="#contact"
-                      onClick={() => requestProduct(p.id)}
-                    >
-                      {t("Étudier cette solution")}
-                      <ArrowUpRight size={18} />
-                    </a>
-                  </article>
-                );
-              })}
-          </div>
+                      <div className="product-top">
+                        <span className="product-icon">
+                          <Icon size={25} />
+                        </span>
+                        <span className="product-badge">
+                          {t(filters.find((f) => f.id === p.category)!.name)}
+                        </span>
+                      </div>
+                      <span className="product-label">{p.label}</span>
+                      <h3>{p.name}</h3>
+                      <p>{p.text}</p>
+                      <div className="tags">
+                        {p.tags.map((t) => (
+                          <span key={t}>{t}</span>
+                        ))}
+                      </div>
+                      <a
+                        className="detail-link"
+                        href="#guide"
+                        onClick={() => chooseGuide(p.id)}
+                      >
+                        {t("Découvrir en détail")}
+                        <ArrowRight size={15} />
+                      </a>
+                      <details>
+                        <summary>
+                          {t("Est-ce adapté à mon entreprise ?")}
+                          <Plus size={15} />
+                        </summary>
+                        <p>{p.best}</p>
+                      </details>
+                      <a
+                        className="product-link"
+                        href="#contact"
+                        onClick={() => requestProduct(p.id)}
+                      >
+                        {t("Étudier cette solution")}
+                        <ArrowUpRight size={18} />
+                      </a>
+                    </article>
+                  );
+                })}
+            </div>
+          </details>
           <p className="catalogue-note">
             {t(
               "Le périmètre, les équipements, les prestations et les engagements de service sont définis sur devis, après étude de votre environnement.",

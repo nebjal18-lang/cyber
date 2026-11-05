@@ -67,6 +67,15 @@ L’offre publique est présentée sous l’identité ALYAD. Aucun fabricant ni 
 
 La connexion du dépôt à votre compte Vercel et l’entrée des variables serveur restent à effectuer dans Vercel. La préconfiguration du dépôt ne crée pas de projet Vercel et ne prouve pas qu’un déploiement a abouti.
 
-## Refonte visuelle et multi-solutions
+## Identité visuelle, interactions et animations
 
-La palette chaude et colorée est définie dans `src/theme.css`, après le socle `src/style.css`. Les trois domaines partagent une structure de carte, de filtre et de fiche avec des accents distincts : terre cuite, vert et bleu. Le catalogue comprend 9 solutions cybersécurité, 6 offres data centers et 6 offres télécommunications. Le formulaire utilise les mêmes identifiants dans les deux langues. Les niveaux de service, travaux et éventuelles autorisations sont cadrés avant engagement.
+La direction graphique repose sur le logo transmis par le propriétaire, le bleu nuit et le vert, une composition d’accueil photographique et une hiérarchie plus aérée. Les trois domaines ont des visuels illustratifs distincts. Les images WebP sont auto-hébergées et les environnements représentés ne sont pas présentés comme des installations réelles appartenant à ALYAD.
+
+- `src/theme.css` : composition, responsive et mouvements.
+- `src/useOrganizedMotion.ts` : apparition unique des sections, prise en compte du focus clavier, des liens d’ancre et de `prefers-reduced-motion`.
+- `public/images/alyad-logo.webp` : version web du logo fourni.
+- `public/images/infrastructure-hero.webp` et `service-environments.webp` : illustrations d’architecture.
+
+L’animation d’entrée est courte et finie ; aucune boucle continue. Le catalogue de 21 offres, le comparatif et les informations d’organisation secondaires sont dépliables. Une fiche détaillée n’est affichée qu’après sélection d’une solution. L’URL conserve les choix de domaine, de langue et de fiche. Ces changements préservent l’intégralité des descriptions et des données de société.
+
+Les captures et la vidéo de lecture sont dans `docs/previews/` : `professionnel-fr-desktop.png`, `professionnel-fr-mobile.png`, `professionnel-domaines.png`, `professionnel-fr-complet.png` et `presentation-animee.mp4`.

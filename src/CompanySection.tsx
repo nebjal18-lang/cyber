@@ -20,13 +20,13 @@ export function Brand({ language }: { language: Language }) {
       href="#"
       aria-label={`${company.name}, ${language === "en" ? "home" : "accueil"}`}
     >
-      <span className="brand-icon" aria-hidden="true">
-        {company.acronym}
-      </span>
-      <span className="brand-word" translate="no">
-        {company.brand}
-        <small>{company.brandDescriptor}</small>
-      </span>
+      <img
+        className="brand-logo"
+        src="/images/alyad-logo.webp"
+        alt={company.name}
+        width="1312"
+        height="1199"
+      />
     </a>
   );
 }
@@ -180,41 +180,49 @@ export function CompanySection({ language }: { language: Language }) {
           </a>
         </aside>
       </div>
-      <h3 className="company-subtitle">{c.activityTitle}</h3>
-      <div className="company-activities">
-        {c.activities.map(([title, text], index) => {
-          const Icon = icons[index];
-          return (
-            <article key={title}>
-              <Icon size={25} aria-hidden="true" />
-              <h4>{title}</h4>
-              <p>{text}</p>
+      <details className="company-disclosure">
+        <summary>
+          {en
+            ? "Organization & other business activities"
+            : "Organisation & autres activités"}
+          <ArrowUpRight size={18} aria-hidden="true" />
+        </summary>
+        <h3 className="company-subtitle">{c.activityTitle}</h3>
+        <div className="company-activities">
+          {c.activities.map(([title, text], index) => {
+            const Icon = icons[index];
+            return (
+              <article key={title}>
+                <Icon size={25} aria-hidden="true" />
+                <h4>{title}</h4>
+                <p>{text}</p>
+              </article>
+            );
+          })}
+        </div>
+        <p className="company-scope-note">{c.scopeNote}</p>
+        <div className="company-team-heading">
+          <h3>{c.teamTitle}</h3>
+          <p>{c.teamIntro}</p>
+        </div>
+        <div className="company-team">
+          {company.team.map((person) => (
+            <article key={person.name}>
+              <span className="team-initials" aria-hidden="true">
+                {person.name
+                  .split(" ")
+                  .filter((word) => word.length > 0)
+                  .map((word) => word[0])
+                  .join("")
+                  .slice(0, 3)}
+              </span>
+              <h4 translate="no">{person.name}</h4>
+              <p className="team-role">{en ? person.roleEn : person.roleFr}</p>
+              <p>{en ? person.missionEn : person.missionFr}</p>
             </article>
-          );
-        })}
-      </div>
-      <p className="company-scope-note">{c.scopeNote}</p>
-      <div className="company-team-heading">
-        <h3>{c.teamTitle}</h3>
-        <p>{c.teamIntro}</p>
-      </div>
-      <div className="company-team">
-        {company.team.map((person) => (
-          <article key={person.name}>
-            <span className="team-initials" aria-hidden="true">
-              {person.name
-                .split(" ")
-                .filter((word) => word.length > 0)
-                .map((word) => word[0])
-                .join("")
-                .slice(0, 3)}
-            </span>
-            <h4 translate="no">{person.name}</h4>
-            <p className="team-role">{en ? person.roleEn : person.roleFr}</p>
-            <p>{en ? person.missionEn : person.missionFr}</p>
-          </article>
-        ))}
-      </div>
+          ))}
+        </div>
+      </details>
       <div className="company-address-line">
         <MapPin size={17} aria-hidden="true" />
         <span>{c.address}</span>
@@ -377,15 +385,17 @@ export function MultiExpertise({
         </p>
       </div>
       <div className="expertise-grid">
-        {fields.map((field) => {
+        {fields.map((field, index) => {
           const Icon = icons[field.id as keyof typeof icons];
           return (
             <article
               key={field.id}
               className={`expertise-card domain-${field.id}`}
+              style={{ transitionDelay: `${index * 90}ms` }}
             >
-              <div className="expertise-symbol">
-                <Icon size={32} aria-hidden="true" />
+              <div className="expertise-image" aria-hidden="true">
+                <Icon size={24} />
+                <span>{field.title}</span>
               </div>
               <h3>{field.title}</h3>
               <p>{field.text}</p>

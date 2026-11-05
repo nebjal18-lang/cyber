@@ -18,6 +18,7 @@ export function SolutionGuide({
 }: Props) {
   const en = language === "en";
   const p = products.find((p) => p.id === selected) ?? products[0];
+  const hasSelection = products.some((product) => product.id === selected);
   const c = en
     ? {
         label: "Make an informed choice",
@@ -73,9 +74,14 @@ export function SolutionGuide({
         <label htmlFor="guide-select">{c.select}</label>
         <select
           id="guide-select"
-          value={p.id}
+          value={hasSelection ? p.id : ""}
           onChange={(e) => onSelect(e.target.value)}
         >
+          <option value="" disabled>
+            {en
+              ? "Choose a solution to explore"
+              : "Choisissez une solution à découvrir"}
+          </option>
           {products.map((product) => (
             <option key={product.id} value={product.id}>
               {product.name}
@@ -83,114 +89,127 @@ export function SolutionGuide({
           ))}
         </select>
       </div>
-      <article
-        className={`guide-panel domain-${p.category}`}
-        aria-labelledby="guide-title"
-      >
-        <div className="guide-summary">
-          <span className="eyebrow">{p.label}</span>
-          <h3 id="guide-title">{p.name}</h3>
-          <p>{p.text}</p>
-          <ul>
-            {p.tags.map((tag) => (
-              <li key={tag}>
-                <Check size={15} aria-hidden="true" />
-                {tag}
-              </li>
-            ))}
-          </ul>
-          <a className="button" href="#contact" onClick={() => onRequest(p.id)}>
-            {c.cta}
-            <ArrowUpRight size={17} />
-          </a>
-          <a className="source-link" href="#approche">
-            {c.source}
-            <ArrowUpRight size={15} />
-          </a>
-        </div>
-        <div className="guide-body">
-          <div>
-            <h4>{c.overview}</h4>
-            <p>{p.overview}</p>
-          </div>
-          <div>
-            <h4>{c.capabilities}</h4>
+      {hasSelection ? (
+        <article
+          className={`guide-panel domain-${p.category}`}
+          aria-labelledby="guide-title"
+        >
+          <div className="guide-summary">
+            <span className="eyebrow">{p.label}</span>
+            <h3 id="guide-title">{p.name}</h3>
+            <p>{p.text}</p>
             <ul>
-              {p.capabilities.map((item) => (
-                <li key={item}>{item}</li>
+              {p.tags.map((tag) => (
+                <li key={tag}>
+                  <Check size={15} aria-hidden="true" />
+                  {tag}
+                </li>
               ))}
             </ul>
+            <a
+              className="button"
+              href="#contact"
+              onClick={() => onRequest(p.id)}
+            >
+              {c.cta}
+              <ArrowUpRight size={17} />
+            </a>
+            <a className="source-link" href="#approche">
+              {c.source}
+              <ArrowUpRight size={15} />
+            </a>
           </div>
-          <div className="use-case">
-            <h4>{c.example}</h4>
-            <p>{p.example}</p>
+          <div className="guide-body">
+            <div>
+              <h4>{c.overview}</h4>
+              <p>{p.overview}</p>
+            </div>
+            <div>
+              <h4>{c.capabilities}</h4>
+              <ul>
+                {p.capabilities.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="use-case">
+              <h4>{c.example}</h4>
+              <p>{p.example}</p>
+            </div>
+            <div>
+              <h4>{c.prerequisites}</h4>
+              <ul>
+                {p.prerequisites.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4>{c.licensing}</h4>
+              <p>{p.licensing}</p>
+            </div>
           </div>
-          <div>
-            <h4>{c.prerequisites}</h4>
-            <ul>
-              {p.prerequisites.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4>{c.licensing}</h4>
-            <p>{p.licensing}</p>
-          </div>
+        </article>
+      ) : (
+        <div className="guide-intro-note">
+          <p>
+            {en
+              ? "Select a cybersecurity, data center or telecommunications solution to explore its use cases, preparation requirements and scope."
+              : "Sélectionnez une solution de cybersécurité, de data centers ou de télécommunications pour découvrir ses usages, ses prérequis et son périmètre."}
+          </p>
         </div>
-      </article>
+      )}
       <p className="editorial-note">{c.note}</p>
-      <div className="comparison-heading">
-        <h3>{c.comparison}</h3>
-        <p>
-          {en
-            ? "Compare the starting points, then discuss the architecture and services your project requires."
-            : "Comparez les points de départ, puis échangeons sur l’architecture et les prestations nécessaires à votre projet."}
-        </p>
-      </div>
-      <div
-        className="comparison-scroll"
-        role="region"
-        aria-label={c.comparison}
-        tabIndex={0}
-      >
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">{c.solution}</th>
-              <th scope="col">{c.need}</th>
-              <th scope="col">{c.audience}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((product) => (
-              <tr key={product.id}>
-                <th scope="row">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      onSelect(product.id);
-                      document.getElementById("guide-select")?.focus();
-                      document.getElementById("guide")?.scrollIntoView({
-                        behavior: matchMedia("(prefers-reduced-motion: reduce)")
-                          .matches
-                          ? "auto"
-                          : "smooth",
-                      });
-                    }}
-                    aria-label={`${c.detail} : ${product.name}`}
-                  >
-                    {product.name}
-                    <ArrowRight size={14} />
-                  </button>
-                </th>
-                <td>{product.text}</td>
-                <td>{product.best}</td>
+      <details className="comparison-disclosure">
+        <summary>
+          {c.comparison}
+          <ArrowRight size={19} aria-hidden="true" />
+        </summary>
+        <div
+          className="comparison-scroll"
+          role="region"
+          aria-label={c.comparison}
+          tabIndex={0}
+        >
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">{c.solution}</th>
+                <th scope="col">{c.need}</th>
+                <th scope="col">{c.audience}</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {products.map((product) => (
+                <tr key={product.id}>
+                  <th scope="row">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        onSelect(product.id);
+                        document.getElementById("guide-select")?.focus();
+                        document.getElementById("guide")?.scrollIntoView({
+                          behavior: matchMedia(
+                            "(prefers-reduced-motion: reduce)",
+                          ).matches
+                            ? "auto"
+                            : "smooth",
+                        });
+                      }}
+                      aria-label={`${c.detail} : ${product.name}`}
+                    >
+                      {product.name}
+                      <ArrowRight size={14} />
+                    </button>
+                  </th>
+                  <td>{product.text}</td>
+                  <td>{product.best}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
     </section>
   );
 }
