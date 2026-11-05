@@ -6,6 +6,9 @@ import {
   Globe,
   Phone,
   MapPin,
+  ShieldCheck,
+  Server,
+  Radio,
 } from "lucide-react";
 import { company } from "./config";
 import type { Language } from "./i18n";
@@ -37,7 +40,7 @@ export function CompanySection({ language }: { language: Language }) {
         intro:
           "ALYAD-DEVELOPPEMENT « AD » SUARL operates in Senegal and internationally. Its institutional presentation brings together trading and consulting with transport, logistics, technical assistance and support for industrial and extractive sectors.",
         connection:
-          "ALYAD-DEVELOPPEMENT is developing its cybersecurity activity around business needs, exposure management and project coordination. The technical scope and delivery arrangements will be defined for each project.",
+          "ALYAD-DEVELOPPEMENT develops a digital solutions offering spanning cybersecurity, data centers and telecommunications. Our approach brings requirements, architecture choices and project coordination together under one business contact.",
         activityTitle: "Our wider business activities",
         activities: [
           [
@@ -80,7 +83,7 @@ export function CompanySection({ language }: { language: Language }) {
         intro:
           "ALYAD-DEVELOPPEMENT « AD » SUARL exerce ses activités au Sénégal et à l’international. Sa présentation institutionnelle associe le négoce et le conseil au transport, à la logistique, à l’assistance technique et à l’accompagnement des secteurs industriels et extractifs.",
         connection:
-          "ALYAD-DEVELOPPEMENT développe son activité cybersécurité autour des besoins des entreprises, de la gestion des expositions et de la coordination des projets. Le périmètre technique et les modalités d’intervention seront définis pour chaque projet.",
+          "ALYAD-DEVELOPPEMENT développe une offre de solutions numériques en cybersécurité, data centers et télécommunications. Notre démarche relie les besoins, les choix d’architecture et la coordination du projet autour d’un interlocuteur commercial unique.",
         activityTitle: "Nos autres domaines d’activité",
         activities: [
           [
@@ -267,98 +270,150 @@ export function CompanyLegal({ language }: { language: Language }) {
       </p>
       <p>
         {en
-          ? "Intended hosting provider: Vercel. Offers are subject to a quotation and confirmation of resale rights."
-          : "Hébergement prévu : Vercel. Les offres sont soumises à un devis et à la confirmation des droits de commercialisation."}
+          ? "Intended hosting provider: Vercel. Services and commitments are specified in a quotation."
+          : "Hébergement prévu : Vercel. Les prestations et les engagements sont précisés dans un devis."}
       </p>
     </>
   );
 }
 
-export function CyberFocus({ language }: { language: Language }) {
+export function MultiExpertise({
+  language,
+  onSelect,
+}: {
+  language: Language;
+  onSelect: (category: string) => void;
+}) {
   const en = language === "en";
-  const c = en
-    ? {
-        label: "Cybersecurity at ALYAD-DEVELOPPEMENT",
-        title:
-          "Connecting your business priorities with your cybersecurity projects.",
-        intro:
-          "From Dakar, ALYAD-DEVELOPPEMENT is developing its cybersecurity activity to help businesses and institutions structure their requirements and explore exposure management solutions.",
-        areas: [
-          [
-            "Requirements & risk scoping",
-            "Discuss your business challenges, identify the environments involved and define an initial scope, priorities and operational constraints.",
+  const fields = en
+    ? [
+        {
+          id: "cyber",
+          title: "Cybersecurity",
+          text: "Understand exposures, strengthen controls and organize your risk reduction priorities.",
+          items: [
+            "Vulnerabilities & assessments",
+            "Cloud, identity & applications",
+            "Industrial security & monitoring",
           ],
-          [
-            "Solution orientation",
-            "Explore vulnerability management, cloud security, identity, web applications and OT solutions to prepare an informed selection.",
+          action: "Explore cybersecurity",
+        },
+        {
+          id: "datacenter",
+          title: "Data centers",
+          text: "Design the foundations that support your data, applications and operational continuity.",
+          items: [
+            "Architecture & virtualization",
+            "Storage, backup & recovery",
+            "Power, cooling & monitoring",
           ],
-          [
-            "Project coordination",
-            "Clarify stakeholders, prerequisites and responsibilities before assessment, deployment or follow-up, within the scope agreed with authorized teams.",
+          action: "Explore data centers",
+        },
+        {
+          id: "telecom",
+          title: "Telecommunications",
+          text: "Connect people, locations and services through networks built around your business.",
+          items: [
+            "LAN, Wi-Fi & optical fiber",
+            "Site connectivity & SD-WAN",
+            "Voice, Internet & radio links",
           ],
-        ],
-        projectTitle: "A local contact to help structure your project",
-        statement:
-          "ALYAD-DEVELOPPEMENT connects business requirements with a structured approach to Tenable solutions in Senegal. From the initial conversation to project scoping, our approach helps clarify priorities, stakeholders and next steps.",
-        boundary:
-          "Licensing, resale, technical delivery and support arrangements will be confirmed within the appropriate contractual framework.",
-        cta: "Discuss your cybersecurity project",
-      }
-    : {
-        label: "La cybersécurité chez ALYAD-DEVELOPPEMENT",
-        title: "Relier vos priorités métier à vos projets de cybersécurité.",
-        intro:
-          "Depuis Dakar, ALYAD-DEVELOPPEMENT développe son activité cybersécurité pour aider les entreprises et les institutions à structurer leurs besoins et à étudier les solutions de gestion des expositions.",
-        areas: [
-          [
-            "Cadrage des besoins & des risques",
-            "Échanger sur vos enjeux métier, identifier les environnements concernés et définir un premier périmètre, les priorités et les contraintes opérationnelles.",
+          action: "Explore telecommunications",
+        },
+      ]
+    : [
+        {
+          id: "cyber",
+          title: "Cybersécurité",
+          text: "Comprendre les expositions, renforcer les protections et organiser vos priorités de réduction du risque.",
+          items: [
+            "Vulnérabilités & audits",
+            "Cloud, identités & applications",
+            "Sécurité industrielle & supervision",
           ],
-          [
-            "Orientation vers les solutions",
-            "Étudier les solutions de gestion des vulnérabilités, de sécurité cloud, d’identités, d’applications web et d’OT pour préparer un choix éclairé.",
+          action: "Explorer la cybersécurité",
+        },
+        {
+          id: "datacenter",
+          title: "Data centers",
+          text: "Concevoir les fondations qui soutiennent vos données, vos applications et la continuité de votre activité.",
+          items: [
+            "Architecture & virtualisation",
+            "Stockage, sauvegarde & reprise",
+            "Énergie, refroidissement & supervision",
           ],
-          [
-            "Coordination des projets",
-            "Clarifier les interlocuteurs, les prérequis et les responsabilités avant une évaluation, un déploiement ou un suivi, sur un périmètre convenu avec les équipes habilitées.",
+          action: "Explorer les data centers",
+        },
+        {
+          id: "telecom",
+          title: "Télécommunications",
+          text: "Relier les personnes, les sites et les services avec des réseaux pensés pour vos usages.",
+          items: [
+            "LAN, Wi-Fi & fibre optique",
+            "Interconnexion & SD-WAN",
+            "Voix, Internet & liaisons radio",
           ],
-        ],
-        projectTitle:
-          "Un interlocuteur de proximité pour structurer votre projet",
-        statement:
-          "ALYAD-DEVELOPPEMENT relie les besoins des entreprises à une approche structurée des solutions Tenable au Sénégal. Du premier échange au cadrage du projet, notre démarche permet de clarifier les priorités, les interlocuteurs et les prochaines étapes.",
-        boundary:
-          "Les modalités de licence, de revente, d’intervention technique et de support seront confirmées dans le cadre contractuel approprié.",
-        cta: "Parlons de votre projet cybersécurité",
-      };
+          action: "Explorer les télécommunications",
+        },
+      ];
+  const icons = { cyber: ShieldCheck, datacenter: Server, telecom: Radio };
   return (
-    <section id="cybersecurite" className="section cyber-focus">
+    <section id="expertises" className="section multi-expertise">
       <div className="section-heading">
         <div>
-          <span className="eyebrow">{c.label}</span>
-          <h2>{c.title}</h2>
+          <span className="eyebrow">
+            {en ? "ALYAD, by your side" : "ALYAD, à vos côtés"}
+          </span>
+          <h2>
+            {en
+              ? "Three fields. One shared ambition."
+              : "Trois domaines. Une même ambition."}
+          </h2>
         </div>
-        <p>{c.intro}</p>
+        <p>
+          {en
+            ? "Move your projects forward with one business contact and solutions built around your priorities."
+            : "Faire avancer vos projets avec un interlocuteur commercial unique et des solutions choisies selon vos priorités."}
+        </p>
       </div>
-      <div className="cyber-areas">
-        {c.areas.map(([title, text]) => (
-          <article key={title}>
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </article>
-        ))}
+      <div className="expertise-grid">
+        {fields.map((field) => {
+          const Icon = icons[field.id as keyof typeof icons];
+          return (
+            <article
+              key={field.id}
+              className={`expertise-card domain-${field.id}`}
+            >
+              <div className="expertise-symbol">
+                <Icon size={32} aria-hidden="true" />
+              </div>
+              <h3>{field.title}</h3>
+              <p>{field.text}</p>
+              <ul>
+                {field.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <a href="#solutions" onClick={() => onSelect(field.id)}>
+                {field.action}
+                <ArrowUpRight size={18} />
+              </a>
+            </article>
+          );
+        })}
       </div>
-      <aside className="project-panel">
-        <div>
-          <h3>{c.projectTitle}</h3>
-          <p>{c.statement}</p>
-          <p>{c.boundary}</p>
-        </div>
-        <a className="button" href="#contact">
-          {c.cta}
+      <div className="engagement-line">
+        <span className="engagement-mark" aria-hidden="true" />
+        <p>
+          {en
+            ? "Your business sets the direction. We help define the architecture, scope and next steps."
+            : "Votre activité donne le cap. Nous vous aidons à définir l’architecture, le périmètre et les prochaines étapes."}
+        </p>
+        <a href="#contact">
+          {en ? "Build my project" : "Construire mon projet"}
           <ArrowUpRight size={17} />
         </a>
-      </aside>
+      </div>
     </section>
   );
 }

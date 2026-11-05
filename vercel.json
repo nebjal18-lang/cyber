@@ -33,7 +33,7 @@
   "functions": {
     "api/contact.js": {
       "maxDuration": 15,
-      "includeFiles": "src/company.json"
+      "includeFiles": "src/*.json"
     }
   }
 }

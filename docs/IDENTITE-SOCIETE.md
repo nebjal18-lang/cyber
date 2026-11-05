@@ -19,7 +19,7 @@ Les données institutionnelles sont transcrites de la présentation PDF fournie 
 
 La présentation d’entreprise résume les activités de négoce, conseil, transport, logistique, industrie, secteurs extractifs et représentation internationale. L’objet social est distingué d’une autorisation effective d’exercer une activité réglementée. Le nom du notaire, le dépôt d’actes et les dispositions particulières du premier exercice ne sont pas utiles au parcours commercial et ne sont pas reproduits.
 
-Le positionnement cybersécurité est ajouté à la demande explicite du propriétaire. Les textes présentent le cadrage des besoins, l’orientation vers les solutions et la coordination des projets, sans inventer une certification, une expérience client, un effectif technique, un SOC ni un agrément de l’éditeur. Le site public ne mentionne pas les démarches de partenariat, conformément à la dernière consigne du propriétaire.
+Le positionnement cybersécurité, data centers et télécommunications est ajouté à la demande explicite du propriétaire. Les textes présentent le cadrage des besoins, l’orientation vers les solutions et la coordination des projets, sans inventer une certification, une expérience client, un effectif technique, un SOC ni un agrément de l’éditeur. Le site public ne mentionne pas les démarches de partenariat, conformément à la dernière consigne du propriétaire.
 
 Aucune adresse e-mail n’est fournie dans le PDF. Le numéro de téléphone n’est pas présenté comme numéro WhatsApp sans confirmation. Les liens d’appel sont actifs ; le formulaire e-mail reste soumis à la configuration Resend/Vercel. Aucun destinataire e-mail n’a été inventé.
 

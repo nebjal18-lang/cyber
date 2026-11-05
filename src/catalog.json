@@ -1,15 +1,13 @@
 [
   {
-    "id": "one",
-    "name": "Tenable One",
-    "category": "plateforme",
-    "url": "https://www.tenable.com/products/tenable-one",
+    "id": "exposure",
+    "category": "cyber",
     "fr": {
       "label": "Une vision d’ensemble",
       "text": "Rapprochez les informations de plusieurs surfaces d’attaque pour comprendre les expositions qui comptent pour votre activité.",
       "tags": ["Visibilité unifiée", "Priorisation", "Pilotage du risque"],
       "best": "Les organisations qui veulent relier les constats techniques aux priorités métier.",
-      "overview": "Une vulnérabilité isolée ne décrit pas toujours le risque réel. Une démarche de gestion des expositions rapproche les actifs, leurs faiblesses, les identités et les relations entre environnements. Tenable One est présenté ici comme la famille de plateforme destinée à cette lecture transverse. Le périmètre de visibilité dépend des composants souscrits, des connecteurs et des données disponibles.",
+      "overview": "Une vulnérabilité isolée ne décrit pas toujours le risque réel. Une démarche de gestion des expositions rapproche les actifs, leurs faiblesses, les identités et les relations entre environnements. Cette lecture transverse aide à relier les constats techniques aux décisions métier. Le périmètre de visibilité dépend des composants souscrits, des connecteurs et des données disponibles.",
       "capabilities": [
         "Consolider la lecture des expositions issues des composants déployés.",
         "Examiner les relations et les chemins potentiels entre actifs et identités.",
@@ -21,14 +19,15 @@
         "Définir les accès, les connecteurs et les règles de partage des informations.",
         "Choisir les indicateurs qui permettront de suivre les actions."
       ],
-      "licensing": "Les composants inclus, intégrations et conditions de licence doivent être confirmés. La plateforme ne corrige pas automatiquement tous les constats et ne garantit pas l’absence d’attaque."
+      "licensing": "Les composants inclus, intégrations et conditions de licence doivent être confirmés. La plateforme ne corrige pas automatiquement tous les constats et ne garantit pas l’absence d’attaque.",
+      "name": "Gestion des expositions"
     },
     "en": {
       "label": "One connected perspective",
       "text": "Bring multiple attack surfaces into focus to understand the exposures that matter to your business.",
       "tags": ["Unified visibility", "Prioritization", "Risk oversight"],
       "best": "Organizations seeking to connect technical findings with business priorities.",
-      "overview": "An isolated vulnerability does not always describe the real risk. Exposure management brings assets, weaknesses, identities and relationships between environments into context. Tenable One is presented here as the platform family for this broader view. Visibility depends on the licensed components, connectors and available data.",
+      "overview": "An isolated vulnerability does not always describe the real risk. Exposure management brings assets, weaknesses, identities and relationships between environments into context. This broader perspective helps connect technical findings to business decisions. Visibility depends on the licensed components, connectors and available data.",
       "capabilities": [
         "Consolidate exposure insights from the components you deploy.",
         "Examine relationships and potential paths between assets and identities.",
@@ -40,20 +39,19 @@
         "Define access, connectors and information-sharing rules.",
         "Choose indicators to track progress on agreed actions."
       ],
-      "licensing": "Included components, integrations and license terms must be confirmed. The platform does not automatically resolve every finding or guarantee that an attack cannot occur."
+      "licensing": "Included components, integrations and license terms must be confirmed. The platform does not automatically resolve every finding or guarantee that an attack cannot occur.",
+      "name": "Exposure management"
     }
   },
   {
-    "id": "vm",
-    "name": "Tenable Vulnerability Management",
-    "category": "vulnerabilites",
-    "url": "https://www.tenable.com/products/tenable-vulnerability-management",
+    "id": "vulnerabilities",
+    "category": "cyber",
     "fr": {
       "label": "La maîtrise des vulnérabilités",
       "text": "Organisez la découverte, l’évaluation et le suivi des vulnérabilités de vos actifs dans une démarche pilotée depuis le cloud.",
       "tags": ["Gestion cloud", "Inventaire", "Remédiation"],
       "best": "Les équipes qui ont besoin d’un suivi régulier et partagé des vulnérabilités.",
-      "overview": "Le scan n’est qu’une étape. Une démarche durable nécessite de connaître les actifs, planifier les évaluations, examiner les résultats et suivre les corrections. Tenable Vulnerability Management répond à cette logique de gestion dans une console cloud. Les méthodes de collecte, les actifs couverts et les possibilités de reporting dépendent de la configuration et de l’offre retenue.",
+      "overview": "Le scan n’est qu’une étape. Une démarche durable nécessite de connaître les actifs, planifier les évaluations, examiner les résultats et suivre les corrections. Cette approche répond à cette logique de gestion dans une console cloud. Les méthodes de collecte, les actifs couverts et les possibilités de reporting dépendent de la configuration et de l’offre retenue.",
       "capabilities": [
         "Organiser les évaluations et regrouper les constats sur les actifs couverts.",
         "Utiliser le contexte des vulnérabilités pour aider à prioriser les corrections.",
@@ -65,14 +63,15 @@
         "Préparer la connectivité, les éventuels scanners, agents et accès nécessaires.",
         "Convenir des fenêtres de scan et des responsabilités de remédiation."
       ],
-      "licensing": "L’architecture de collecte, les droits d’accès, la localisation des données et le périmètre de licence sont à valider. La correction relève des équipes habilitées et de leur gestion du changement."
+      "licensing": "L’architecture de collecte, les droits d’accès, la localisation des données et le périmètre de licence sont à valider. La correction relève des équipes habilitées et de leur gestion du changement.",
+      "name": "Gestion des vulnérabilités"
     },
     "en": {
       "label": "Vulnerabilities under control",
       "text": "Organize discovery, assessment and vulnerability follow-up through a cloud-managed approach.",
       "tags": ["Cloud-managed", "Inventory", "Remediation"],
       "best": "Teams that need regular, shared visibility of vulnerabilities.",
-      "overview": "Scanning is only one step. A sustainable program needs asset awareness, planned assessments, reviewed findings and follow-up on fixes. Tenable Vulnerability Management supports this workflow through a cloud console. Collection methods, covered assets and reporting capabilities depend on configuration and the selected offering.",
+      "overview": "Scanning is only one step. A sustainable program needs asset awareness, planned assessments, reviewed findings and follow-up on fixes. This approach supports this workflow through a cloud console. Collection methods, covered assets and reporting capabilities depend on configuration and the selected offering.",
       "capabilities": [
         "Organize assessments and consolidate findings for covered assets.",
         "Use vulnerability context to help prioritize fixes.",
@@ -84,20 +83,19 @@
         "Prepare connectivity and any required scanners, agents and access.",
         "Agree on scanning windows and remediation ownership."
       ],
-      "licensing": "Collection architecture, access rights, data location and licensing scope require validation. Remediation remains subject to authorized teams and change management."
+      "licensing": "Collection architecture, access rights, data location and licensing scope require validation. Remediation remains subject to authorized teams and change management.",
+      "name": "Vulnerability management"
     }
   },
   {
-    "id": "nessus",
-    "name": "Tenable Nessus",
-    "category": "vulnerabilites",
-    "url": "https://www.tenable.com/products/nessus",
+    "id": "audit",
+    "category": "cyber",
     "fr": {
       "label": "Le point de départ technique",
       "text": "Réalisez des évaluations de vulnérabilités et de configuration sur un périmètre technique clairement autorisé.",
       "tags": ["Scans ciblés", "Audit technique", "Configuration"],
       "best": "Les consultants, auditeurs et équipes techniques qui réalisent des évaluations ciblées.",
-      "overview": "Nessus est une famille d’outils de scan permettant de rechercher des vulnérabilités et des problèmes de configuration sur les cibles prises en charge. Les contrôles disponibles varient selon l’édition, les plugins et les accès fournis. Un scan authentifié peut apporter davantage de contexte qu’un contrôle externe seul, sous réserve de privilèges adaptés et d’une préparation rigoureuse.",
+      "overview": "Un audit technique utilise des méthodes d’évaluation permettant de rechercher des vulnérabilités et des problèmes de configuration sur les cibles prises en charge. Les contrôles disponibles varient selon l’édition, les plugins et les accès fournis. Un scan authentifié peut apporter davantage de contexte qu’un contrôle externe seul, sous réserve de privilèges adaptés et d’une préparation rigoureuse.",
       "capabilities": [
         "Préparer des politiques de scan adaptées aux systèmes évalués.",
         "Examiner les constats et les éléments techniques pour guider la validation.",
@@ -109,14 +107,15 @@
         "Choisir un emplacement de scan avec la connectivité nécessaire.",
         "Définir les comptes de contrôle et protéger les résultats du rapport."
       ],
-      "licensing": "Choisir l’édition avec l’éditeur selon l’usage, les cibles et les droits requis. Un scanner seul n’équivaut pas à une plateforme de gestion continue ni à un test d’intrusion complet."
+      "licensing": "Choisir l’édition avec l’éditeur selon l’usage, les cibles et les droits requis. Un scanner seul n’équivaut pas à une plateforme de gestion continue ni à un test d’intrusion complet.",
+      "name": "Audit technique & configuration"
     },
     "en": {
       "label": "A practical technical starting point",
       "text": "Run vulnerability and configuration assessments within a clearly authorized technical scope.",
       "tags": ["Targeted scans", "Technical assessment", "Configuration"],
       "best": "Consultants, auditors and technical teams performing scoped assessments.",
-      "overview": "Nessus is a family of scanning tools used to identify vulnerabilities and configuration issues on supported targets. Available checks vary with the edition, plugins and provided access. Credentialed scanning can offer more context than an external-only check, provided privileges are appropriate and the assessment is carefully prepared.",
+      "overview": "A vulnerability assessment is a family of scanning tools used to identify vulnerabilities and configuration issues on supported targets. Available checks vary with the edition, plugins and provided access. Credentialed scanning can offer more context than an external-only check, provided privileges are appropriate and the assessment is carefully prepared.",
       "capabilities": [
         "Prepare scan policies suited to the systems being assessed.",
         "Review findings and technical evidence to guide validation.",
@@ -128,20 +127,19 @@
         "Choose a scanner location with suitable connectivity.",
         "Define assessment accounts and protect report contents."
       ],
-      "licensing": "Confirm the edition with the vendor based on intended use, targets and required rights. A standalone scanner is not equivalent to a continuous management platform or a full penetration test."
+      "licensing": "Confirm the edition with the vendor based on intended use, targets and required rights. A standalone scanner is not equivalent to a continuous management platform or a full penetration test.",
+      "name": "Technical & configuration assessment"
     }
   },
   {
-    "id": "cloud",
-    "name": "Tenable Cloud Security",
-    "category": "cloud",
-    "url": "https://www.tenable.com/products/tenable-cloud-security",
+    "id": "cloud-security",
+    "category": "cyber",
     "fr": {
       "label": "Le cloud, sous contrôle",
       "text": "Examinez les risques de configuration et de permissions qui peuvent exposer vos environnements cloud.",
       "tags": ["Posture cloud", "Permissions", "Contexte du risque"],
       "best": "Les organisations qui veulent mieux maîtriser des environnements cloud en évolution.",
-      "overview": "Dans le cloud, le risque dépend autant des permissions et de la configuration que des composants logiciels. Tenable Cloud Security est présenté pour l’analyse de posture et des expositions cloud. L’étendue de couverture varie selon les fournisseurs, les services, les connecteurs et l’offre choisie. Les recommandations doivent être validées avec les responsables cloud avant leur application.",
+      "overview": "Dans le cloud, le risque dépend autant des permissions et de la configuration que des composants logiciels. Cette approche permet d’étudier l’analyse de posture et des expositions cloud. L’étendue de couverture varie selon les fournisseurs, les services, les connecteurs et l’offre choisie. Les recommandations doivent être validées avec les responsables cloud avant leur application.",
       "capabilities": [
         "Repérer les configurations susceptibles d’augmenter l’exposition.",
         "Examiner les accès et les permissions excessives dans le périmètre pris en charge.",
@@ -153,14 +151,15 @@
         "Définir les permissions d’intégration avec le principe du moindre privilège.",
         "Identifier les données sensibles et les responsables des changements."
       ],
-      "licensing": "La couverture des services, les modes de déploiement et les fonctionnalités exactes sont à confirmer. La solution ne remplace pas l’architecture de sécurité ni la gouvernance des accès."
+      "licensing": "La couverture des services, les modes de déploiement et les fonctionnalités exactes sont à confirmer. La solution ne remplace pas l’architecture de sécurité ni la gouvernance des accès.",
+      "name": "Sécurité cloud"
     },
     "en": {
       "label": "Cloud security in context",
       "text": "Assess configuration and permission risks that may expose your cloud environments.",
       "tags": ["Cloud posture", "Permissions", "Risk context"],
       "best": "Organizations seeking greater control over changing cloud environments.",
-      "overview": "Cloud risk depends on permissions and configuration as well as software components. Tenable Cloud Security is presented for cloud posture and exposure analysis. Coverage varies by provider, service, connector and selected offering. Recommendations must be reviewed with cloud owners before changes are applied.",
+      "overview": "Cloud risk depends on permissions and configuration as well as software components. This approach is considered for cloud posture and exposure analysis. Coverage varies by provider, service, connector and selected offering. Recommendations must be reviewed with cloud owners before changes are applied.",
       "capabilities": [
         "Identify configurations that may increase exposure.",
         "Review access and excessive permissions within the supported scope.",
@@ -172,20 +171,19 @@
         "Define integration permissions using least privilege.",
         "Identify sensitive data and owners responsible for changes."
       ],
-      "licensing": "Service coverage, deployment methods and exact features must be confirmed. The solution does not replace security architecture or access governance."
+      "licensing": "Service coverage, deployment methods and exact features must be confirmed. The solution does not replace security architecture or access governance.",
+      "name": "Cloud security"
     }
   },
   {
     "id": "identity",
-    "name": "Tenable Identity Exposure",
-    "category": "identites",
-    "url": "https://www.tenable.com/products/tenable-identity-exposure",
+    "category": "cyber",
     "fr": {
       "label": "Des identités mieux protégées",
       "text": "Repérez les faiblesses des infrastructures d’identité et les conditions qui peuvent faciliter une progression d’attaque.",
-      "tags": ["Active Directory", "Identités", "Chemins d’attaque"],
+      "tags": ["annuaires d’entreprise", "Identités", "Chemins d’attaque"],
       "best": "Les équipes qui veulent réduire les risques associés aux infrastructures d’identité.",
-      "overview": "Les identités relient les utilisateurs, les services et les ressources. Une permission excessive ou une configuration faible peut permettre à un attaquant de progresser. Tenable Identity Exposure est présenté pour l’examen des expositions des infrastructures d’identité, notamment Active Directory. La prise en charge exacte des environnements hybrides et des sources d’identité doit être confirmée pour le projet.",
+      "overview": "Les identités relient les utilisateurs, les services et les ressources. Une permission excessive ou une configuration faible peut permettre à un attaquant de progresser. Cette approche permet d’étudier l’examen des expositions des infrastructures d’identité, notamment annuaires d’entreprise. La prise en charge exacte des environnements hybrides et des sources d’identité doit être confirmée pour le projet.",
       "capabilities": [
         "Identifier des configurations d’identité présentant un risque.",
         "Examiner les relations de privilège et les chemins potentiels de progression.",
@@ -197,14 +195,15 @@
         "Préparer les accès nécessaires et les échanges avec les administrateurs.",
         "Organiser la validation des changements et le suivi des impacts."
       ],
-      "licensing": "Les changements d’annuaire peuvent avoir des effets métier. La solution ne remplace pas le MFA, la gestion des identités, la sauvegarde de l’annuaire ou les procédures de reprise."
+      "licensing": "Les changements d’annuaire peuvent avoir des effets métier. La solution ne remplace pas le MFA, la gestion des identités, la sauvegarde de l’annuaire ou les procédures de reprise.",
+      "name": "Identités & accès"
     },
     "en": {
       "label": "Stronger identity foundations",
       "text": "Identify identity infrastructure weaknesses and conditions that may enable an attack to progress.",
-      "tags": ["Active Directory", "Identities", "Attack paths"],
+      "tags": ["business directories", "Identities", "Attack paths"],
       "best": "Teams seeking to reduce risks in their identity infrastructure.",
-      "overview": "Identities connect users, services and resources. Excessive permissions or weak configuration may allow an attacker to move further. Tenable Identity Exposure is presented for assessing identity infrastructure exposures, including Active Directory. Exact support for hybrid environments and identity sources must be confirmed for the project.",
+      "overview": "Identities connect users, services and resources. Excessive permissions or weak configuration may allow an attacker to move further. This approach is considered for assessing identity infrastructure exposures, including business directories. Exact support for hybrid environments and identity sources must be confirmed for the project.",
       "capabilities": [
         "Identify risky identity configurations.",
         "Examine privilege relationships and potential attack paths.",
@@ -216,20 +215,19 @@
         "Prepare required access and coordination with administrators.",
         "Plan change validation and impact monitoring."
       ],
-      "licensing": "Directory changes can affect business operations. The solution does not replace MFA, identity management, directory backups or recovery procedures."
+      "licensing": "Directory changes can affect business operations. The solution does not replace MFA, identity management, directory backups or recovery procedures.",
+      "name": "Identity & access security"
     }
   },
   {
-    "id": "ot",
-    "name": "Tenable OT Security",
-    "category": "industriel",
-    "url": "https://www.tenable.com/products/tenable-ot-security",
+    "id": "industrial",
+    "category": "cyber",
     "fr": {
       "label": "La continuité des opérations",
       "text": "Développez la visibilité sur les actifs et les expositions de vos environnements industriels, avec une approche adaptée à leur sensibilité.",
       "tags": ["Systèmes OT", "Inventaire industriel", "Contexte opérationnel"],
       "best": "Les exploitants de sites industriels, logistiques, énergétiques et d’infrastructures.",
-      "overview": "Les systèmes opérationnels peuvent piloter des processus physiques et présenter des contraintes différentes de l’IT classique. La connaissance des actifs, des communications et des risques doit tenir compte de la disponibilité et de la sûreté. Tenable OT Security est présenté pour améliorer cette visibilité. Le choix des méthodes de collecte doit être réalisé avec les équipes d’exploitation et les fabricants concernés.",
+      "overview": "Les systèmes opérationnels peuvent piloter des processus physiques et présenter des contraintes différentes de l’IT classique. La connaissance des actifs, des communications et des risques doit tenir compte de la disponibilité et de la sûreté. Cette approche permet d’étudier améliorer cette visibilité. Le choix des méthodes de collecte doit être réalisé avec les équipes d’exploitation et les fabricants concernés.",
       "capabilities": [
         "Mieux connaître les équipements et les communications du périmètre couvert.",
         "Rapprocher les informations techniques des enjeux d’exploitation.",
@@ -241,14 +239,15 @@
         "Étudier la segmentation, les flux et les possibilités de collecte adaptées.",
         "Valider explicitement toute interaction active et les fenêtres d’intervention."
       ],
-      "licensing": "La compatibilité des équipements, les méthodes passives ou actives et le dimensionnement doivent être confirmés. Aucune absence de perturbation ne peut être garantie sans étude du contexte."
+      "licensing": "La compatibilité des équipements, les méthodes passives ou actives et le dimensionnement doivent être confirmés. Aucune absence de perturbation ne peut être garantie sans étude du contexte.",
+      "name": "Sécurité industrielle & OT"
     },
     "en": {
       "label": "Protect operational continuity",
       "text": "Build visibility of industrial assets and exposures using an approach suited to their sensitivity.",
       "tags": ["OT systems", "Industrial inventory", "Operational context"],
       "best": "Industrial, logistics, energy and infrastructure operators.",
-      "overview": "Operational systems may control physical processes and have constraints that differ from conventional IT. Asset, communication and risk visibility must account for availability and safety. Tenable OT Security is presented to help improve this visibility. Collection methods must be agreed with operations teams and the relevant equipment manufacturers.",
+      "overview": "Operational systems may control physical processes and have constraints that differ from conventional IT. Asset, communication and risk visibility must account for availability and safety. This approach is considered to help improve this visibility. Collection methods must be agreed with operations teams and the relevant equipment manufacturers.",
       "capabilities": [
         "Improve understanding of equipment and communications in the covered scope.",
         "Connect technical findings with operational priorities.",
@@ -260,64 +259,63 @@
         "Review segmentation, flows and suitable collection options.",
         "Explicitly approve any active interaction and assessment window."
       ],
-      "licensing": "Equipment compatibility, passive or active methods and sizing require confirmation. An absence of disruption cannot be guaranteed without assessing the operating context."
+      "licensing": "Equipment compatibility, passive or active methods and sizing require confirmation. An absence of disruption cannot be guaranteed without assessing the operating context.",
+      "name": "Industrial & OT security"
     }
   },
   {
-    "id": "sc",
-    "name": "Tenable Security Center",
-    "category": "vulnerabilites",
-    "url": "https://www.tenable.com/products/tenable-security-center",
+    "id": "monitoring",
+    "category": "cyber",
     "fr": {
-      "label": "Le pilotage dans votre infrastructure",
-      "text": "Étudiez une approche de gestion des vulnérabilités hébergée dans votre propre environnement.",
-      "tags": ["Gestion sur site", "Gouvernance", "Reporting"],
-      "best": "Les organisations dont les contraintes d’architecture favorisent une gestion sur site.",
-      "overview": "Tenable Security Center est présenté comme une famille de gestion des vulnérabilités sur site. Cette approche peut intéresser les organisations qui veulent intégrer la console de gestion à leur infrastructure. Elle implique aussi de prévoir l’exploitation, les ressources, les mises à jour et la protection des données d’évaluation. Un hébergement sur site ne constitue pas, à lui seul, une garantie de conformité ou de souveraineté.",
+      "label": "Détecter et comprendre",
+      "text": "Rapprochez les journaux, alertes et événements utiles pour organiser la détection et le traitement des incidents.",
+      "tags": ["Collecte des événements", "Détection", "Suivi des incidents"],
+      "best": "Les organisations qui souhaitent structurer leur visibilité sécurité et leur gestion des alertes.",
+      "overview": "La supervision sécurité relie les événements des réseaux, systèmes, applications et identités. Une architecture adaptée sélectionne les sources utiles, définit les cas de détection et organise la qualification des alertes. La valeur du dispositif dépend de la qualité des données, des règles et des responsabilités de traitement, pas du volume de journaux collectés.",
       "capabilities": [
-        "Centraliser les évaluations et les résultats dans l’architecture prévue.",
-        "Structurer la visibilité et les rapports selon les responsabilités définies.",
-        "Organiser le suivi des vulnérabilités sur les périmètres autorisés."
+        "Définir les sources, les durées de rétention et les règles de corrélation.",
+        "Préparer les scénarios de détection et les procédures de qualification.",
+        "Suivre les incidents avec des responsables, des décisions et des actions traçables."
       ],
-      "example": "Une institution souhaite évaluer une architecture de gestion sur site et identifier les ressources nécessaires à son exploitation.",
+      "example": "Une entreprise veut centraliser les événements de ses services essentiels et définir qui doit réagir à une activité suspecte.",
       "prerequisites": [
-        "Vérifier les exigences officielles de système et de dimensionnement.",
-        "Définir les scanners, les flux, les sauvegardes et les administrateurs.",
-        "Prévoir la maintenance et les responsabilités de mise à jour."
+        "Définir les systèmes prioritaires et la confidentialité des journaux.",
+        "Préparer la synchronisation horaire, la collecte et les accès.",
+        "Convenir de la couverture horaire, des responsabilités et des escalades."
       ],
-      "licensing": "Les éditions, intégrations, composants et besoins de connectivité sont à confirmer. Comparer les coûts et responsabilités d’exploitation avec une solution cloud avant de choisir."
+      "licensing": "La couverture, les volumes, la rétention et les horaires de service sont définis sur devis. Aucune surveillance permanente ni réponse automatique n’est incluse sans engagement contractuel explicite.",
+      "name": "Détection & supervision sécurité"
     },
     "en": {
-      "label": "Management in your own environment",
-      "text": "Explore a vulnerability management approach hosted within your own infrastructure.",
-      "tags": ["On-premises management", "Governance", "Reporting"],
-      "best": "Organizations whose architecture requirements favor on-premises management.",
-      "overview": "Tenable Security Center is presented as an on-premises vulnerability management family. This approach may suit organizations that want a management console within their infrastructure. It also requires planning operations, resources, updates and protection of assessment data. On-premises hosting alone does not guarantee compliance or data sovereignty.",
+      "label": "Detect and understand",
+      "text": "Connect useful logs, alerts and events to organize detection and incident handling.",
+      "tags": ["Event collection", "Detection", "Incident tracking"],
+      "best": "Organizations seeking to structure security visibility and alert management.",
+      "overview": "Security monitoring connects events from networks, systems, applications and identities. A suitable architecture selects meaningful sources, defines detection use cases and organizes alert triage. Its value depends on data quality, rules and response ownership rather than the sheer volume of logs collected.",
       "capabilities": [
-        "Centralize assessments and findings in the planned architecture.",
-        "Organize visibility and reporting around defined responsibilities.",
-        "Track vulnerabilities within authorized scopes."
+        "Define sources, retention periods and correlation rules.",
+        "Prepare detection scenarios and triage procedures.",
+        "Track incidents with clear owners, decisions and actions."
       ],
-      "example": "An institution wants to assess an on-premises management architecture and determine the resources needed to operate it.",
+      "example": "A business wants to consolidate events from essential services and define who should respond to suspicious activity.",
       "prerequisites": [
-        "Check official system and sizing requirements.",
-        "Define scanners, network flows, backups and administrators.",
-        "Plan maintenance and update ownership."
+        "Identify priority systems and log confidentiality requirements.",
+        "Prepare time synchronization, collection and access.",
+        "Agree on service hours, responsibilities and escalation paths."
       ],
-      "licensing": "Editions, integrations, components and connectivity requirements must be confirmed. Compare operating costs and responsibilities with a cloud option before deciding."
+      "licensing": "Coverage, volume, retention and service hours are defined in a quotation. Continuous monitoring and automated response are not included without an explicit contractual commitment.",
+      "name": "Security detection & monitoring"
     }
   },
   {
-    "id": "was",
-    "name": "Tenable Web App Scanning",
-    "category": "web",
-    "url": "https://www.tenable.com/products/tenable-web-app-scanning",
+    "id": "applications",
+    "category": "cyber",
     "fr": {
       "label": "Vos applications, côté sécurité",
       "text": "Évaluez les applications web autorisées afin d’identifier des faiblesses exploitables depuis leur surface applicative.",
       "tags": ["Applications web", "Évaluation dynamique", "Authentification"],
       "best": "Les propriétaires de portails, services web et applications métier exposés ou internes.",
-      "overview": "Une application peut présenter des faiblesses que l’évaluation du système hôte ne révèle pas. L’analyse dynamique examine le comportement de l’application à travers ses interfaces accessibles. Tenable Web App Scanning est présenté pour cette famille de besoin. La profondeur des tests dépend notamment de l’authentification, de la navigation, des protections et des technologies de l’application.",
+      "overview": "Une application peut présenter des faiblesses que l’évaluation du système hôte ne révèle pas. L’analyse dynamique examine le comportement de l’application à travers ses interfaces accessibles. Cette approche permet d’étudier cette famille de besoin. La profondeur des tests dépend notamment de l’authentification, de la navigation, des protections et des technologies de l’application.",
       "capabilities": [
         "Évaluer les URL et applications comprises dans un périmètre autorisé.",
         "Préparer des parcours authentifiés lorsque la prise en charge le permet.",
@@ -329,14 +327,15 @@
         "Préparer des comptes de test, exclusions et données non sensibles.",
         "Convenir d’un environnement, d’un calendrier et du traitement des alertes."
       ],
-      "licensing": "La couverture des technologies et des interfaces doit être validée. Un scan dynamique ne remplace pas une revue de code, un test d’intrusion ou un processus de développement sécurisé."
+      "licensing": "La couverture des technologies et des interfaces doit être validée. Un scan dynamique ne remplace pas une revue de code, un test d’intrusion ou un processus de développement sécurisé.",
+      "name": "Sécurité des applications & API"
     },
     "en": {
       "label": "Application security in focus",
       "text": "Assess authorized web applications to identify weaknesses in their application-facing attack surface.",
       "tags": ["Web applications", "Dynamic assessment", "Authentication"],
       "best": "Owners of portals, web services and exposed or internal business applications.",
-      "overview": "An application may have weaknesses that a host-level assessment does not reveal. Dynamic assessment examines application behavior through accessible interfaces. Tenable Web App Scanning is presented for this type of need. Test depth depends on authentication, navigation, protective controls and application technologies.",
+      "overview": "An application may have weaknesses that a host-level assessment does not reveal. Dynamic assessment examines application behavior through accessible interfaces. This approach is considered for this type of need. Test depth depends on authentication, navigation, protective controls and application technologies.",
       "capabilities": [
         "Assess URLs and applications within an authorized scope.",
         "Prepare authenticated journeys where supported.",
@@ -348,20 +347,19 @@
         "Prepare test accounts, exclusions and non-sensitive test data.",
         "Agree on an environment, schedule and alert handling."
       ],
-      "licensing": "Technology and interface coverage must be validated. Dynamic scanning does not replace code review, penetration testing or a secure development process."
+      "licensing": "Technology and interface coverage must be validated. Dynamic scanning does not replace code review, penetration testing or a secure development process.",
+      "name": "Application & API security"
     }
   },
   {
-    "id": "asm",
-    "name": "Tenable Attack Surface Management",
-    "category": "web",
-    "url": "https://www.tenable.com/products/tenable-attack-surface-management",
+    "id": "attack-surface",
+    "category": "cyber",
     "fr": {
       "label": "Votre exposition vue de l’extérieur",
       "text": "Améliorez la connaissance des actifs accessibles depuis Internet et des expositions à investiguer.",
       "tags": ["Exposition externe", "Découverte", "Attribution des actifs"],
       "best": "Les organisations qui souhaitent mieux connaître leur empreinte numérique externe.",
-      "overview": "Les actifs exposés évoluent : domaines, sous-domaines, services et infrastructures peuvent dépendre de plusieurs équipes ou prestataires. Une démarche de gestion de surface d’attaque externe cherche à retrouver cette empreinte et à clarifier les responsabilités. Tenable Attack Surface Management est présenté pour cette famille de besoin. Les résultats de découverte doivent être validés, car une association technique ne prouve pas toujours la propriété d’un actif.",
+      "overview": "Les actifs exposés évoluent : domaines, sous-domaines, services et infrastructures peuvent dépendre de plusieurs équipes ou prestataires. Une démarche de gestion de surface d’attaque externe cherche à retrouver cette empreinte et à clarifier les responsabilités. Cette approche permet d’étudier cette famille de besoin. Les résultats de découverte doivent être validés, car une association technique ne prouve pas toujours la propriété d’un actif.",
       "capabilities": [
         "Découvrir des actifs externes potentiellement associés à l’organisation.",
         "Examiner les services et expositions observables depuis Internet.",
@@ -373,14 +371,15 @@
         "Définir une procédure de validation de propriété et de périmètre.",
         "Associer les équipes internes et les prestataires concernés."
       ],
-      "licensing": "Les méthodes, fréquences, fonctionnalités et conditions commerciales doivent être confirmées. La découverte externe ne vaut pas autorisation de tester un système tiers."
+      "licensing": "Les méthodes, fréquences, fonctionnalités et conditions commerciales doivent être confirmées. La découverte externe ne vaut pas autorisation de tester un système tiers.",
+      "name": "Surface d’attaque externe"
     },
     "en": {
       "label": "See your external footprint",
       "text": "Improve awareness of Internet-facing assets and exposures that deserve investigation.",
       "tags": ["External exposure", "Discovery", "Asset attribution"],
       "best": "Organizations seeking a clearer understanding of their external digital footprint.",
-      "overview": "Exposed assets change: domains, subdomains, services and infrastructure may be owned by different teams or providers. External attack surface management seeks to discover this footprint and clarify ownership. Tenable Attack Surface Management is presented for this type of need. Discovery results require validation because a technical association does not always establish asset ownership.",
+      "overview": "Exposed assets change: domains, subdomains, services and infrastructure may be owned by different teams or providers. External attack surface management seeks to discover this footprint and clarify ownership. This approach is considered for this type of need. Discovery results require validation because a technical association does not always establish asset ownership.",
       "capabilities": [
         "Discover external assets potentially associated with an organization.",
         "Review Internet-observable services and exposures.",
@@ -392,7 +391,536 @@
         "Define a process for ownership and scope validation.",
         "Involve internal teams and relevant providers."
       ],
-      "licensing": "Methods, frequency, features and commercial terms require confirmation. External discovery is not authorization to test a third-party system."
+      "licensing": "Methods, frequency, features and commercial terms require confirmation. External discovery is not authorization to test a third-party system.",
+      "name": "External attack surface"
+    }
+  },
+  {
+    "id": "dc-design",
+    "category": "datacenter",
+    "fr": {
+      "name": "Architecture data center",
+      "label": "Concevoir des bases solides",
+      "text": "Étudiez une infrastructure adaptée à vos applications, à votre capacité et aux contraintes du site.",
+      "tags": ["Architecture", "Résilience", "Dimensionnement"],
+      "best": "Une organisation qui crée une salle informatique ou modernise une infrastructure existante.",
+      "overview": "Le projet commence par les usages : applications critiques, capacité actuelle, évolution attendue, budget et contraintes physiques. L’architecture relie calcul, stockage, réseau, énergie et exploitation. Les choix de redondance doivent être évalués sur l’ensemble de la chaîne pour éviter de déplacer un point de défaillance plutôt que de le supprimer.",
+      "capabilities": [
+        "Cartographier les dépendances et les besoins de capacité.",
+        "Préparer les schémas d’architecture et les scénarios de défaillance.",
+        "Définir les étapes de migration et les critères de recette."
+      ],
+      "example": "Moderniser une salle informatique tout en préparant l’augmentation de la charge applicative.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "Data center architecture",
+      "label": "Build a strong foundation",
+      "text": "Plan infrastructure around your applications, capacity needs and site constraints.",
+      "tags": ["Architecture", "Resilience", "Sizing"],
+      "best": "Organizations building a server room or modernizing existing infrastructure.",
+      "overview": "The project starts with workloads: critical applications, current capacity, expected growth, budget and physical constraints. Architecture connects compute, storage, networking, power and operations. Redundancy decisions must be assessed across the whole chain to avoid moving a single point of failure rather than removing it.",
+      "capabilities": [
+        "Map dependencies and capacity requirements.",
+        "Prepare architecture diagrams and failure scenarios.",
+        "Define migration stages and acceptance criteria."
+      ],
+      "example": "Modernize a server room while preparing for growing application demand.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
+    }
+  },
+  {
+    "id": "virtualization",
+    "category": "datacenter",
+    "fr": {
+      "name": "Virtualisation & cloud privé",
+      "label": "Mutualiser sans perdre la maîtrise",
+      "text": "Organisez des ressources de calcul mutualisées pour vos applications et vos environnements de travail.",
+      "tags": ["Machines virtuelles", "Haute disponibilité", "Automatisation"],
+      "best": "Les entreprises qui souhaitent consolider leurs serveurs et faciliter l’évolution de leurs applications.",
+      "overview": "La virtualisation permet de séparer les services de leur matériel et de mutualiser les ressources. Un cloud privé ajoute une organisation des accès, des capacités et du provisionnement. La conception doit tenir compte de l’isolation, des licences, des dépendances et des moyens de sauvegarde. Un cluster ne remplace pas un plan de reprise testé.",
+      "capabilities": [
+        "Étudier les charges et les ressources réservées.",
+        "Préparer la disponibilité des hôtes, du stockage et du réseau.",
+        "Organiser l’administration, les modèles de déploiement et les sauvegardes."
+      ],
+      "example": "Consolider plusieurs serveurs applicatifs avec une capacité de maintenance mieux organisée.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "Virtualization & private cloud",
+      "label": "Share resources, retain control",
+      "text": "Organize shared computing resources for applications and business environments.",
+      "tags": ["Virtual machines", "High availability", "Automation"],
+      "best": "Businesses seeking server consolidation and more flexible application growth.",
+      "overview": "Virtualization separates services from physical hardware and shares resources. A private cloud adds access, capacity and provisioning management. Design must account for isolation, licensing, dependencies and backup arrangements. A cluster does not replace a tested recovery plan.",
+      "capabilities": [
+        "Assess workloads and reserved resources.",
+        "Plan host, storage and network availability.",
+        "Organize administration, deployment templates and backups."
+      ],
+      "example": "Consolidate application servers with better planned maintenance capacity.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
+    }
+  },
+  {
+    "id": "storage",
+    "category": "datacenter",
+    "fr": {
+      "name": "Stockage & gestion des données",
+      "label": "Des données disponibles et maîtrisées",
+      "text": "Adaptez le stockage aux besoins de performance, de croissance et de protection de vos données.",
+      "tags": ["Capacité", "Performance", "Protection des données"],
+      "best": "Les équipes qui doivent faire évoluer leur stockage sans perdre la lisibilité des coûts et des accès.",
+      "overview": "Le choix du stockage dépend du type de données, des accès simultanés, de la latence acceptable et de la croissance. Les besoins en fichiers, blocs et objets ne sont pas interchangeables. Une architecture cohérente associe supervision, gestion des droits et politique de protection ; la réplication et les instantanés ne suffisent pas à eux seuls comme sauvegarde indépendante.",
+      "capabilities": [
+        "Qualifier les besoins de capacité et de performance.",
+        "Définir les niveaux de service et la gestion des accès.",
+        "Préparer la migration, la supervision et la protection des données."
+      ],
+      "example": "Remplacer un stockage saturé en prévoyant une croissance et des règles de partage documentées.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "Storage & data management",
+      "label": "Available, controlled data",
+      "text": "Align storage with data performance, growth and protection requirements.",
+      "tags": ["Capacity", "Performance", "Data protection"],
+      "best": "Teams scaling storage while keeping costs and access understandable.",
+      "overview": "Storage choices depend on data types, concurrent access, acceptable latency and growth. File, block and object requirements are not interchangeable. A coherent architecture combines monitoring, access control and protection policies; replication and snapshots alone are not an independent backup strategy.",
+      "capabilities": [
+        "Qualify capacity and performance needs.",
+        "Define service levels and access management.",
+        "Plan migration, monitoring and data protection."
+      ],
+      "example": "Replace saturated storage with documented growth and sharing rules.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
+    }
+  },
+  {
+    "id": "backup-recovery",
+    "category": "datacenter",
+    "fr": {
+      "name": "Sauvegarde & reprise d’activité",
+      "label": "Repartir avec un plan vérifié",
+      "text": "Préparez la protection des données et la restauration des services selon vos objectifs métier.",
+      "tags": ["Sauvegarde isolée", "RPO/RTO", "Tests de restauration"],
+      "best": "Les organisations qui veulent vérifier leur capacité réelle à restaurer après un incident.",
+      "overview": "Une sauvegarde utile doit pouvoir être restaurée dans les conditions attendues. La stratégie définit les données couvertes, les copies séparées, l’isolation ou l’immutabilité lorsque pertinente, et les accès d’administration. Les objectifs RPO et RTO sont des cibles à mesurer lors d’exercices ; ils ne sont pas garantis par la seule présence d’un outil.",
+      "capabilities": [
+        "Définir les priorités de restauration et les copies de protection.",
+        "Préparer les procédures, comptes et environnements de reprise.",
+        "Réaliser des tests documentés et suivre les écarts."
+      ],
+      "example": "Tester la restauration d’un service critique et vérifier les dépendances réseau et d’identité.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "Backup & disaster recovery",
+      "label": "Recover with a tested plan",
+      "text": "Plan data protection and service restoration around business objectives.",
+      "tags": ["Isolated backups", "RPO/RTO", "Restore testing"],
+      "best": "Organizations seeking to verify their real ability to recover after an incident.",
+      "overview": "A useful backup must be restorable under expected conditions. The strategy defines covered data, separate copies, isolation or immutability where appropriate, and administrative access. RPO and RTO are objectives to measure during exercises; the presence of a tool alone does not guarantee them.",
+      "capabilities": [
+        "Define recovery priorities and protection copies.",
+        "Prepare recovery procedures, accounts and environments.",
+        "Run documented tests and track gaps."
+      ],
+      "example": "Test restoration of a critical service, including network and identity dependencies.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
+    }
+  },
+  {
+    "id": "power-cooling",
+    "category": "datacenter",
+    "fr": {
+      "name": "Énergie & refroidissement",
+      "label": "Soutenir la continuité du site",
+      "text": "Étudiez la chaîne électrique, le refroidissement et les conditions physiques de votre infrastructure.",
+      "tags": ["Charge électrique", "Refroidissement", "Conditions du site"],
+      "best": "Les exploitants qui aménagent ou fiabilisent une salle informatique.",
+      "overview": "La disponibilité dépend aussi du bâtiment, de l’énergie et de l’environnement. L’étude rapproche les charges informatiques, les circuits électriques, les secours, les flux d’air et les mesures de température. Le contexte du site à Dakar ou en région, les contraintes de maintenance et les compétences requises pour les travaux doivent être pris en compte.",
+      "capabilities": [
+        "Étudier les charges, les protections et les possibilités de redondance.",
+        "Préparer une organisation des flux d’air et du suivi environnemental.",
+        "Définir les responsabilités de réalisation et les critères de réception."
+      ],
+      "example": "Préparer l’extension d’une salle en vérifiant les capacités électriques et thermiques disponibles.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "Power & cooling",
+      "label": "Support site continuity",
+      "text": "Assess power, cooling and physical conditions for your infrastructure.",
+      "tags": ["Electrical load", "Cooling", "Site conditions"],
+      "best": "Operators building or improving the reliability of a server room.",
+      "overview": "Availability also depends on the building, power and environment. Assessment connects IT loads, electrical circuits, backup power, airflow and temperature measurements. Site conditions in Dakar or other regions, maintenance constraints and the qualifications needed for works must be considered.",
+      "capabilities": [
+        "Assess loads, protections and redundancy options.",
+        "Plan airflow organization and environmental monitoring.",
+        "Define implementation responsibilities and acceptance criteria."
+      ],
+      "example": "Prepare a room expansion by checking available electrical and thermal capacity.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
+    }
+  },
+  {
+    "id": "infrastructure-monitoring",
+    "category": "datacenter",
+    "fr": {
+      "name": "Supervision des infrastructures",
+      "label": "Voir pour mieux exploiter",
+      "text": "Rassemblez les indicateurs de disponibilité, de capacité et d’état des équipements.",
+      "tags": ["Disponibilité", "Capacité", "Alertes opérationnelles"],
+      "best": "Les équipes qui veulent détecter les dérives et préparer leurs décisions d’exploitation.",
+      "overview": "Une supervision efficace sélectionne des mesures utiles : capacité, erreurs, disponibilité et tendances. Les seuils doivent correspondre aux besoins du service et produire des alertes exploitables. Les tableaux de bord, la cartographie des dépendances et les procédures de traitement doivent être conçus ensemble pour éviter une accumulation d’alarmes sans responsable.",
+      "capabilities": [
+        "Définir les équipements et services à superviser.",
+        "Préparer tableaux de bord, seuils et règles d’alerte.",
+        "Organiser la prise en charge et les revues de capacité."
+      ],
+      "example": "Mettre en visibilité les risques de saturation avant qu’ils ne perturbent les applications.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "Infrastructure monitoring",
+      "label": "Visibility for better operations",
+      "text": "Consolidate availability, capacity and equipment health indicators.",
+      "tags": ["Availability", "Capacity", "Operational alerts"],
+      "best": "Teams seeking to detect deviations and support operational decisions.",
+      "overview": "Effective monitoring selects meaningful measures: capacity, errors, availability and trends. Thresholds must reflect service needs and generate actionable alerts. Dashboards, dependency mapping and handling procedures should be designed together to avoid unowned alarm overload.",
+      "capabilities": [
+        "Define monitored equipment and services.",
+        "Prepare dashboards, thresholds and alert rules.",
+        "Organize ownership and capacity reviews."
+      ],
+      "example": "Identify saturation risks before they affect applications.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
+    }
+  },
+  {
+    "id": "lan-wifi",
+    "category": "telecom",
+    "fr": {
+      "name": "Réseaux LAN & Wi-Fi",
+      "label": "Connecter les équipes au quotidien",
+      "text": "Concevez un réseau local filaire et sans fil adapté aux usages et aux espaces de travail.",
+      "tags": ["Couverture Wi-Fi", "Segmentation", "Contrôle d’accès"],
+      "best": "Les bureaux, campus et sites qui souhaitent fiabiliser leurs connexions professionnelles.",
+      "overview": "La qualité d’un réseau dépend des usages simultanés, de la topologie, du câblage et de l’environnement radio. Une étude Wi-Fi doit examiner les obstacles, les interférences et la capacité, au-delà du seul signal reçu. La segmentation sépare les usages sensibles, les visiteurs et les équipements tout en conservant des règles d’accès compréhensibles.",
+      "capabilities": [
+        "Étudier la couverture et les besoins de capacité.",
+        "Concevoir les segments et les règles d’accès.",
+        "Préparer le déploiement et les mesures de recette."
+      ],
+      "example": "Réaménager les connexions d’un siège pour les collaborateurs, visiteurs et équipements métier.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "LAN & enterprise Wi-Fi",
+      "label": "Connect teams every day",
+      "text": "Design wired and wireless local networks around business use and workspace needs.",
+      "tags": ["Wi-Fi coverage", "Segmentation", "Access control"],
+      "best": "Offices, campuses and sites seeking dependable business connectivity.",
+      "overview": "Network quality depends on simultaneous use, topology, cabling and the radio environment. Wi-Fi design must assess obstacles, interference and capacity, beyond signal strength alone. Segmentation separates sensitive use, guests and equipment while keeping access rules understandable.",
+      "capabilities": [
+        "Assess coverage and capacity requirements.",
+        "Design network segments and access rules.",
+        "Prepare deployment and acceptance measurements."
+      ],
+      "example": "Redesign headquarters connectivity for staff, visitors and business equipment.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
+    }
+  },
+  {
+    "id": "sdwan",
+    "category": "telecom",
+    "fr": {
+      "name": "Interconnexion & SD-WAN",
+      "label": "Rapprocher vos sites",
+      "text": "Reliez les sites et applications avec une architecture adaptée aux priorités de trafic et aux contraintes locales.",
+      "tags": ["Multi-sites", "Routage", "Continuité des liens"],
+      "best": "Les organisations réparties entre Dakar, les régions et plusieurs implantations.",
+      "overview": "L’interconnexion doit rapprocher les applications et les utilisateurs avec une politique de sécurité cohérente. Une approche SD-WAN peut utiliser plusieurs accès et orienter le trafic selon les conditions du réseau. L’intérêt dépend de la qualité des liens, du chiffrement, des besoins applicatifs et du fonctionnement en mode dégradé ; plusieurs accès ne garantissent pas à eux seuls une disponibilité totale.",
+      "capabilities": [
+        "Cartographier les flux et les sites prioritaires.",
+        "Étudier la résilience et la politique de routage.",
+        "Tester la bascule et documenter les procédures de dépannage."
+      ],
+      "example": "Maintenir l’accès aux applications centrales lors d’une dégradation du lien principal.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "Site connectivity & SD-WAN",
+      "label": "Bring your sites together",
+      "text": "Connect sites and applications with architecture suited to traffic priorities and local constraints.",
+      "tags": ["Multiple sites", "Routing", "Link continuity"],
+      "best": "Organizations operating across Dakar, other regions and multiple locations.",
+      "overview": "Site connectivity should bring applications and users together under a coherent security policy. An SD-WAN approach can use multiple access links and steer traffic according to network conditions. Its value depends on link quality, encryption, application needs and degraded-mode behavior; multiple links alone do not guarantee total availability.",
+      "capabilities": [
+        "Map traffic flows and priority sites.",
+        "Assess resilience and routing policies.",
+        "Test failover and document troubleshooting procedures."
+      ],
+      "example": "Maintain access to central applications when the primary link degrades.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
+    }
+  },
+  {
+    "id": "fiber",
+    "category": "telecom",
+    "fr": {
+      "name": "Fibre & câblage structuré",
+      "label": "Une infrastructure qui tient la distance",
+      "text": "Préparez les liaisons physiques, les baies et l’organisation du câblage de vos sites.",
+      "tags": ["Fibre optique", "Baies", "Recette des liaisons"],
+      "best": "Les projets d’aménagement, d’extension ou de remise à niveau de réseaux.",
+      "overview": "Le câblage constitue une base durable de la connectivité. Le choix des médias, des cheminements et des terminaisons doit tenir compte des distances, de l’environnement, des risques physiques et de l’évolution prévue. Une installation exploitable exige aussi un repérage clair, une documentation et des mesures de recette adaptées au type de liaison.",
+      "capabilities": [
+        "Étudier les cheminements et les contraintes du bâtiment.",
+        "Préparer le repérage, les plans et les raccordements.",
+        "Définir les mesures de recette et les documents de remise."
+      ],
+      "example": "Structurer le câblage d’un nouveau site et disposer d’un dossier d’exploitation lisible.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "Fiber & structured cabling",
+      "label": "Infrastructure built for the long term",
+      "text": "Plan physical links, racks and cabling organization across your sites.",
+      "tags": ["Optical fiber", "Racks", "Link acceptance"],
+      "best": "Network fit-out, expansion and modernization projects.",
+      "overview": "Cabling is a lasting foundation for connectivity. Media, pathways and termination choices must consider distances, environment, physical risks and planned growth. An operable installation also needs clear labeling, documentation and acceptance measurements appropriate to the link type.",
+      "capabilities": [
+        "Assess pathways and building constraints.",
+        "Plan labeling, diagrams and connections.",
+        "Define acceptance measurements and handover documents."
+      ],
+      "example": "Structure cabling for a new site with usable operational documentation.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
+    }
+  },
+  {
+    "id": "voice",
+    "category": "telecom",
+    "fr": {
+      "name": "Téléphonie IP & collaboration",
+      "label": "Fluidifier les échanges",
+      "text": "Organisez la téléphonie et les communications de vos équipes autour de leurs usages.",
+      "tags": ["VoIP", "Qualité de service", "Mobilité"],
+      "best": "Les entreprises qui modernisent leurs communications ou rapprochent plusieurs sites.",
+      "overview": "La téléphonie IP dépend de la qualité du réseau, des accès, des terminaux et des règles de sécurité. Le projet définit les parcours d’appel, la numérotation et la continuité attendue. La migration doit aussi tenir compte des usages existants, des besoins de mobilité, des modalités de portage et des contraintes réglementaires applicables.",
+      "capabilities": [
+        "Qualifier les usages, les appels et les terminaux.",
+        "Étudier la qualité de service et les règles de sécurité.",
+        "Préparer la migration, les essais et la prise en main."
+      ],
+      "example": "Harmoniser les communications de plusieurs bureaux et préparer des scénarios de secours.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "IP telephony & collaboration",
+      "label": "Make communication flow",
+      "text": "Organize team telephony and communications around business use.",
+      "tags": ["VoIP", "Quality of service", "Mobility"],
+      "best": "Businesses modernizing communications or connecting multiple sites.",
+      "overview": "IP telephony depends on network quality, access, endpoints and security rules. The project defines call flows, numbering and expected continuity. Migration must consider existing use, mobility needs, number portability and applicable regulatory constraints.",
+      "capabilities": [
+        "Qualify usage, calls and endpoints.",
+        "Assess quality of service and security rules.",
+        "Prepare migration, testing and user onboarding."
+      ],
+      "example": "Harmonize communications across offices and plan fallback scenarios.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
+    }
+  },
+  {
+    "id": "internet",
+    "category": "telecom",
+    "fr": {
+      "name": "Connectivité Internet résiliente",
+      "label": "Préparer la continuité des accès",
+      "text": "Étudiez vos accès Internet et les scénarios de secours adaptés à votre activité.",
+      "tags": ["Liens de secours", "Bascule", "Supervision"],
+      "best": "Les sites dont l’activité dépend d’applications et de communications en ligne.",
+      "overview": "La résilience se prépare en examinant les dépendances réelles : parcours des liens, énergie, équipement de terminaison et fonctionnement des applications. Des accès diversifiés peuvent réduire certains risques mais partager des infrastructures communes. Les scénarios de secours doivent être testés avec les usages métier et des procédures de retour à la normale.",
+      "capabilities": [
+        "Évaluer les débits, la latence et les besoins critiques.",
+        "Étudier la diversification des accès et les points de défaillance.",
+        "Tester les conditions de bascule et superviser les accès."
+      ],
+      "example": "Prévoir un accès de secours pour un site qui utilise des applications en ligne au quotidien.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "Resilient Internet connectivity",
+      "label": "Plan access continuity",
+      "text": "Assess Internet access and fallback scenarios suited to your business.",
+      "tags": ["Backup links", "Failover", "Monitoring"],
+      "best": "Sites relying on online applications and communications.",
+      "overview": "Resilience requires examining real dependencies: link paths, power, termination equipment and application behavior. Diverse access links can reduce some risks while still sharing common infrastructure. Fallback scenarios should be tested with business use and documented recovery procedures.",
+      "capabilities": [
+        "Assess bandwidth, latency and critical needs.",
+        "Review access diversity and failure points.",
+        "Test failover conditions and monitor access links."
+      ],
+      "example": "Plan backup access for a site using online applications every day.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
+    }
+  },
+  {
+    "id": "radio",
+    "category": "telecom",
+    "fr": {
+      "name": "Liaisons radio & sites distants",
+      "label": "Relier les implantations éloignées",
+      "text": "Étudiez les liaisons sans fil et les accès de sites lorsque les contraintes de terrain l’exigent.",
+      "tags": ["Étude de site", "Liaisons radio", "Disponibilité"],
+      "best": "Les sites distants, industriels ou temporaires présentant des contraintes de raccordement.",
+      "overview": "Une liaison radio doit être étudiée dans son environnement réel : visibilité, relief, distance, interférences, énergie et conditions d’installation. La bande de fréquence, les équipements et les autorisations applicables conditionnent la faisabilité. Le dimensionnement doit intégrer la capacité utile et les variations attendues, avec une recette mesurable après installation.",
+      "capabilities": [
+        "Réaliser une étude de faisabilité et des contraintes de site.",
+        "Vérifier les autorisations et les conditions de mise en œuvre.",
+        "Préparer les mesures de recette et l’accès pour la maintenance."
+      ],
+      "example": "Étudier le raccordement d’un site d’exploitation éloigné en tenant compte du terrain et des usages.",
+      "prerequisites": [
+        "Définir le périmètre, les applications et les responsables concernés.",
+        "Recueillir les contraintes techniques, physiques et de maintenance du site.",
+        "Convenir du calendrier, du budget et des critères de recette."
+      ],
+      "licensing": "L’architecture, les équipements, les conditions d’installation et les niveaux de service sont définis après étude. Le devis précise les prestations, les responsabilités et les éventuelles autorisations nécessaires. Aucune capacité ni disponibilité chiffrée n’est garantie sans engagement adapté."
+    },
+    "en": {
+      "name": "Radio links & remote sites",
+      "label": "Connect remote locations",
+      "text": "Assess wireless links and remote access where site constraints require them.",
+      "tags": ["Site survey", "Radio links", "Availability"],
+      "best": "Remote, industrial or temporary sites facing connection constraints.",
+      "overview": "A radio link must be assessed in its actual environment: line of sight, terrain, distance, interference, power and installation conditions. Frequency bands, equipment and applicable authorizations determine feasibility. Sizing must account for useful capacity and expected variations, with measurable post-installation acceptance tests.",
+      "capabilities": [
+        "Assess feasibility and site constraints.",
+        "Check authorizations and implementation conditions.",
+        "Plan acceptance measurements and maintenance access."
+      ],
+      "example": "Assess connectivity for a remote operating site based on terrain and business use.",
+      "prerequisites": [
+        "Define scope, applications and accountable owners.",
+        "Collect technical, physical and maintenance constraints for the site.",
+        "Agree on timeline, budget and acceptance criteria."
+      ],
+      "licensing": "Architecture, equipment, installation conditions and service levels are defined after assessment. The quotation specifies services, responsibilities and any required authorizations. No numerical capacity or availability guarantee is made without a suitable commitment."
     }
   }
 ]

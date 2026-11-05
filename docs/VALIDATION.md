@@ -1,42 +1,36 @@
-# Validation technique
+# Validation — refonte ALYAD multi-solutions
 
-Validation dans l’environnement cloud sous Node 24 et Chromium système, le 4 novembre 2026.
+Recette du 5 novembre 2026 sous Node 24 et Chromium système.
 
-| Contrôle                                         | Résultat                                                     |
-| ------------------------------------------------ | ------------------------------------------------------------ |
-| Compilation TypeScript et build Vite             | Réussis                                                      |
-| Tests Node API, catalogue et traductions         | 11 tests réussis                                             |
-| Tests Playwright ordinateur et mobile            | 22 tests réussis, 0 ignoré                                   |
-| Audit axe WCAG A/AA sur la page                  | Aucune violation détectée en FR/EN, sur ordinateur et mobile |
-| Dépendances de production `npm audit --omit=dev` | 0 vulnérabilité signalée au moment du contrôle               |
-| Revue visuelle des captures ordinateur/mobile    | Effectuée                                                    |
-| Envoi d’e-mail réel                              | Non exécuté : compte et domaine Resend non configurés        |
-| Déploiement Vercel                               | Non effectué : déploiement manuel choisi par le propriétaire |
-| Lecture actualisée du site Tenable               | Bloquée par le proxy réseau HTTP 403                         |
+| Contrôle | Résultat |
+| --- | --- |
+| Compilation TypeScript et build Vite | Réussis |
+| Tests Node API, catalogue et traductions | 11 réussis, 0 ignoré |
+| Tests navigateur ordinateur et mobile | 24 réussis, 0 ignoré |
+| Audit axe WCAG A/AA | Aucune violation détectée en français et en anglais, sur ordinateur et mobile |
+| Catalogue | 21 offres : 9 cybersécurité, 6 data centers, 6 télécommunications |
+| Fiches détaillées | 21 fiches parcourues dans chaque langue |
+| Glossaire | 15 notions disponibles dans les deux langues |
+| Rendu responsive | Absence de débordement horizontal aux largeurs 320, 390, 768 et 1280 px |
+| Références commerciales | Noms et liens des anciens produits retirés des sources, contenus, métadonnées et catalogue |
+| Production statique | Ouverture des fichiers compilés et présence des 21 solutions vérifiées |
+| Envoi d’e-mail réel | Non exécuté : service d’envoi non configuré |
+| Déploiement Vercel | Non effectué par l’assistant |
 
-Les tests navigateur vérifient le catalogue, les filtres et l’URL, le choix d’une solution dans le formulaire, l’absence de débordement horizontal, le menu mobile, les informations légales, le téléchargement de secours, l’échec d’envoi explicite et la confirmation après réponse positive simulée. Les tests API couvrent la validation, les méthodes, le JSON invalide, l’origine, les limites de taille, le piège robot, l’absence de configuration et les réponses du fournisseur simulées. Les simulations ne prouvent pas la délivrabilité d’un e-mail réel.
+Les tests couvrent le filtrage et l’URL, la sélection de fiches, la transmission des identifiants génériques de solution, le choix prérempli dans le formulaire, les statuts d’envoi et d’échec, le téléchargement de secours, les langues et le retour du navigateur. Ils vérifient aussi l’identité ALYAD, le téléphone, les informations légales, les données structurées et la conservation des champs lors d’un changement de langue.
 
-Les premiers audits ont signalé des contrastes insuffisants sur des textes secondaires ; ils ont été corrigés avant la recette finale. Le téléchargement du Chromium Playwright a été bloqué par la politique réseau ; les tests ont utilisé le navigateur Chromium déjà installé, sans contournement du proxy.
+Les tests API valident les méthodes, l’origine, le format et la taille, les champs, le consentement, les identifiants du catalogue et la langue. Le service e-mail est simulé pour tester les chemins de succès et d’échec ; cela ne prouve pas une délivrabilité réelle. L’intégrité du catalogue bilingue et la couverture de traduction de l’interface sont vérifiées par les tests Node.
 
-Reproduire dans cette machine :
+Le premier audit visuel a révélé un contraste insuffisant sur un texte secondaire de la présentation institutionnelle ; sa teinte a été assombrie puis les quatre audits de page ont réussi. L’audit automatisé ne constitue pas une certification complète d’accessibilité.
+
+## Reproduire
 
 ```bash
 cd /workspace/cyber
+npm ci
 npm run build
 npm test
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e
 ```
 
-Sur une machine avec les navigateurs Playwright installés, `npm run test:e2e` suffit. Les captures se trouvent dans `docs/previews/`. Cet audit automatisé ne remplace pas une recette avec les données réelles ni une certification d’accessibilité.
-
-## Extension bilingue
-
-Les tests supplémentaires vérifient les liens avec `lang=en`, le titre et l’attribut HTML de langue, le retour du navigateur, les neuf fiches dans les deux langues, le tableau comparatif, le glossaire, la conservation des champs lors du passage FR/EN, la langue transmise à l’API et le téléchargement d’une demande anglaise. L’intégrité des traductions de l’interface et des données dynamiques est aussi vérifiée. L’absence de débordement horizontal est contrôlée aux largeurs 320, 390, 768 et 1280 px.
-
-Les nouvelles captures sont `docs/previews/english-desktop.png`, `english-mobile.png` et `english-hero-desktop.png`/`english-hero-mobile.png`. Les captures françaises ont été mises à jour avec le nouveau contenu. Les neuf fiches sont des descriptions éditoriales originales ; leur publication ne vaut pas vérification de la version actuelle du catalogue Tenable.
-
-## Intégration ALYAD-DEVELOPPEMENT
-
-La recette contrôle aussi la raison sociale, l’adresse, le téléphone cliquable, le registre du commerce, le NINEA avec son zéro initial, les cinq fonctions de direction et les mentions légales, dans les deux langues. Les données structurées d’organisation reprennent les coordonnées réelles. La présentation cybersécurité et la suppression des anciennes informations provisoires ont été vérifiées ; les formulations retirées à la demande du propriétaire ne figurent pas dans le site public. Les captures ont été régénérées avec l’identité ALYAD.
-
-Bilan de cette recette : build réussi, 11 tests Node et 22 tests navigateur réussis, aucune violation détectée par les audits axe exécutés en français et en anglais, sur ordinateur et mobile. L’envoi d’e-mail réel et le déploiement n’ont pas été effectués.
+Sur une machine équipée des navigateurs Playwright, `npm run test:e2e` suffit. Les captures actualisées sont dans `docs/previews/`, notamment `refonte-fr-desktop.png`, `refonte-fr-mobile.png` et `trois-domaines.png`. Les références techniques et la portée des recommandations sont documentées dans `REFERENCES-TECHNIQUES.md`.

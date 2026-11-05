@@ -1,0 +1,10 @@
+# Références techniques de conception
+
+Documents officiels effectivement consultés lors de la refonte du 5 novembre 2026, par leurs dépôts publics. Ils éclairent des principes d’architecture et ne constituent ni une certification d’ALYAD, ni une recommandation de fournisseur, ni une comparaison exhaustive du marché. Ils ne sont pas présentés comme des sous-traitants dans le site commercial.
+
+- **OWASP ASVS**, présentation du standard : https://github.com/OWASP/ASVS/blob/master/README.md — exigences de sécurité pour la conception, le développement et les tests d’applications et de services web. Le site retient le principe d’une évaluation cadrée et documentée. Aucun texte du standard n’est reproduit ni adapté comme exigence contractuelle ; aucune conformité complète n’est revendiquée.
+- **Documentation des topologies haute disponibilité** : https://github.com/kubernetes/website/blob/main/content/en/docs/setup/production-environment/tools/kubeadm/ha-topology.md — avantages, contraintes et couplages entre composants d’un cluster. La fiche générique de virtualisation retient l’examen des dépendances et des modes de défaillance ; aucune technologie n’est imposée au client.
+- **OpenConfig**, présentation du projet : https://github.com/openconfig/public/blob/master/README.md — modèles de gestion réseau indépendants des fabricants, interfaces programmatiques et besoins opérationnels. Le cadrage télécom privilégie l’interopérabilité et la qualité des mesures.
+- **NIST OSCAL**, présentation du projet : https://github.com/usnistgov/OSCAL/blob/main/README.md — représentation structurée des contrôles et de leur évaluation. Le cadrage cybersécurité retient la traçabilité des constats, des responsabilités et des actions, sans revendiquer une implémentation d’OSCAL.
+
+Les recommandations complémentaires sur le stockage, la sauvegarde, l’énergie, le câblage et la qualité de service sont des principes généraux d’ingénierie. Aucune validation de dimensionnement, certification de niveau de data center, étude radio ni autorisation réglementaire n’a été réalisée dans le cadre de la création du site. Elles doivent être définies projet par projet.

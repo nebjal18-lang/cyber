@@ -5,20 +5,21 @@ test("catalogue, filtres, choix de solution et responsive", async ({
 }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Protéger",
+    "Sécuriser.",
   );
-  await expect(page.locator(".product")).toHaveCount(9);
+  await expect(page.locator(".product")).toHaveCount(21);
   await page.screenshot({
     path: `docs/previews/accueil-${test.info().project.name}.png`,
     fullPage: true,
   });
-  await page.getByRole("button", { name: "Cloud", exact: true }).click();
-  await expect(page.locator(".product")).toHaveCount(1);
-  await expect(page).toHaveURL(/categorie=cloud/);
-  await page.getByRole("link", { name: "Parlons de cette solution" }).click();
-  await expect(page.locator("select[name=solution]")).toHaveValue(
-    "Tenable Cloud Security",
-  );
+  await page.getByRole("button", { name: "Data centers", exact: true }).click();
+  await expect(page.locator(".product")).toHaveCount(6);
+  await expect(page).toHaveURL(/categorie=datacenter/);
+  await page
+    .getByRole("link", { name: "Étudier cette solution" })
+    .first()
+    .click();
+  await expect(page.locator("select[name=solution]")).toHaveValue("dc-design");
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,
@@ -45,9 +46,7 @@ test("formulaire : échec explicite et téléchargement", async ({ page }) => {
   await expect(page.getByRole("status")).toContainText("n’a pas été transmise");
   const download = page.waitForEvent("download");
   await page.getByRole("button", { name: "Télécharger ma demande" }).click();
-  expect((await download).suggestedFilename()).toBe(
-    "demande-cybersecurite.txt",
-  );
+  expect((await download).suggestedFilename()).toBe("demande-projet-alyad.txt");
 });
 test("formulaire : confirmation après réponse serveur positive", async ({
   page,
@@ -101,21 +100,23 @@ test("accessibilité automatique de la page", async ({ page }) => {
 test("version anglaise complète, liens partageables et retour navigateur", async ({
   page,
 }) => {
-  await page.goto("/?categorie=cloud&fiche=cloud#solutions");
+  await page.goto("/?categorie=cyber&fiche=cloud-security#solutions");
   await page.getByRole("button", { name: "EN English" }).click();
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
-  await expect(page).toHaveTitle(/Tenable solutions in Senegal/);
+  await expect(page).toHaveTitle(/Cybersecurity, data centers/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Protect",
+    "Secure.",
   );
-  await expect(page.locator(".product")).toHaveCount(1);
+  await expect(page.locator(".product")).toHaveCount(9);
   await expect(page).toHaveURL(/lang=en/);
   await page
+    .locator(".product")
+    .filter({
+      has: page.getByRole("heading", { name: "Cloud security", exact: true }),
+    })
     .getByRole("link", { name: "Explore in detail", exact: true })
     .click();
-  await expect(page.locator("#guide-title")).toHaveText(
-    "Tenable Cloud Security",
-  );
+  await expect(page.locator("#guide-title")).toHaveText("Cloud security");
   await expect(page.locator(".guide-body")).toContainText(
     "Cloud risk depends on permissions",
   );
@@ -126,7 +127,7 @@ test("version anglaise complète, liens partageables et retour navigateur", asyn
   await page.goBack();
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
 });
-test("neuf guides détaillés et ressources disponibles dans les deux langues", async ({
+test("vingt-et-un guides détaillés et ressources disponibles dans les deux langues", async ({
   page,
 }) => {
   for (const lang of ["fr", "en"]) {
@@ -137,19 +138,21 @@ test("neuf guides détaillés et ressources disponibles dans les deux langues", 
       .evaluateAll((options) =>
         options.map((o) => (o as HTMLOptionElement).value),
       );
-    expect(values).toHaveLength(9);
+    expect(values).toHaveLength(21);
     for (const id of values) {
       await picker.selectOption(id);
       await expect(page.locator(".guide-body h4")).toHaveCount(5);
       await expect(page.locator(".guide-body")).toContainText(
-        lang === "en" ? "Scope and licensing" : "Périmètre et licence",
+        lang === "en"
+          ? "Scope and service commitments"
+          : "Périmètre et engagements",
       );
       expect(
         (await page.locator(".guide-body").innerText()).length,
       ).toBeGreaterThan(1000);
     }
-    await expect(page.locator("tbody tr")).toHaveCount(9);
-    await expect(page.locator(".glossary dt")).toHaveCount(9);
+    await expect(page.locator("tbody tr")).toHaveCount(21);
+    await expect(page.locator(".glossary dt")).toHaveCount(15);
   }
 });
 test("formulaire anglais, langue envoyée et téléchargement anglais", async ({
@@ -177,11 +180,11 @@ test("formulaire anglais, langue envoyée et téléchargement anglais", async ({
     "has not been delivered",
   );
   expect(sent.language).toBe("en");
-  expect(sent.solution).toBe("À définir ensemble");
+  expect(sent.solution).toBe("general");
   const download = page.waitForEvent("download");
   await page.getByRole("button", { name: "Download my request" }).click();
   expect((await download).suggestedFilename()).toBe(
-    "cybersecurity-inquiry.txt",
+    "alyad-project-inquiry.txt",
   );
   await page.getByRole("button", { name: "Legal notice", exact: true }).click();
   await expect(page.getByRole("dialog")).toContainText("publisher");
@@ -245,10 +248,10 @@ test("identité ALYAD, présentation institutionnelle et contacts dans les deux 
       "tel:+221782912111",
     );
     await expect(page.locator("#contact")).toContainText("+221 78 291 21 11");
-    await expect(page.locator("#cybersecurite")).toBeVisible();
+    await expect(page.locator("#expertises")).toBeVisible();
     await expect(page.locator("body")).not.toContainText("Teranga");
     expect(await page.locator("body").innerText()).not.toMatch(
-      /demande de partenariat|partnership application|candidature|approved (?:Tenable )?partner/i,
+      /demande de partenariat|partnership application|candidature|approved partner/i,
     );
     await page
       .getByRole("button", {
@@ -272,5 +275,42 @@ test("identité ALYAD, présentation institutionnelle et contacts dans les deux 
         () => document.documentElement.scrollWidth <= innerWidth,
       ),
     ).toBeTruthy();
+  }
+});
+
+test("trois domaines, offres génériques et demandes préremplies", async ({
+  page,
+}) => {
+  for (const language of ["fr", "en"]) {
+    await page.goto(`/?lang=${language}#solutions`);
+    const groups = [
+      {
+        label: language === "en" ? "Cybersecurity" : "Cybersécurité",
+        count: 9,
+        id: "cyber",
+      },
+      { label: "Data centers", count: 6, id: "datacenter" },
+      {
+        label: language === "en" ? "Telecommunications" : "Télécommunications",
+        count: 6,
+        id: "telecom",
+      },
+    ];
+    for (const group of groups) {
+      await page
+        .locator(".filters")
+        .getByRole("button", { name: group.label, exact: true })
+        .click();
+      await expect(page.locator(".product")).toHaveCount(group.count);
+      await expect(page).toHaveURL(new RegExp(`categorie=${group.id}`));
+    }
+    await page.locator(".product .detail-link").first().click();
+    await expect(page.locator("#guide-select")).toHaveValue("lan-wifi");
+    await page.locator(".guide-summary .button").click();
+    await expect(page.locator("select[name=solution]")).toHaveValue("lan-wifi");
+    await expect(page.locator('main a[href^="http"]')).toHaveCount(0);
+    expect(await page.locator("body").innerText()).not.toMatch(
+      new RegExp(["ten", "able"].join("") + "|" + ["nes", "sus"].join(""), "i"),
+    );
   }
 });

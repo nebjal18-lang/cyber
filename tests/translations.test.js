@@ -8,13 +8,15 @@ const english = JSON.parse(
 const products = JSON.parse(
   readFileSync(new URL("../src/catalog.json", import.meta.url), "utf8"),
 );
-test("les neuf fiches sont complètes en français et en anglais", () => {
-  assert.equal(products.length, 9);
-  assert.equal(new Set(products.map((p) => p.id)).size, 9);
+test("les vingt-et-une fiches sont complètes en français et en anglais", () => {
+  assert.equal(products.length, 21);
+  assert.equal(new Set(products.map((p) => p.id)).size, 21);
   for (const product of products) {
-    assert.match(product.url, /^https:\/\/www\.tenable\.com\/products\//);
+    assert.ok(["cyber", "datacenter", "telecom"].includes(product.category));
+    assert.equal(product.url, undefined);
     for (const lang of ["fr", "en"]) {
       for (const field of [
+        "name",
         "label",
         "text",
         "best",

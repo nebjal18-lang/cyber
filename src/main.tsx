@@ -19,6 +19,8 @@ import {
   Mail,
   ChevronDown,
   Phone,
+  Server,
+  Radio,
 } from "lucide-react";
 import { company } from "./config";
 import { getProducts } from "./catalog";
@@ -28,7 +30,7 @@ import {
   Brand,
   CompanySection,
   CompanyLegal,
-  CyberFocus,
+  MultiExpertise,
 } from "./CompanySection";
 import "@fontsource/dm-sans/400.css";
 import "@fontsource/dm-sans/500.css";
@@ -37,25 +39,14 @@ import "@fontsource/dm-sans/700.css";
 import "@fontsource/manrope/600.css";
 import "@fontsource/manrope/700.css";
 import "./style.css";
+import "./theme.css";
 
-const icons = {
-  one: Layers,
-  vm: Network,
-  nessus: ScanLine,
-  cloud: Cloud,
-  identity: Fingerprint,
-  ot: Factory,
-  sc: Network,
-  was: ScanLine,
-  asm: Layers,
-};
+const icons = { cyber: ShieldCheck, datacenter: Server, telecom: Radio };
 const filters = [
   { id: "toutes", name: "Toutes les solutions" },
-  { id: "vulnerabilites", name: "Vulnérabilités" },
-  { id: "cloud", name: "Cloud" },
-  { id: "identites", name: "Identités" },
-  { id: "industriel", name: "Industrie & OT" },
-  { id: "web", name: "Applications & exposition externe" },
+  { id: "cyber", name: "Cybersécurité" },
+  { id: "datacenter", name: "Data centers" },
+  { id: "telecom", name: "Télécommunications" },
 ];
 function validCategory() {
   const id = new URLSearchParams(location.search).get("categorie");
@@ -66,7 +57,7 @@ function App() {
   const t = translator(language);
   const products = getProducts(language);
   const [guide, setGuide] = useState(
-    new URLSearchParams(location.search).get("fiche") || "one",
+    new URLSearchParams(location.search).get("fiche") || "exposure",
   );
   function chooseGuide(id: string) {
     setGuide(id);
@@ -89,7 +80,7 @@ function App() {
     const sync = () => {
       setLanguage(readLanguage());
       setFilter(validCategory());
-      setGuide(new URLSearchParams(location.search).get("fiche") || "one");
+      setGuide(new URLSearchParams(location.search).get("fiche") || "exposure");
     };
     window.addEventListener("popstate", sync);
     return () => window.removeEventListener("popstate", sync);
@@ -97,7 +88,7 @@ function App() {
 
   const [menu, setMenu] = useState(false);
   const [filter, setFilter] = useState(validCategory());
-  const [chosen, setChosen] = useState("À définir ensemble");
+  const [chosen, setChosen] = useState("general");
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
   const [draft, setDraft] = useState("");
@@ -133,8 +124,8 @@ function App() {
     };
     const text =
       language === "en"
-        ? `Project inquiry — ${company.name}\n\nName: ${data.name}\nCompany: ${data.company}\nEmail: ${data.email}\nPhone: ${data.phone || "Not provided"}\nSolution: ${t(String(data.solution))}\nProject: ${data.message}`
-        : `Demande de rendez-vous — ${company.name}\n\nNom : ${data.name}\nSociété : ${data.company}\nE-mail : ${data.email}\nTéléphone : ${data.phone || "Non renseigné"}\nSolution : ${data.solution}\nProjet : ${data.message}`;
+        ? `Project inquiry — ${company.name}\n\nName: ${data.name}\nCompany: ${data.company}\nEmail: ${data.email}\nPhone: ${data.phone || "Not provided"}\nSolution: ${products.find((p) => p.id === data.solution)?.name || t("À définir ensemble")}\nProject: ${data.message}`
+        : `Demande de rendez-vous — ${company.name}\n\nNom : ${data.name}\nSociété : ${data.company}\nE-mail : ${data.email}\nTéléphone : ${data.phone || "Non renseigné"}\nSolution : ${products.find((p) => p.id === data.solution)?.name || t("À définir ensemble")}\nProjet : ${data.message}`;
     setDraft(text);
     setBusy(true);
     setStatus("Envoi de votre demande…");
@@ -151,7 +142,7 @@ function App() {
       );
       setDraft("");
       form.reset();
-      setChosen("À définir ensemble");
+      setChosen("general");
     } catch {
       setStatus(
         "L’envoi est indisponible. Votre demande n’a pas été transmise. Téléchargez-la pour la conserver et la partager avec votre interlocuteur.",
@@ -168,8 +159,8 @@ function App() {
     a.href = url;
     a.download =
       language === "en"
-        ? "cybersecurity-inquiry.txt"
-        : "demande-cybersecurite.txt";
+        ? "alyad-project-inquiry.txt"
+        : "demande-projet-alyad.txt";
     a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
@@ -183,7 +174,7 @@ function App() {
           <MapPin size={13} />
           {t("Dakar, Sénégal")}
         </span>
-        <span>{t("La cybersécurité, au plus près de vos enjeux.")}</span>
+        <span>{t("L’énergie de vos projets numériques.")}</span>
         <a href="#contact">
           {t("Parlons de votre projet")}
           <ArrowUpRight size={13} />
@@ -196,7 +187,7 @@ function App() {
           className={menu ? "open" : ""}
         >
           <a href="#solutions" onClick={() => setMenu(false)}>
-            {t("Solutions Tenable")}
+            {t("Nos solutions")}
           </a>
           <a href="#approche" onClick={() => setMenu(false)}>
             {t("Notre approche")}
@@ -251,15 +242,13 @@ function App() {
               {t("Ancrés à Dakar. Tournés vers votre avenir.")}
             </span>
             <h1>
-              {t("Voir les risques.")}
-              <br />
-              {t("Protéger")}
-              <br />
-              {t("l’essentiel.")}
+              <span>{t("Connecter.")}</span>
+              <span>{t("Sécuriser.")}</span>
+              <span>{t("Faire grandir.")}</span>
             </h1>
             <p>
               {t(
-                "ALYAD-DEVELOPPEMENT accompagne la réflexion cybersécurité des entreprises au Sénégal : comprendre les risques, clarifier les besoins et préparer les projets autour des solutions Tenable.",
+                "ALYAD-DEVELOPPEMENT relie vos ambitions à des solutions de cybersécurité, de data centers et de télécommunications. À Dakar et au Sénégal, construisons un numérique fiable, connecté et prêt à grandir.",
               )}
             </p>
             <div className="hero-actions">
@@ -275,7 +264,7 @@ function App() {
             <div className="hero-proof">
               <ShieldCheck size={18} />
               <span>
-                {t("Une approche préventive. Des priorités claires.")}
+                {t("Un ancrage sénégalais. Des projets à votre mesure.")}
               </span>
             </div>
           </div>
@@ -283,12 +272,12 @@ function App() {
             className="hero-art"
             role="img"
             aria-label={t(
-              "Illustration de visibilité sur les actifs, identités, cloud et systèmes industriels. Données fictives, sans connexion à un système réel.",
+              "Illustration d’une architecture numérique reliant cybersécurité, data centers, réseaux et continuité des services.",
             )}
           >
             <div className="art-top">
               <span className="signal-dot" />
-              {t("Vue sur votre exposition")}{" "}
+              {t("Vos projets, connectés")}{" "}
               <span className="art-caption">{t("Illustration")}</span>
             </div>
             <div className="orbit orbit-one" />
@@ -306,11 +295,11 @@ function App() {
               />
             </svg>
             <div className="core">
-              <ShieldCheck size={48} />
+              <Layers size={48} />
               <span>
-                {t("Une vision")}
+                {t("Votre écosystème")}
                 <br />
-                <strong>{t("connectée.")}</strong>
+                <strong>{t("numérique.")}</strong>
               </span>
             </div>
             <div className="asset asset-cloud">
@@ -319,18 +308,18 @@ function App() {
               <i />
             </div>
             <div className="asset asset-identity">
-              <Fingerprint />
-              <span>{t("Identités")}</span>
+              <ShieldCheck />
+              <span>{t("Cybersécurité")}</span>
               <i />
             </div>
             <div className="asset asset-it">
-              <Network />
-              <span>{t("Infrastructure IT")}</span>
+              <Server />
+              <span>{t("Data centers")}</span>
               <i />
             </div>
             <div className="asset asset-ot">
-              <Factory />
-              <span>{t("Systèmes OT")}</span>
+              <Radio />
+              <span>{t("Télécommunications")}</span>
               <i />
             </div>
             <div className="art-note">
@@ -338,8 +327,10 @@ function App() {
                 <ScanLine size={18} />
               </span>
               <div>
-                {t("Comprendre. Prioriser. Agir.")}
-                <small>{t("La visibilité au service de vos décisions.")}</small>
+                {t("Relier. Protéger. Faire évoluer.")}
+                <small>
+                  {t("Trois domaines au service de votre activité.")}
+                </small>
               </div>
               <ArrowUpRight size={17} />
             </div>
@@ -349,36 +340,40 @@ function App() {
             </div>
           </div>
         </section>
-        <div className="solution-ribbon">
-          <p>
-            {t("La technologie")}
-            <strong translate="no">tenable</strong>
-          </p>
-          <span className="ribbon-line" />
-          <p>
-            {t("La visibilité sur vos expositions.")}
-            <br />
-            <strong>{t("La confiance pour avancer.")}</strong>
-          </p>
-          <a href="#solutions">
-            {t("Découvrir l’écosystème")}
-            <ArrowDownIcon />
-          </a>
+        <div
+          className="solution-ribbon service-ribbon"
+          aria-label={t("Nos domaines")}
+        >
+          {filters.slice(1).map((f) => {
+            const Icon = icons[f.id as keyof typeof icons];
+            return (
+              <a
+                key={f.id}
+                className={`domain-chip domain-${f.id}`}
+                href="#solutions"
+                onClick={() => selectFilter(f.id)}
+              >
+                <Icon size={22} aria-hidden="true" />
+                {t(f.name)}
+                <ArrowUpRight size={16} />
+              </a>
+            );
+          })}
         </div>
-        <CyberFocus language={language} />
+        <MultiExpertise language={language} onSelect={selectFilter} />
         <section id="solutions" className="section solutions">
           <div className="section-heading">
             <div>
               <span className="eyebrow">{t("Les solutions")}</span>
               <h2>
-                {t("À chaque surface d’attaque,")}
+                {t("Pour chaque ambition,")}
                 <br />
                 {t("une réponse adaptée.")}
               </h2>
             </div>
             <p>
               {t(
-                "De vos postes de travail à votre cloud, choisissez les solutions qui répondent à votre environnement et à votre niveau de maturité.",
+                "Explorez nos solutions par domaine. Chaque projet associe vos usages, vos contraintes et des critères de performance concrets.",
               )}
             </p>
           </div>
@@ -390,6 +385,7 @@ function App() {
             {filters.map((f) => (
               <button
                 key={f.id}
+                className={`domain-${f.id}`}
                 aria-pressed={filter === f.id}
                 onClick={() => selectFilter(f.id)}
               >
@@ -401,24 +397,22 @@ function App() {
             {products
               .filter((p) => filter === "toutes" || p.category === filter)
               .map((p) => {
-                const Icon = icons[p.id as keyof typeof icons];
+                const Icon = icons[p.category as keyof typeof icons];
                 return (
                   <article
-                    className={`product ${p.id === "one" ? "featured" : ""}`}
+                    className={`product domain-${p.category}`}
                     key={p.id}
                   >
                     <div className="product-top">
                       <span className="product-icon">
                         <Icon size={25} />
                       </span>
-                      {p.id === "one" && (
-                        <span className="product-badge">
-                          {t("Plateforme unifiée")}
-                        </span>
-                      )}
+                      <span className="product-badge">
+                        {t(filters.find((f) => f.id === p.category)!.name)}
+                      </span>
                     </div>
                     <span className="product-label">{p.label}</span>
-                    <h3 translate="no">{p.name}</h3>
+                    <h3>{p.name}</h3>
                     <p>{p.text}</p>
                     <div className="tags">
                       {p.tags.map((t) => (
@@ -439,17 +433,13 @@ function App() {
                         <Plus size={15} />
                       </summary>
                       <p>{p.best}</p>
-                      <a href={p.url} target="_blank" rel="noreferrer">
-                        {t("Consulter la fiche officielle")}
-                        <ArrowUpRight size={13} />
-                      </a>
                     </details>
                     <a
                       className="product-link"
                       href="#contact"
-                      onClick={() => requestProduct(p.name)}
+                      onClick={() => requestProduct(p.id)}
                     >
-                      {t("Parlons de cette solution")}
+                      {t("Étudier cette solution")}
                       <ArrowUpRight size={18} />
                     </a>
                   </article>
@@ -458,7 +448,7 @@ function App() {
           </div>
           <p className="catalogue-note">
             {t(
-              "Licences, éditions, périmètres et disponibilité à confirmer sur devis. Les descriptifs présentent les usages généraux des solutions.",
+              "Le périmètre, les équipements, les prestations et les engagements de service sont définis sur devis, après étude de votre environnement.",
             )}
           </p>
         </section>
@@ -589,8 +579,8 @@ function App() {
           <div className="faq-list">
             {[
               {
-                q: "Par quelle solution Tenable commencer ?",
-                a: "Le choix dépend de vos actifs, de votre organisation et de vos objectifs. Nessus peut répondre à des évaluations ciblées ; Vulnerability Management à un pilotage cloud des vulnérabilités ; Tenable One à une démarche plus transverse. Un cadrage permet de confirmer le bon choix.",
+                q: "Par quel projet commencer ?",
+                a: "Commençons par vos priorités : sécuriser vos actifs, fiabiliser vos infrastructures ou mieux connecter vos équipes. Un échange permet de préciser le périmètre, les dépendances et les étapes adaptées à votre budget.",
               },
               {
                 q: "Quel budget faut-il prévoir ?",
@@ -735,11 +725,11 @@ function App() {
                 value={chosen}
                 onChange={(e) => setChosen(e.target.value)}
               >
-                <option value="À définir ensemble">
-                  {t("À définir ensemble")}
-                </option>
+                <option value="general">{t("À définir ensemble")}</option>
                 {products.map((p) => (
-                  <option key={p.id}>{p.name}</option>
+                  <option key={p.id} value={p.id}>
+                    {p.name}
+                  </option>
                 ))}
               </select>
             </label>
@@ -802,12 +792,12 @@ function App() {
         <div className="footer-main">
           <Brand language={language} />
           <p>
-            {t("La visibilité pour décider.")}
+            {t("L’énergie pour entreprendre.")}
             <br />
-            {t("La proximité pour avancer.")}
+            {t("La proximité pour construire.")}
           </p>
           <a href="#societe">{t("La société")}</a>
-          <a href="#solutions">{t("Solutions Tenable")}</a>
+          <a href="#solutions">{t("Nos solutions")}</a>
           <a href="#contact">
             {t("Votre projet")}
             <ArrowUpRight size={15} />
@@ -829,7 +819,7 @@ function App() {
         </div>
         <p className="trademark">
           {t(
-            "Tenable et les noms de ses produits sont des marques de leurs titulaires respectifs.",
+            "Cybersécurité, data centers et télécommunications. Des solutions adaptées à votre activité, portées par ALYAD-DEVELOPPEMENT.",
           )}{" "}
         </p>
       </footer>

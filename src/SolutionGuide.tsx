@@ -23,16 +23,16 @@ export function SolutionGuide({
         label: "Make an informed choice",
         title: "Understand the solution. Define the right scope.",
         intro:
-          "Explore how each solution fits into a security program: use cases, capabilities, deployment preparation and points to confirm before a quotation.",
+          "Explore how each solution fits into a digital infrastructure: use cases, capabilities, deployment preparation and points to confirm before a quotation.",
         select: "Explore a detailed solution",
         overview: "What does it address?",
         capabilities: "What to explore",
         example: "An example for your organization",
         prerequisites: "Preparing your project",
-        licensing: "Scope and licensing",
-        source: "Official product reference",
+        licensing: "Scope and service commitments",
+        source: "Our project approach",
         cta: "Request a scoped proposal",
-        note: "Original guidance for your project. Exact features, editions, supported environments and availability must be confirmed with Tenable. These summaries do not replace current product documentation.",
+        note: "Each project is scoped around your environment, technical constraints and business priorities. Equipment, implementation and service commitments are specified in your proposal.",
         comparison: "Which solution for which need?",
         solution: "Solution",
         need: "Primary use case",
@@ -43,16 +43,16 @@ export function SolutionGuide({
         label: "Choisir en connaissance de cause",
         title: "Comprendre la solution. Définir le bon périmètre.",
         intro:
-          "Découvrez la place de chaque solution dans votre démarche de sécurité : usages, capacités à étudier, préparation du déploiement et points à confirmer avant un devis.",
+          "Découvrez la place de chaque solution dans votre démarche numérique : usages, capacités à étudier, préparation du déploiement et points à confirmer avant un devis.",
         select: "Explorer une fiche détaillée",
         overview: "À quel besoin répond-elle ?",
         capabilities: "Les possibilités à étudier",
         example: "Un exemple pour votre organisation",
         prerequisites: "Préparer votre projet",
-        licensing: "Périmètre et licence",
-        source: "Référence produit officielle",
+        licensing: "Périmètre et engagements",
+        source: "Notre méthode projet",
         cta: "Demander une proposition adaptée",
-        note: "Contenus originaux pour orienter votre projet. Les caractéristiques exactes, éditions, environnements pris en charge et disponibilités sont à confirmer auprès de Tenable. Ces synthèses ne remplacent pas la documentation produit actualisée.",
+        note: "Chaque projet est cadré selon votre environnement, vos contraintes techniques et vos priorités métier. Les équipements, la réalisation et les engagements de service sont précisés dans votre proposition.",
         comparison: "Quelle solution pour quel besoin ?",
         solution: "Solution",
         need: "Usage principal",
@@ -83,12 +83,13 @@ export function SolutionGuide({
           ))}
         </select>
       </div>
-      <article className="guide-panel" aria-labelledby="guide-title">
+      <article
+        className={`guide-panel domain-${p.category}`}
+        aria-labelledby="guide-title"
+      >
         <div className="guide-summary">
           <span className="eyebrow">{p.label}</span>
-          <h3 id="guide-title" translate="no">
-            {p.name}
-          </h3>
+          <h3 id="guide-title">{p.name}</h3>
           <p>{p.text}</p>
           <ul>
             {p.tags.map((tag) => (
@@ -98,20 +99,11 @@ export function SolutionGuide({
               </li>
             ))}
           </ul>
-          <a
-            className="button"
-            href="#contact"
-            onClick={() => onRequest(p.name)}
-          >
+          <a className="button" href="#contact" onClick={() => onRequest(p.id)}>
             {c.cta}
             <ArrowUpRight size={17} />
           </a>
-          <a
-            className="source-link"
-            href={p.url}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a className="source-link" href="#approche">
             {c.source}
             <ArrowUpRight size={15} />
           </a>
@@ -205,7 +197,7 @@ export function SolutionGuide({
 const knowledge = {
   fr: {
     label: "Mieux comprendre pour mieux décider",
-    title: "Au-delà du scan, une démarche de réduction du risque.",
+    title: "Des choix techniques qui servent votre activité.",
     intro:
       "Une solution apporte de la visibilité. Sa valeur se construit aussi dans la manière d’organiser les équipes, de traiter les constats et de vérifier les progrès.",
     articles: [
@@ -214,12 +206,12 @@ const knowledge = {
         text: "Une vulnérabilité est une faiblesse technique. Une exposition tient compte des conditions qui rendent une ressource accessible ou attaquable, comme une configuration ou une permission. Le risque dépend aussi de l’impact métier et de la probabilité d’exploitation. Une organisation gagne à rapprocher ces trois lectures pour éviter de traiter toutes les alertes de la même façon.",
       },
       {
-        title: "Prioriser avec le contexte, pas seulement un score",
-        text: "La sévérité technique est utile, mais elle ne suffit pas à organiser un plan d’action. Il faut également examiner la criticité de l’actif, son accessibilité, les possibilités d’exploitation et les mesures de protection existantes. Les résultats de l’outil doivent être validés et rapprochés des contraintes de maintenance par les équipes habilitées.",
+        title: "Résilience : prévoir la panne et tester la reprise",
+        text: "Un data center résilient se conçoit autour des services à maintenir : énergie, réseau, calcul, données et procédures. La redondance limite certaines pannes ; la sauvegarde et la reprise traitent d’autres scénarios. Les objectifs de perte de données et de délai de remise en service doivent être définis avec le métier puis vérifiés par des exercices.",
       },
       {
-        title: "Construire des indicateurs utiles au métier",
-        text: "Un tableau de bord doit aider à décider : périmètre effectivement évalué, actifs sans propriétaire, actions prioritaires en retard et résultats après correction. Le nombre brut de vulnérabilités ne décrit pas à lui seul le niveau de sécurité. Les indicateurs retenus doivent être compréhensibles et associés à un responsable et à une décision.",
+        title: "Connectivité : penser les usages, pas seulement le débit",
+        text: "La qualité d’un réseau se mesure dans les usages : appels, accès applicatifs, transferts et mobilité. Le débit ne suffit pas ; la latence, la variation des délais, la perte de paquets et la couverture ont aussi un rôle. Une recette utile vérifie les scénarios réels, y compris la bascule vers un lien de secours et la séparation des accès sensibles.",
       },
     ],
     cycleTitle: "Du premier état des lieux au suivi des corrections",
@@ -243,6 +235,30 @@ const knowledge = {
     ],
     glossaryTitle: "Les termes utiles, simplement",
     terms: [
+      [
+        "RPO",
+        "Objectif de point de reprise : quantité de données que l’organisation accepte de perdre, exprimée en durée.",
+      ],
+      [
+        "RTO",
+        "Objectif de délai de reprise : durée cible pour remettre un service en fonctionnement après un incident.",
+      ],
+      [
+        "LAN et WAN",
+        "Le LAN relie les équipements d’un site ; le WAN relie plusieurs sites ou réseaux distants.",
+      ],
+      [
+        "SD-WAN",
+        "Approche de pilotage des interconnexions qui applique des politiques de trafic à plusieurs accès réseau.",
+      ],
+      [
+        "Qualité de service",
+        "Règles permettant de différencier et de prioriser certains flux, par exemple la voix, selon les capacités disponibles.",
+      ],
+      [
+        "VoIP",
+        "Transport des communications vocales sur des réseaux IP, avec des exigences de sécurité et de qualité à étudier.",
+      ],
       [
         "Gestion des expositions",
         "Démarche qui rapproche plusieurs sources de faiblesse et leur contexte pour organiser la réduction du risque.",
@@ -294,7 +310,7 @@ const knowledge = {
   },
   en: {
     label: "Understand more. Decide better.",
-    title: "Beyond scanning: a program to reduce risk.",
+    title: "Technical choices that serve your business.",
     intro:
       "A solution provides visibility. Its value also depends on how teams organize, address findings and verify progress.",
     articles: [
@@ -303,12 +319,12 @@ const knowledge = {
         text: "A vulnerability is a technical weakness. Exposure includes conditions that make a resource reachable or attackable, such as configuration or permissions. Risk also depends on business impact and the likelihood of exploitation. Bringing these perspectives together helps organizations avoid treating every alert in the same way.",
       },
       {
-        title: "Prioritize with context, not only a score",
-        text: "Technical severity is useful, but it is not enough to organize an action plan. Asset criticality, reachability, exploitation opportunities and existing protections also matter. Tool findings must be validated and assessed against maintenance constraints by authorized teams.",
+        title: "Resilience: plan for failure and test recovery",
+        text: "A resilient data center is designed around services to maintain: power, networking, compute, data and procedures. Redundancy limits some failures; backup and recovery address other scenarios. Data loss and recovery time objectives should be defined with business owners and verified through exercises.",
       },
       {
-        title: "Build indicators that support business decisions",
-        text: "A dashboard should help people decide: actual assessment coverage, assets without owners, overdue priority actions and results after remediation. The raw vulnerability count alone does not describe security posture. Chosen indicators should be understandable and connected to an owner and a decision.",
+        title: "Connectivity: focus on use, not only bandwidth",
+        text: "Network quality is measured through actual use: calls, applications, transfers and mobility. Bandwidth alone is not enough; latency, delay variation, packet loss and coverage also matter. Meaningful acceptance testing checks real scenarios, including backup link failover and separation of sensitive access.",
       },
     ],
     cycleTitle: "From the initial baseline to verified remediation",
@@ -332,6 +348,30 @@ const knowledge = {
     ],
     glossaryTitle: "Useful terms, clearly explained",
     terms: [
+      [
+        "RPO",
+        "Recovery point objective: the amount of data an organization can accept losing, expressed as a duration.",
+      ],
+      [
+        "RTO",
+        "Recovery time objective: the target time to restore a service following an incident.",
+      ],
+      [
+        "LAN and WAN",
+        "A LAN connects equipment at a site; a WAN connects multiple sites or remote networks.",
+      ],
+      [
+        "SD-WAN",
+        "An approach to managing site connectivity by applying traffic policies across multiple access links.",
+      ],
+      [
+        "Quality of service",
+        "Rules that differentiate and prioritize traffic, such as voice, within available capacity.",
+      ],
+      [
+        "VoIP",
+        "Voice communication carried over IP networks, with security and quality requirements to assess.",
+      ],
       [
         "Exposure management",
         "An approach that brings different sources of weakness and their context together to organize risk reduction.",

@@ -19,11 +19,11 @@ export function updateMetadata(language: Language) {
   document.documentElement.lang = language;
   const en = language === "en";
   document.title = en
-    ? `${company.name} | Tenable solutions in Senegal`
-    : `${company.name} | Solutions Tenable au Sénégal`;
+    ? `${company.name} | Cybersecurity, data centers & telecoms`
+    : `${company.name} | Cybersécurité, data centers & télécoms`;
   const description = en
-    ? "ALYAD-DEVELOPPEMENT in Dakar: cybersecurity planning and Tenable solutions in Senegal."
-    : "ALYAD-DEVELOPPEMENT à Dakar : projets cybersécurité et solutions Tenable au Sénégal.";
+    ? "ALYAD-DEVELOPPEMENT in Dakar: cybersecurity planning and Cybersecurity, data centers & telecoms."
+    : "ALYAD-DEVELOPPEMENT à Dakar : cybersécurité, infrastructures data center et télécommunications au Sénégal.";
   document
     .querySelector('meta[name="description"]')
     ?.setAttribute("content", description);

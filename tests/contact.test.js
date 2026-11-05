@@ -6,7 +6,7 @@ const valid = {
   company: "Entreprise test",
   email: "awa@example.sn",
   phone: "+221 770000000",
-  solution: "Tenable Nessus",
+  solution: "audit",
   message: "Nous souhaitons évaluer notre parc informatique.",
   consent: "on",
 };
@@ -139,11 +139,7 @@ test("API : succès et échec du fournisseur correctement propagés", async () =
 });
 
 test("API : les nouvelles solutions et la langue anglaise sont acceptées", () => {
-  for (const solution of [
-    "Tenable Security Center",
-    "Tenable Web App Scanning",
-    "Tenable Attack Surface Management",
-  ])
+  for (const solution of ["dc-design", "lan-wifi", "backup-recovery"])
     assert.equal(validate({ ...valid, solution, language: "en" }), null);
   assert.ok(validate({ ...valid, language: "xx" }));
 });
@@ -159,7 +155,7 @@ test("API : la langue choisie est conservée dans l’e-mail commercial", async 
   try {
     globalThis.fetch = async (_url, options) => {
       const payload = JSON.parse(options.body);
-      assert.match(payload.subject, /New cybersecurity/);
+      assert.match(payload.subject, /New technology/);
       assert.match(payload.text, /Language: English/);
       assert.match(payload.text, /Name: Awa Diop/);
       return { ok: true };

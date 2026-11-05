@@ -1,16 +1,16 @@
 import company from "../src/company.json" with { type: "json" };
+import catalog from "../src/catalog.json" with { type: "json" };
 const allowedSolutions = new Set([
-  "À définir ensemble",
-  "Tenable One",
-  "Tenable Vulnerability Management",
-  "Tenable Nessus",
-  "Tenable Cloud Security",
-  "Tenable Identity Exposure",
-  "Tenable OT Security",
-  "Tenable Security Center",
-  "Tenable Web App Scanning",
-  "Tenable Attack Surface Management",
+  "general",
+  ...catalog.map((item) => item.id),
 ]);
+function solutionLabel(body) {
+  const lang = body.language === "en" ? "en" : "fr";
+  return (
+    catalog.find((item) => item.id === body.solution)?.[lang].name ??
+    (lang === "en" ? "Let's define it together" : "À définir ensemble")
+  );
+}
 export function validate(body) {
   if (!body || typeof body !== "object" || Array.isArray(body))
     return "Demande invalide.";
@@ -97,12 +97,12 @@ export default async function handler(req, res) {
         reply_to: body.email,
         subject:
           body.language === "en"
-            ? `New cybersecurity project inquiry — ${company.name}`
-            : `Nouvelle demande de projet cybersécurité — ${company.name}`,
+            ? `New technology project inquiry — ${company.name}`
+            : `Nouvelle demande de projet numérique — ${company.name}`,
         text:
           body.language === "en"
-            ? `Language: English\nName: ${body.name.trim()}\nCompany: ${body.company.trim()}\nEmail: ${body.email}\nPhone: ${body.phone || "Not provided"}\nSolution: ${body.solution}\n\n${body.message.trim()}`
-            : `Nom : ${body.name.trim()}\nEntreprise : ${body.company.trim()}\nE-mail : ${body.email}\nTéléphone : ${body.phone || "Non renseigné"}\nSolution : ${body.solution}\n\n${body.message.trim()}`,
+            ? `Language: English\nName: ${body.name.trim()}\nCompany: ${body.company.trim()}\nEmail: ${body.email}\nPhone: ${body.phone || "Not provided"}\nSolution: ${solutionLabel(body)}\n\n${body.message.trim()}`
+            : `Nom : ${body.name.trim()}\nEntreprise : ${body.company.trim()}\nE-mail : ${body.email}\nTéléphone : ${body.phone || "Non renseigné"}\nSolution : ${solutionLabel(body)}\n\n${body.message.trim()}`,
       }),
     });
     if (!result.ok)
