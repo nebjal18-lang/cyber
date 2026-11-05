@@ -26,3 +26,6 @@ Aucune adresse e-mail n’est fournie dans le PDF. Le numéro de téléphone n�
 L’identité est centralisée dans `src/company.json`. Les composants d’en-tête, pied de page, présentation, mentions légales, métadonnées, données structurées et objets des e-mails utilisent cette source. La version anglaise conserve la dénomination et les identifiants légaux français.
 
 Le propriétaire a ensuite transmis le logo ALYAD DÉVELOPPEMENT dans la conversation. Une version à fond transparent a été préparée pour le web et intégrée à l’en-tête, au pied de page et à la favicon. Les couleurs de cette identité guident désormais la composition. Les illustrations techniques du site sont des visuels de présentation et ne constituent pas une documentation photographique des installations de la société.
+
+
+La présentation synthétique des cinq responsables apparaît aussi sur l’accueil. Leurs initiales sont affichées tant que le champ `portrait` dans `src/company.json` est vide. Aucun portrait synthétique n’est utilisé. Les illustrations anonymes de préparation de projet et de manipulation de fibre sont des visuels d’ambiance, légendés comme illustrations, sans attribution à une personne ni à un chantier ALYAD.

@@ -35,5 +35,19 @@
       "maxDuration": 15,
       "includeFiles": "src/*.json"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/solutions",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ressources",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/societe",
+      "destination": "/index.html"
+    }
+  ]
 }

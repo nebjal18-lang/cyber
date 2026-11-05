@@ -1,0 +1,101 @@
+[
+  {
+    "id": "cyber",
+    "fr": "Sécuriser mon activité",
+    "en": "Secure my business",
+    "descriptionFr": "Mieux connaître les risques et protéger vos actifs.",
+    "descriptionEn": "Understand risks and protect your assets.",
+    "choices": [
+      {
+        "solution": "vulnerabilities",
+        "fr": "Identifier mes vulnérabilités",
+        "en": "Identify my vulnerabilities",
+        "related": ["audit", "exposure"]
+      },
+      {
+        "solution": "cloud-security",
+        "fr": "Sécuriser mes usages cloud",
+        "en": "Secure my cloud environment",
+        "related": ["identity", "applications"]
+      },
+      {
+        "solution": "identity",
+        "fr": "Maîtriser les identités et les accès",
+        "en": "Strengthen identity and access controls",
+        "related": ["cloud-security", "monitoring"]
+      },
+      {
+        "solution": "monitoring",
+        "fr": "Organiser la détection et les alertes",
+        "en": "Organize detection and alerts",
+        "related": ["exposure", "vulnerabilities"]
+      }
+    ]
+  },
+  {
+    "id": "datacenter",
+    "fr": "Fiabiliser mes infrastructures",
+    "en": "Strengthen my infrastructure",
+    "descriptionFr": "Préparer la capacité, la disponibilité et la reprise.",
+    "descriptionEn": "Plan capacity, availability and recovery.",
+    "choices": [
+      {
+        "solution": "backup-recovery",
+        "fr": "Préparer la sauvegarde et la reprise",
+        "en": "Plan backup and recovery",
+        "related": ["storage", "infrastructure-monitoring"]
+      },
+      {
+        "solution": "dc-design",
+        "fr": "Concevoir ou moderniser une infrastructure",
+        "en": "Design or modernize infrastructure",
+        "related": ["power-cooling", "infrastructure-monitoring"]
+      },
+      {
+        "solution": "virtualization",
+        "fr": "Consolider mes serveurs",
+        "en": "Consolidate my servers",
+        "related": ["storage", "backup-recovery"]
+      },
+      {
+        "solution": "storage",
+        "fr": "Faire évoluer le stockage des données",
+        "en": "Scale data storage",
+        "related": ["backup-recovery", "virtualization"]
+      }
+    ]
+  },
+  {
+    "id": "telecom",
+    "fr": "Mieux connecter mes équipes",
+    "en": "Improve team connectivity",
+    "descriptionFr": "Relier les personnes, les sites et les applications.",
+    "descriptionEn": "Connect people, locations and applications.",
+    "choices": [
+      {
+        "solution": "lan-wifi",
+        "fr": "Fiabiliser le réseau et le Wi-Fi",
+        "en": "Improve network and Wi-Fi reliability",
+        "related": ["fiber", "internet"]
+      },
+      {
+        "solution": "sdwan",
+        "fr": "Relier plusieurs sites",
+        "en": "Connect multiple locations",
+        "related": ["internet", "radio"]
+      },
+      {
+        "solution": "internet",
+        "fr": "Préparer un accès Internet de secours",
+        "en": "Plan backup Internet access",
+        "related": ["sdwan", "infrastructure-monitoring"]
+      },
+      {
+        "solution": "voice",
+        "fr": "Moderniser les communications",
+        "en": "Modernize communications",
+        "related": ["lan-wifi", "internet"]
+      }
+    ]
+  }
+]

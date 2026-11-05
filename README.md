@@ -1,6 +1,6 @@
 # ALYAD-DEVELOPPEMENT — cybersécurité, data centers et télécommunications
 
-Site bilingue français/anglais React/TypeScript. Identité ALYAD-DEVELOPPEMENT, catalogue filtrable, accompagnement, FAQ, formulaire avec API Vercel et repli par téléchargement. Aucun déploiement ni envoi réel effectué automatiquement.
+Site bilingue français/anglais React/TypeScript. Identité ALYAD-DEVELOPPEMENT, accueil visuel, orientation de projet en trois questions, catalogue filtrable, pages dédiées, FAQ et formulaire avec API Vercel et repli par téléchargement. Aucun déploiement ni envoi réel effectué automatiquement.
 
 ## Démarrer
 
@@ -76,6 +76,24 @@ La direction graphique repose sur le logo transmis par le propriétaire, le bleu
 - `public/images/alyad-logo.webp` : version web du logo fourni.
 - `public/images/infrastructure-hero.webp` et `service-environments.webp` : illustrations d’architecture.
 
-L’animation d’entrée est courte et finie ; aucune boucle continue. Le catalogue de 21 offres, le comparatif et les informations d’organisation secondaires sont dépliables. Une fiche détaillée n’est affichée qu’après sélection d’une solution. L’URL conserve les choix de domaine, de langue et de fiche. Ces changements préservent l’intégralité des descriptions et des données de société.
+L’animation d’entrée est courte et finie ; aucune boucle continue. Le catalogue de 21 offres se trouve sur `/solutions`, ouvert par défaut et filtrable. Le comparatif reste dépliable. Les ressources sont sur `/ressources` et la présentation institutionnelle complète sur `/societe`. Les réécritures Vercel permettent leur ouverture directe et leur actualisation sans toucher à `/api/contact`. Une fiche détaillée n’est affichée qu’après sélection d’une solution. L’URL conserve les choix de domaine, de langue et de fiche. Ces changements préservent l’intégralité des descriptions et des données de société.
 
 Les captures et la vidéo de lecture sont dans `docs/previews/` : `professionnel-fr-desktop.png`, `professionnel-fr-mobile.png`, `professionnel-domaines.png`, `professionnel-fr-complet.png` et `presentation-animee.mp4`.
+
+## Accueil vivant et parcours de projet
+
+L’accueil conserve les trois domaines, les situations types illustrées, la méthode interactive, les cinq responsables identifiés, la FAQ et le contact. Les fiches longues et le glossaire sont sur des pages dédiées. Toutes ces pages existent en français et en anglais avec des liens qui conservent la langue.
+
+- `src/ProjectPlanner.tsx` : objectif, besoin et horizon, puis trois pistes du catalogue et préparation du formulaire. Les coordonnées ne sont pas demandées pour consulter les pistes.
+- `src/project-options.json` : questions bilingues et correspondances avec les identifiants canoniques des solutions.
+- `src/HomeSections.tsx` : situations interactives, méthode, responsables et introductions des pages.
+- `src/solutionIcons.ts` : icône adaptée à chacune des 21 offres.
+- `src/routing.ts` : routes et construction des liens localisés. Les anciens liens racine comportant `categorie` ou `fiche` restent compatibles.
+- `src/experience.css` : composition des nouvelles sections et adaptation aux petits écrans.
+- `public/images/project-context.webp` : illustrations de préparation d’un projet et de raccordement réseau ; elles ne représentent ni des portraits du personnel ni des réalisations clients.
+
+Les noms et fonctions des responsables viennent de la présentation institutionnelle. Le champ facultatif `portrait` de chaque responsable, dans `src/company.json`, est vide : ajoutez un chemin local vers une photographie autorisée pour remplacer les initiales.
+
+Le parcours sélectionne une solution stable, conserve les notes déjà saisies et ajoute un cadrage à la demande. Le texte transmis et le téléchargement conservent ces deux éléments sans répéter un cadrage déjà présent en tête du message. Le serveur valide la taille et le type du champ `projectBrief`. Aucun questionnaire n’est conservé dans le navigateur.
+
+Les animations restent courtes : apparition des sections, ouverture des étapes et transition des situations à la demande. Le réglage système de mouvement réduit supprime ces effets. Il n’y a pas de rotation automatique des contenus.

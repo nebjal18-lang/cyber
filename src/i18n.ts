@@ -1,5 +1,6 @@
 import english from "./locales/en.json";
 import { company } from "./config";
+import type { SitePage } from "./routing";
 export type Language = "fr" | "en";
 export function readLanguage(): Language {
   return new URLSearchParams(location.search).get("lang") === "en"
@@ -14,15 +15,22 @@ export function translator(language: Language) {
         ] ?? source)
       : source;
 }
-export function updateMetadata(language: Language) {
+export function updateMetadata(language: Language, page: SitePage = "home") {
   updateCompanyStructuredData();
   document.documentElement.lang = language;
   const en = language === "en";
   document.title = en
     ? `${company.name} | Cybersecurity, data centers & telecoms`
     : `${company.name} | Cybersécurité, data centers & télécoms`;
+  const pageName = {
+    home: { fr: "", en: "" },
+    solutions: { fr: "Nos solutions", en: "Our solutions" },
+    resources: { fr: "Ressources", en: "Resources" },
+    company: { fr: "La société", en: "Our company" },
+  }[page][language];
+  if (pageName) document.title = pageName + " — " + document.title;
   const description = en
-    ? "ALYAD-DEVELOPPEMENT in Dakar: cybersecurity planning and Cybersecurity, data centers & telecoms."
+    ? "ALYAD-DEVELOPPEMENT in Dakar: cybersecurity, data center infrastructure and telecommunications for your business."
     : "ALYAD-DEVELOPPEMENT à Dakar : cybersécurité, infrastructures data center et télécommunications au Sénégal.";
   document
     .querySelector('meta[name="description"]')

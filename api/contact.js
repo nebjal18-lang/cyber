@@ -11,6 +11,13 @@ function solutionLabel(body) {
     (lang === "en" ? "Let's define it together" : "À définir ensemble")
   );
 }
+export function projectText(body) {
+  const message = body.message.trim();
+  const brief = body.projectBrief?.trim();
+  return brief && !message.startsWith(brief)
+    ? `${brief}\n\n${message}`
+    : message;
+}
 export function validate(body) {
   if (!body || typeof body !== "object" || Array.isArray(body))
     return "Demande invalide.";
@@ -37,6 +44,11 @@ export function validate(body) {
     (typeof body.phone !== "string" || body.phone.length > 40)
   )
     return "Téléphone invalide.";
+  if (
+    body.projectBrief !== undefined &&
+    (typeof body.projectBrief !== "string" || body.projectBrief.length > 1500)
+  )
+    return "Cadrage de projet invalide.";
   if (body.language !== undefined && !["fr", "en"].includes(body.language))
     return "Langue invalide.";
   if (!allowedSolutions.has(body.solution)) return "Solution invalide.";
@@ -101,8 +113,8 @@ export default async function handler(req, res) {
             : `Nouvelle demande de projet numérique — ${company.name}`,
         text:
           body.language === "en"
-            ? `Language: English\nName: ${body.name.trim()}\nCompany: ${body.company.trim()}\nEmail: ${body.email}\nPhone: ${body.phone || "Not provided"}\nSolution: ${solutionLabel(body)}\n\n${body.message.trim()}`
-            : `Nom : ${body.name.trim()}\nEntreprise : ${body.company.trim()}\nE-mail : ${body.email}\nTéléphone : ${body.phone || "Non renseigné"}\nSolution : ${solutionLabel(body)}\n\n${body.message.trim()}`,
+            ? `Language: English\nName: ${body.name.trim()}\nCompany: ${body.company.trim()}\nEmail: ${body.email}\nPhone: ${body.phone || "Not provided"}\nSolution: ${solutionLabel(body)}\n\n${projectText(body)}`
+            : `Nom : ${body.name.trim()}\nEntreprise : ${body.company.trim()}\nE-mail : ${body.email}\nTéléphone : ${body.phone || "Non renseigné"}\nSolution : ${solutionLabel(body)}\n\n${projectText(body)}`,
       }),
     });
     if (!result.ok)

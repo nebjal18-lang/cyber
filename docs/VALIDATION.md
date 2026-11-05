@@ -1,27 +1,46 @@
-# Validation — refonte ALYAD multi-solutions
+# Validation — accueil illustré et parcours ALYAD
 
-Recette du 5 novembre 2026 sous Node 24 et Chromium système.
+Recette du 5 novembre 2026 sous Node 24 et Chromium système. Validation locale du code et de la version compilée.
 
 | Contrôle | Résultat |
 | --- | --- |
 | Compilation TypeScript et build Vite | Réussis |
-| Tests Node API, catalogue et traductions | 11 réussis, 0 ignoré |
-| Tests navigateur ordinateur et mobile | 26 réussis, 0 ignoré |
-| Audit axe WCAG A/AA | Aucune violation détectée en français et en anglais, sur ordinateur et mobile |
+| Tests Node API, catalogue et traductions | 12 réussis, 0 ignoré |
+| Scénarios navigateur ordinateur et mobile | 34 réussis, 0 ignoré |
+| Compatibilité des anciens liens | 4 contrôles ciblés supplémentaires réussis après normalisation vers `/solutions` |
+| Audit axe WCAG A/AA | Aucune violation détectée sur l’accueil et les trois pages dédiées, dans les deux langues et les deux formats |
 | Catalogue | 21 offres : 9 cybersécurité, 6 data centers, 6 télécommunications |
 | Fiches détaillées | 21 fiches parcourues dans chaque langue |
-| Glossaire | 15 notions disponibles dans les deux langues |
-| Rendu responsive | Absence de débordement horizontal aux largeurs 320, 390, 768 et 1280 px |
-| Références commerciales | Noms et liens des anciens produits retirés des sources, contenus, métadonnées et catalogue |
-| Production statique | Ouverture des fichiers compilés et présence des 21 solutions vérifiées |
+| Glossaire | 15 notions sur `/ressources`, dans les deux langues |
+| Rendu responsive | Pas de débordement horizontal aux largeurs contrôlées de 320 à 1440 px |
+| Questionnaire | Trois étapes, trois recommandations, identifiant stable et cadrage dans la demande |
+| Notes du visiteur | Conservées lors de la préparation du formulaire ; contexte complémentaire transmis |
+| Identité | Cinq responsables issus de la présentation institutionnelle ; initiales et fonctions, sans portraits inventés |
+| Références commerciales | Catalogue générique sans noms ni liens d’anciens fournisseurs |
 | Envoi d’e-mail réel | Non exécuté : service d’envoi non configuré |
-| Déploiement Vercel | Non effectué par l’assistant |
+| Déploiement Vercel | Non effectué par l’assistant ; réécritures des pages préconfigurées |
 
-Les tests couvrent le filtrage et l’URL, la sélection de fiches, la transmission des identifiants génériques de solution, le choix prérempli dans le formulaire, les statuts d’envoi et d’échec, le téléchargement de secours, les langues et le retour du navigateur. Ils vérifient aussi l’identité ALYAD, le téléphone, les informations légales, les données structurées et la conservation des champs lors d’un changement de langue.
+Les tests couvrent les liens directs et leur actualisation, les filtres et les anciennes URL, les fiches, les demandes préremplies, les statuts d’envoi et d’échec, le téléchargement de secours, les langues et le retour du navigateur. Ils vérifient l’identité ALYAD, le téléphone, les informations légales et structurées, ainsi que la conservation des champs et des choix lors d’un changement de langue.
 
-Les tests API valident les méthodes, l’origine, le format et la taille, les champs, le consentement, les identifiants du catalogue et la langue. Le service e-mail est simulé pour tester les chemins de succès et d’échec ; cela ne prouve pas une délivrabilité réelle. L’intégrité du catalogue bilingue et la couverture de traduction de l’interface sont vérifiées par les tests Node.
+Les nouveaux scénarios parcourent les trois étapes du questionnaire sur ordinateur et mobile, le retour sur les choix, la remise à zéro, les recommandations et le préremplissage. Ils vérifient une sélection au clavier, la conservation d’un message déjà saisi et la transmission de son cadrage complémentaire. Les situations types changent de contenu et de lien de solution ; la méthode expose les livrables de chaque étape. Le réglage de mouvement réduit supprime les animations.
 
-Les contrastes des boutons ont été ajustés avant la recette finale. Les quatre audits de page passent en mode de mouvement réduit, afin de contrôler les contenus dans leur état lisible. L’audit automatisé ne constitue pas une certification complète d’accessibilité.
+L’API valide les méthodes, l’origine, le format, la taille, les champs, le consentement, les identifiants de solution, la langue et le cadrage facultatif `projectBrief`. Le texte commercial évite de répéter un cadrage déjà placé en tête du message. Le fournisseur e-mail est simulé pour les chemins de succès et d’échec ; ces tests ne prouvent pas la délivrabilité réelle. L’intégrité des fiches bilingues et la couverture du dictionnaire d’interface sont vérifiées par les tests Node.
+
+Les audits automatiques utilisent le mouvement réduit afin de contrôler les contenus dans leur état lisible. Ils ne constituent pas une certification complète d’accessibilité. Les captures du site compilé ont été revues visuellement sur ordinateur et mobile.
+
+## Aperçus
+
+Dans `docs/previews/` :
+
+- `professionnel-fr-desktop.png`, `professionnel-fr-mobile.png` : première vue.
+- `professionnel-fr-complet.png` et `accueil-mobile.png` : accueil complet.
+- `orientation-projet-desktop.png`, `orientation-projet-mobile.png` : questionnaire.
+- `situations-illustrees-desktop.png`, `situations-illustrees-mobile.png` : exemples interactifs et illustrations.
+- `responsables-desktop.png`, `responsables-mobile.png` : présentation des responsables.
+- `solutions-desktop.png`, `solutions-mobile.png` : page du catalogue.
+- `presentation-animee.mp4` : démonstration de douze secondes des animations et interactions réelles.
+
+La hauteur de l’accueil à 1440 px de large passe d’environ 8 961 à 6 286 px. Les fiches et ressources déplacées restent accessibles intégralement sur leurs pages dédiées.
 
 ## Reproduire
 
@@ -33,10 +52,4 @@ npm test
 PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e
 ```
 
-Sur une machine équipée des navigateurs Playwright, `npm run test:e2e` suffit. Les captures actualisées sont dans `docs/previews/`, notamment `refonte-fr-desktop.png`, `refonte-fr-mobile.png` et `trois-domaines.png`. Les références techniques et la portée des recommandations sont documentées dans `REFERENCES-TECHNIQUES.md`.
-
-## Nouvelle composition avec logo et mouvement
-
-Le logo est chargé et affiché dans les deux dimensions de test. Deux scénarios supplémentaires vérifient l’apparition des cartes lors de la navigation, le comportement du catalogue dépliable et la suppression des animations en mouvement réduit. Le rendu compilé a également servi à produire une vidéo de huit secondes des animations réelles.
-
-Bilan : 11 tests Node et 26 tests navigateur réussis, aucun test ignoré, build réussi. Les visuels de revue actuels sont `professionnel-fr-desktop.png`, `professionnel-fr-mobile.png`, `professionnel-domaines.png` et `professionnel-fr-complet.png`. La vidéo est `presentation-animee.mp4`. Les anciens noms de captures françaises pointent désormais sur la nouvelle composition.
+Avec les navigateurs Playwright installés, `npm run test:e2e` suffit. La configuration Vercel conserve `/api/contact` et réécrit explicitement `/solutions`, `/ressources` et `/societe` vers l’application. Les accès directs ont été testés avec Vite ; la publication et sa vérification dans Vercel restent à effectuer. L’accès au domaine public communiqué est bloqué par la politique réseau de cet environnement : aucun résultat local n’est présenté comme une vérification du déploiement public.

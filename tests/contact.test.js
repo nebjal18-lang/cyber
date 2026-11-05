@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import handler, { validate } from "../api/contact.js";
+import handler, { validate, projectText } from "../api/contact.js";
 const valid = {
   name: "Awa Diop",
   company: "Entreprise test",
@@ -177,4 +177,28 @@ test("API : la langue choisie est conservée dans l’e-mail commercial", async 
         ? delete process.env[key]
         : (process.env[key] = value);
   }
+});
+
+test("cadrage : conservation des notes, déduplication et limites", () => {
+  const brief = "Cadrage : fiabiliser les sauvegardes.";
+  assert.equal(validate({ ...valid, projectBrief: brief }), null);
+  assert.equal(
+    projectText({ ...valid, projectBrief: brief }),
+    `${brief}\n\n${valid.message}`,
+  );
+  assert.equal(
+    projectText({ ...valid, message: brief, projectBrief: brief }),
+    brief,
+  );
+  assert.equal(projectText(valid), valid.message);
+  assert.equal(
+    projectText({
+      ...valid,
+      message: brief + "\nNotes ajoutées.",
+      projectBrief: brief,
+    }),
+    brief + "\nNotes ajoutées.",
+  );
+  assert.ok(validate({ ...valid, projectBrief: {} }));
+  assert.ok(validate({ ...valid, projectBrief: "x".repeat(1501) }));
 });

@@ -12,12 +12,13 @@ import {
 } from "lucide-react";
 import { company } from "./config";
 import type { Language } from "./i18n";
+import { localLink } from "./routing";
 
 export function Brand({ language }: { language: Language }) {
   return (
     <a
       className="brand alyad-brand"
-      href="#"
+      href={localLink("/", language)}
       aria-label={`${company.name}, ${language === "en" ? "home" : "accueil"}`}
     >
       <img
@@ -31,7 +32,13 @@ export function Brand({ language }: { language: Language }) {
   );
 }
 
-export function CompanySection({ language }: { language: Language }) {
+export function CompanySection({
+  language,
+  expanded = false,
+}: {
+  language: Language;
+  expanded?: boolean;
+}) {
   const en = language === "en";
   const c = en
     ? {
@@ -180,7 +187,7 @@ export function CompanySection({ language }: { language: Language }) {
           </a>
         </aside>
       </div>
-      <details className="company-disclosure">
+      <details className="company-disclosure" open={expanded}>
         <summary>
           {en
             ? "Organization & other business activities"
@@ -285,13 +292,7 @@ export function CompanyLegal({ language }: { language: Language }) {
   );
 }
 
-export function MultiExpertise({
-  language,
-  onSelect,
-}: {
-  language: Language;
-  onSelect: (category: string) => void;
-}) {
+export function MultiExpertise({ language }: { language: Language }) {
   const en = language === "en";
   const fields = en
     ? [
@@ -404,7 +405,14 @@ export function MultiExpertise({
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <a href="#solutions" onClick={() => onSelect(field.id)}>
+              <a
+                href={localLink(
+                  "/solutions",
+                  language,
+                  { categorie: field.id },
+                  "solutions",
+                )}
+              >
                 {field.action}
                 <ArrowUpRight size={18} />
               </a>

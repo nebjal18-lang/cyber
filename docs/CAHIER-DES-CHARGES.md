@@ -20,7 +20,7 @@ Logo transmis par le propriétaire, préparé pour une intégration web à fond 
 
 Les animations ont un rôle défini : entrée de page courte, révélations uniques au défilement et interactions de navigation. Aucune boucle permanente. `prefers-reduced-motion` est respecté ; le focus clavier et les liens d’ancre rendent immédiatement visibles les sections ciblées.
 
-Le catalogue reste complet mais dépliable. Les fiches s’affichent après sélection, le tableau comparatif et les informations secondaires sont ouverts à la demande. Le site doit conserver les descriptions, les deux langues, les informations institutionnelles et les parcours de demande.
+Le catalogue reste complet sur sa page dédiée et ouvert par défaut. Les fiches s’affichent après sélection ; le tableau comparatif reste ouvert à la demande. L’organisation et les autres activités sont déployées sur la page Société. Le site doit conserver les descriptions, les deux langues, les informations institutionnelles et les parcours de demande.
 
 ## Fonctions
 
@@ -33,3 +33,16 @@ API Vercel `/api/contact` : validation, consentement, limites de taille, contrô
 Aucune certification, référence client, disponibilité chiffrée, propriété d’un data center ou autorisation d’opérateur n’est inventée. Équipements, travaux, licences, support et engagements sont précisés sur devis. Les interventions techniques nécessitent un périmètre autorisé et des responsabilités définies.
 
 La recette couvre la compilation, les validations API, les traductions, les 21 fiches, les trois domaines, les parcours FR/EN, les liens d’appel, les petits écrans et l’accessibilité. Le test d’envoi réel nécessite une configuration e-mail valide. Le déploiement Vercel et le domaine sont gérés séparément. Voir `VALIDATION.md` et `IDENTITE-SOCIETE.md`.
+
+
+## Évolution : accueil illustré et navigation par besoins
+
+- Accueil : trois domaines, guide de projet en trois étapes, méthode dépliable, trois situations types interactives, cinq responsables identifiés, FAQ et formulaire.
+- Solutions : catalogue complet et filtrable de 21 offres, icônes propres à chaque solution, fiches détaillées et secteurs.
+- Ressources : articles pédagogiques, cycle de remédiation, glossaire et préparation du besoin.
+- Société : identité légale, activités et organisation détaillée.
+- Les liens de page conservent la langue choisie ; les routes directes sont préconfigurées dans Vercel.
+- Orientation : aucune coordonnée demandée avant les recommandations ; une solution principale et deux pistes complémentaires sont issues du catalogue. Le résultat reste un point de départ à qualifier.
+- Contact : conserver les notes du visiteur et joindre son cadrage. Le téléchargement de secours contient les mêmes informations utiles que la demande serveur.
+- Personnes : noms et fonctions authentiques, initiales en attendant des photographies autorisées. Les illustrations de gestes et de préparation sont identifiées comme telles.
+- Mouvement : effets courts, déclenchés par la lecture ou les actions, avec respect de la préférence de mouvement réduit.
