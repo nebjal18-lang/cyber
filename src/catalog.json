@@ -1,0 +1,398 @@
+[
+  {
+    "id": "one",
+    "name": "Tenable One",
+    "category": "plateforme",
+    "url": "https://www.tenable.com/products/tenable-one",
+    "fr": {
+      "label": "Une vision d’ensemble",
+      "text": "Rapprochez les informations de plusieurs surfaces d’attaque pour comprendre les expositions qui comptent pour votre activité.",
+      "tags": ["Visibilité unifiée", "Priorisation", "Pilotage du risque"],
+      "best": "Les organisations qui veulent relier les constats techniques aux priorités métier.",
+      "overview": "Une vulnérabilité isolée ne décrit pas toujours le risque réel. Une démarche de gestion des expositions rapproche les actifs, leurs faiblesses, les identités et les relations entre environnements. Tenable One est présenté ici comme la famille de plateforme destinée à cette lecture transverse. Le périmètre de visibilité dépend des composants souscrits, des connecteurs et des données disponibles.",
+      "capabilities": [
+        "Consolider la lecture des expositions issues des composants déployés.",
+        "Examiner les relations et les chemins potentiels entre actifs et identités.",
+        "Aider les équipes techniques et les responsables à partager des priorités de réduction du risque."
+      ],
+      "example": "Une entreprise présente sur plusieurs sites veut rapprocher les risques de son infrastructure, de ses identités et de son cloud, puis attribuer les actions aux bonnes équipes.",
+      "prerequisites": [
+        "Identifier les sources de données et les responsables de chaque périmètre.",
+        "Définir les accès, les connecteurs et les règles de partage des informations.",
+        "Choisir les indicateurs qui permettront de suivre les actions."
+      ],
+      "licensing": "Les composants inclus, intégrations et conditions de licence doivent être confirmés. La plateforme ne corrige pas automatiquement tous les constats et ne garantit pas l’absence d’attaque."
+    },
+    "en": {
+      "label": "One connected perspective",
+      "text": "Bring multiple attack surfaces into focus to understand the exposures that matter to your business.",
+      "tags": ["Unified visibility", "Prioritization", "Risk oversight"],
+      "best": "Organizations seeking to connect technical findings with business priorities.",
+      "overview": "An isolated vulnerability does not always describe the real risk. Exposure management brings assets, weaknesses, identities and relationships between environments into context. Tenable One is presented here as the platform family for this broader view. Visibility depends on the licensed components, connectors and available data.",
+      "capabilities": [
+        "Consolidate exposure insights from the components you deploy.",
+        "Examine relationships and potential paths between assets and identities.",
+        "Help technical teams and decision-makers agree on risk reduction priorities."
+      ],
+      "example": "A multi-site organization wants to connect infrastructure, identity and cloud risks, then assign actions to the right teams.",
+      "prerequisites": [
+        "Identify data sources and owners for each scope.",
+        "Define access, connectors and information-sharing rules.",
+        "Choose indicators to track progress on agreed actions."
+      ],
+      "licensing": "Included components, integrations and license terms must be confirmed. The platform does not automatically resolve every finding or guarantee that an attack cannot occur."
+    }
+  },
+  {
+    "id": "vm",
+    "name": "Tenable Vulnerability Management",
+    "category": "vulnerabilites",
+    "url": "https://www.tenable.com/products/tenable-vulnerability-management",
+    "fr": {
+      "label": "La maîtrise des vulnérabilités",
+      "text": "Organisez la découverte, l’évaluation et le suivi des vulnérabilités de vos actifs dans une démarche pilotée depuis le cloud.",
+      "tags": ["Gestion cloud", "Inventaire", "Remédiation"],
+      "best": "Les équipes qui ont besoin d’un suivi régulier et partagé des vulnérabilités.",
+      "overview": "Le scan n’est qu’une étape. Une démarche durable nécessite de connaître les actifs, planifier les évaluations, examiner les résultats et suivre les corrections. Tenable Vulnerability Management répond à cette logique de gestion dans une console cloud. Les méthodes de collecte, les actifs couverts et les possibilités de reporting dépendent de la configuration et de l’offre retenue.",
+      "capabilities": [
+        "Organiser les évaluations et regrouper les constats sur les actifs couverts.",
+        "Utiliser le contexte des vulnérabilités pour aider à prioriser les corrections.",
+        "Partager les résultats avec les responsables et réévaluer après correction."
+      ],
+      "example": "Une DSI à Dakar souhaite suivre ses serveurs et ses postes sur plusieurs sites et distinguer les corrections prioritaires des actions moins urgentes.",
+      "prerequisites": [
+        "Définir l’inventaire et les actifs à licencier.",
+        "Préparer la connectivité, les éventuels scanners, agents et accès nécessaires.",
+        "Convenir des fenêtres de scan et des responsabilités de remédiation."
+      ],
+      "licensing": "L’architecture de collecte, les droits d’accès, la localisation des données et le périmètre de licence sont à valider. La correction relève des équipes habilitées et de leur gestion du changement."
+    },
+    "en": {
+      "label": "Vulnerabilities under control",
+      "text": "Organize discovery, assessment and vulnerability follow-up through a cloud-managed approach.",
+      "tags": ["Cloud-managed", "Inventory", "Remediation"],
+      "best": "Teams that need regular, shared visibility of vulnerabilities.",
+      "overview": "Scanning is only one step. A sustainable program needs asset awareness, planned assessments, reviewed findings and follow-up on fixes. Tenable Vulnerability Management supports this workflow through a cloud console. Collection methods, covered assets and reporting capabilities depend on configuration and the selected offering.",
+      "capabilities": [
+        "Organize assessments and consolidate findings for covered assets.",
+        "Use vulnerability context to help prioritize fixes.",
+        "Share results with owners and reassess after remediation."
+      ],
+      "example": "An IT team in Dakar wants to assess servers and workstations across several locations and separate urgent fixes from lower-priority work.",
+      "prerequisites": [
+        "Define inventory and licensed assets.",
+        "Prepare connectivity and any required scanners, agents and access.",
+        "Agree on scanning windows and remediation ownership."
+      ],
+      "licensing": "Collection architecture, access rights, data location and licensing scope require validation. Remediation remains subject to authorized teams and change management."
+    }
+  },
+  {
+    "id": "nessus",
+    "name": "Tenable Nessus",
+    "category": "vulnerabilites",
+    "url": "https://www.tenable.com/products/nessus",
+    "fr": {
+      "label": "Le point de départ technique",
+      "text": "Réalisez des évaluations de vulnérabilités et de configuration sur un périmètre technique clairement autorisé.",
+      "tags": ["Scans ciblés", "Audit technique", "Configuration"],
+      "best": "Les consultants, auditeurs et équipes techniques qui réalisent des évaluations ciblées.",
+      "overview": "Nessus est une famille d’outils de scan permettant de rechercher des vulnérabilités et des problèmes de configuration sur les cibles prises en charge. Les contrôles disponibles varient selon l’édition, les plugins et les accès fournis. Un scan authentifié peut apporter davantage de contexte qu’un contrôle externe seul, sous réserve de privilèges adaptés et d’une préparation rigoureuse.",
+      "capabilities": [
+        "Préparer des politiques de scan adaptées aux systèmes évalués.",
+        "Examiner les constats et les éléments techniques pour guider la validation.",
+        "Restituer les résultats et lancer une nouvelle évaluation après traitement."
+      ],
+      "example": "Un consultant prépare un état des lieux autorisé d’un parc serveur avant de proposer un programme de correction.",
+      "prerequisites": [
+        "Obtenir une autorisation écrite et une liste de cibles.",
+        "Choisir un emplacement de scan avec la connectivité nécessaire.",
+        "Définir les comptes de contrôle et protéger les résultats du rapport."
+      ],
+      "licensing": "Choisir l’édition avec l’éditeur selon l’usage, les cibles et les droits requis. Un scanner seul n’équivaut pas à une plateforme de gestion continue ni à un test d’intrusion complet."
+    },
+    "en": {
+      "label": "A practical technical starting point",
+      "text": "Run vulnerability and configuration assessments within a clearly authorized technical scope.",
+      "tags": ["Targeted scans", "Technical assessment", "Configuration"],
+      "best": "Consultants, auditors and technical teams performing scoped assessments.",
+      "overview": "Nessus is a family of scanning tools used to identify vulnerabilities and configuration issues on supported targets. Available checks vary with the edition, plugins and provided access. Credentialed scanning can offer more context than an external-only check, provided privileges are appropriate and the assessment is carefully prepared.",
+      "capabilities": [
+        "Prepare scan policies suited to the systems being assessed.",
+        "Review findings and technical evidence to guide validation.",
+        "Report results and reassess after issues are addressed."
+      ],
+      "example": "A consultant establishes an authorized baseline for a server estate before proposing a remediation program.",
+      "prerequisites": [
+        "Obtain written authorization and an approved target list.",
+        "Choose a scanner location with suitable connectivity.",
+        "Define assessment accounts and protect report contents."
+      ],
+      "licensing": "Confirm the edition with the vendor based on intended use, targets and required rights. A standalone scanner is not equivalent to a continuous management platform or a full penetration test."
+    }
+  },
+  {
+    "id": "cloud",
+    "name": "Tenable Cloud Security",
+    "category": "cloud",
+    "url": "https://www.tenable.com/products/tenable-cloud-security",
+    "fr": {
+      "label": "Le cloud, sous contrôle",
+      "text": "Examinez les risques de configuration et de permissions qui peuvent exposer vos environnements cloud.",
+      "tags": ["Posture cloud", "Permissions", "Contexte du risque"],
+      "best": "Les organisations qui veulent mieux maîtriser des environnements cloud en évolution.",
+      "overview": "Dans le cloud, le risque dépend autant des permissions et de la configuration que des composants logiciels. Tenable Cloud Security est présenté pour l’analyse de posture et des expositions cloud. L’étendue de couverture varie selon les fournisseurs, les services, les connecteurs et l’offre choisie. Les recommandations doivent être validées avec les responsables cloud avant leur application.",
+      "capabilities": [
+        "Repérer les configurations susceptibles d’augmenter l’exposition.",
+        "Examiner les accès et les permissions excessives dans le périmètre pris en charge.",
+        "Rapprocher les constats de leur contexte pour organiser les actions."
+      ],
+      "example": "Une entreprise veut comprendre si certains comptes, ressources ou droits d’accès exposent des données ou des services dans son cloud.",
+      "prerequisites": [
+        "Lister les fournisseurs, comptes, abonnements et projets concernés.",
+        "Définir les permissions d’intégration avec le principe du moindre privilège.",
+        "Identifier les données sensibles et les responsables des changements."
+      ],
+      "licensing": "La couverture des services, les modes de déploiement et les fonctionnalités exactes sont à confirmer. La solution ne remplace pas l’architecture de sécurité ni la gouvernance des accès."
+    },
+    "en": {
+      "label": "Cloud security in context",
+      "text": "Assess configuration and permission risks that may expose your cloud environments.",
+      "tags": ["Cloud posture", "Permissions", "Risk context"],
+      "best": "Organizations seeking greater control over changing cloud environments.",
+      "overview": "Cloud risk depends on permissions and configuration as well as software components. Tenable Cloud Security is presented for cloud posture and exposure analysis. Coverage varies by provider, service, connector and selected offering. Recommendations must be reviewed with cloud owners before changes are applied.",
+      "capabilities": [
+        "Identify configurations that may increase exposure.",
+        "Review access and excessive permissions within the supported scope.",
+        "Put findings into context to organize remediation work."
+      ],
+      "example": "An organization wants to understand whether accounts, resources or permissions expose data or services in its cloud environment.",
+      "prerequisites": [
+        "List relevant providers, accounts, subscriptions and projects.",
+        "Define integration permissions using least privilege.",
+        "Identify sensitive data and owners responsible for changes."
+      ],
+      "licensing": "Service coverage, deployment methods and exact features must be confirmed. The solution does not replace security architecture or access governance."
+    }
+  },
+  {
+    "id": "identity",
+    "name": "Tenable Identity Exposure",
+    "category": "identites",
+    "url": "https://www.tenable.com/products/tenable-identity-exposure",
+    "fr": {
+      "label": "Des identités mieux protégées",
+      "text": "Repérez les faiblesses des infrastructures d’identité et les conditions qui peuvent faciliter une progression d’attaque.",
+      "tags": ["Active Directory", "Identités", "Chemins d’attaque"],
+      "best": "Les équipes qui veulent réduire les risques associés aux infrastructures d’identité.",
+      "overview": "Les identités relient les utilisateurs, les services et les ressources. Une permission excessive ou une configuration faible peut permettre à un attaquant de progresser. Tenable Identity Exposure est présenté pour l’examen des expositions des infrastructures d’identité, notamment Active Directory. La prise en charge exacte des environnements hybrides et des sources d’identité doit être confirmée pour le projet.",
+      "capabilities": [
+        "Identifier des configurations d’identité présentant un risque.",
+        "Examiner les relations de privilège et les chemins potentiels de progression.",
+        "Fournir des éléments aux responsables identité pour préparer les corrections."
+      ],
+      "example": "Une organisation veut comprendre quelles faiblesses de son annuaire pourraient faciliter un accès privilégié non souhaité.",
+      "prerequisites": [
+        "Délimiter les domaines, forêts et sources d’identité concernés.",
+        "Préparer les accès nécessaires et les échanges avec les administrateurs.",
+        "Organiser la validation des changements et le suivi des impacts."
+      ],
+      "licensing": "Les changements d’annuaire peuvent avoir des effets métier. La solution ne remplace pas le MFA, la gestion des identités, la sauvegarde de l’annuaire ou les procédures de reprise."
+    },
+    "en": {
+      "label": "Stronger identity foundations",
+      "text": "Identify identity infrastructure weaknesses and conditions that may enable an attack to progress.",
+      "tags": ["Active Directory", "Identities", "Attack paths"],
+      "best": "Teams seeking to reduce risks in their identity infrastructure.",
+      "overview": "Identities connect users, services and resources. Excessive permissions or weak configuration may allow an attacker to move further. Tenable Identity Exposure is presented for assessing identity infrastructure exposures, including Active Directory. Exact support for hybrid environments and identity sources must be confirmed for the project.",
+      "capabilities": [
+        "Identify risky identity configurations.",
+        "Examine privilege relationships and potential attack paths.",
+        "Provide identity owners with context to prepare remediation."
+      ],
+      "example": "An organization wants to understand which directory weaknesses could facilitate unintended privileged access.",
+      "prerequisites": [
+        "Define the relevant domains, forests and identity sources.",
+        "Prepare required access and coordination with administrators.",
+        "Plan change validation and impact monitoring."
+      ],
+      "licensing": "Directory changes can affect business operations. The solution does not replace MFA, identity management, directory backups or recovery procedures."
+    }
+  },
+  {
+    "id": "ot",
+    "name": "Tenable OT Security",
+    "category": "industriel",
+    "url": "https://www.tenable.com/products/tenable-ot-security",
+    "fr": {
+      "label": "La continuité des opérations",
+      "text": "Développez la visibilité sur les actifs et les expositions de vos environnements industriels, avec une approche adaptée à leur sensibilité.",
+      "tags": ["Systèmes OT", "Inventaire industriel", "Contexte opérationnel"],
+      "best": "Les exploitants de sites industriels, logistiques, énergétiques et d’infrastructures.",
+      "overview": "Les systèmes opérationnels peuvent piloter des processus physiques et présenter des contraintes différentes de l’IT classique. La connaissance des actifs, des communications et des risques doit tenir compte de la disponibilité et de la sûreté. Tenable OT Security est présenté pour améliorer cette visibilité. Le choix des méthodes de collecte doit être réalisé avec les équipes d’exploitation et les fabricants concernés.",
+      "capabilities": [
+        "Mieux connaître les équipements et les communications du périmètre couvert.",
+        "Rapprocher les informations techniques des enjeux d’exploitation.",
+        "Préparer des actions de réduction du risque compatibles avec les contraintes industrielles."
+      ],
+      "example": "Un exploitant souhaite établir un inventaire de ses équipements et identifier les priorités de sécurité sans appliquer automatiquement les pratiques de scan bureautique.",
+      "prerequisites": [
+        "Associer les responsables exploitation, automatisme, réseau et sécurité.",
+        "Étudier la segmentation, les flux et les possibilités de collecte adaptées.",
+        "Valider explicitement toute interaction active et les fenêtres d’intervention."
+      ],
+      "licensing": "La compatibilité des équipements, les méthodes passives ou actives et le dimensionnement doivent être confirmés. Aucune absence de perturbation ne peut être garantie sans étude du contexte."
+    },
+    "en": {
+      "label": "Protect operational continuity",
+      "text": "Build visibility of industrial assets and exposures using an approach suited to their sensitivity.",
+      "tags": ["OT systems", "Industrial inventory", "Operational context"],
+      "best": "Industrial, logistics, energy and infrastructure operators.",
+      "overview": "Operational systems may control physical processes and have constraints that differ from conventional IT. Asset, communication and risk visibility must account for availability and safety. Tenable OT Security is presented to help improve this visibility. Collection methods must be agreed with operations teams and the relevant equipment manufacturers.",
+      "capabilities": [
+        "Improve understanding of equipment and communications in the covered scope.",
+        "Connect technical findings with operational priorities.",
+        "Prepare risk reduction actions that respect industrial constraints."
+      ],
+      "example": "An operator wants an equipment inventory and security priorities without automatically applying office IT scanning practices to industrial systems.",
+      "prerequisites": [
+        "Involve operations, automation, networking and security owners.",
+        "Review segmentation, flows and suitable collection options.",
+        "Explicitly approve any active interaction and assessment window."
+      ],
+      "licensing": "Equipment compatibility, passive or active methods and sizing require confirmation. An absence of disruption cannot be guaranteed without assessing the operating context."
+    }
+  },
+  {
+    "id": "sc",
+    "name": "Tenable Security Center",
+    "category": "vulnerabilites",
+    "url": "https://www.tenable.com/products/tenable-security-center",
+    "fr": {
+      "label": "Le pilotage dans votre infrastructure",
+      "text": "Étudiez une approche de gestion des vulnérabilités hébergée dans votre propre environnement.",
+      "tags": ["Gestion sur site", "Gouvernance", "Reporting"],
+      "best": "Les organisations dont les contraintes d’architecture favorisent une gestion sur site.",
+      "overview": "Tenable Security Center est présenté comme une famille de gestion des vulnérabilités sur site. Cette approche peut intéresser les organisations qui veulent intégrer la console de gestion à leur infrastructure. Elle implique aussi de prévoir l’exploitation, les ressources, les mises à jour et la protection des données d’évaluation. Un hébergement sur site ne constitue pas, à lui seul, une garantie de conformité ou de souveraineté.",
+      "capabilities": [
+        "Centraliser les évaluations et les résultats dans l’architecture prévue.",
+        "Structurer la visibilité et les rapports selon les responsabilités définies.",
+        "Organiser le suivi des vulnérabilités sur les périmètres autorisés."
+      ],
+      "example": "Une institution souhaite évaluer une architecture de gestion sur site et identifier les ressources nécessaires à son exploitation.",
+      "prerequisites": [
+        "Vérifier les exigences officielles de système et de dimensionnement.",
+        "Définir les scanners, les flux, les sauvegardes et les administrateurs.",
+        "Prévoir la maintenance et les responsabilités de mise à jour."
+      ],
+      "licensing": "Les éditions, intégrations, composants et besoins de connectivité sont à confirmer. Comparer les coûts et responsabilités d’exploitation avec une solution cloud avant de choisir."
+    },
+    "en": {
+      "label": "Management in your own environment",
+      "text": "Explore a vulnerability management approach hosted within your own infrastructure.",
+      "tags": ["On-premises management", "Governance", "Reporting"],
+      "best": "Organizations whose architecture requirements favor on-premises management.",
+      "overview": "Tenable Security Center is presented as an on-premises vulnerability management family. This approach may suit organizations that want a management console within their infrastructure. It also requires planning operations, resources, updates and protection of assessment data. On-premises hosting alone does not guarantee compliance or data sovereignty.",
+      "capabilities": [
+        "Centralize assessments and findings in the planned architecture.",
+        "Organize visibility and reporting around defined responsibilities.",
+        "Track vulnerabilities within authorized scopes."
+      ],
+      "example": "An institution wants to assess an on-premises management architecture and determine the resources needed to operate it.",
+      "prerequisites": [
+        "Check official system and sizing requirements.",
+        "Define scanners, network flows, backups and administrators.",
+        "Plan maintenance and update ownership."
+      ],
+      "licensing": "Editions, integrations, components and connectivity requirements must be confirmed. Compare operating costs and responsibilities with a cloud option before deciding."
+    }
+  },
+  {
+    "id": "was",
+    "name": "Tenable Web App Scanning",
+    "category": "web",
+    "url": "https://www.tenable.com/products/tenable-web-app-scanning",
+    "fr": {
+      "label": "Vos applications, côté sécurité",
+      "text": "Évaluez les applications web autorisées afin d’identifier des faiblesses exploitables depuis leur surface applicative.",
+      "tags": ["Applications web", "Évaluation dynamique", "Authentification"],
+      "best": "Les propriétaires de portails, services web et applications métier exposés ou internes.",
+      "overview": "Une application peut présenter des faiblesses que l’évaluation du système hôte ne révèle pas. L’analyse dynamique examine le comportement de l’application à travers ses interfaces accessibles. Tenable Web App Scanning est présenté pour cette famille de besoin. La profondeur des tests dépend notamment de l’authentification, de la navigation, des protections et des technologies de l’application.",
+      "capabilities": [
+        "Évaluer les URL et applications comprises dans un périmètre autorisé.",
+        "Préparer des parcours authentifiés lorsque la prise en charge le permet.",
+        "Fournir aux équipes de développement des constats à valider et à corriger."
+      ],
+      "example": "Une entreprise prépare la mise en ligne d’un portail et veut organiser une évaluation sur un environnement de test représentatif.",
+      "prerequisites": [
+        "Confirmer la propriété des cibles et l’autorisation de test.",
+        "Préparer des comptes de test, exclusions et données non sensibles.",
+        "Convenir d’un environnement, d’un calendrier et du traitement des alertes."
+      ],
+      "licensing": "La couverture des technologies et des interfaces doit être validée. Un scan dynamique ne remplace pas une revue de code, un test d’intrusion ou un processus de développement sécurisé."
+    },
+    "en": {
+      "label": "Application security in focus",
+      "text": "Assess authorized web applications to identify weaknesses in their application-facing attack surface.",
+      "tags": ["Web applications", "Dynamic assessment", "Authentication"],
+      "best": "Owners of portals, web services and exposed or internal business applications.",
+      "overview": "An application may have weaknesses that a host-level assessment does not reveal. Dynamic assessment examines application behavior through accessible interfaces. Tenable Web App Scanning is presented for this type of need. Test depth depends on authentication, navigation, protective controls and application technologies.",
+      "capabilities": [
+        "Assess URLs and applications within an authorized scope.",
+        "Prepare authenticated journeys where supported.",
+        "Provide development teams with findings to validate and address."
+      ],
+      "example": "A business preparing to launch a portal wants an assessment on a representative test environment.",
+      "prerequisites": [
+        "Confirm target ownership and testing authorization.",
+        "Prepare test accounts, exclusions and non-sensitive test data.",
+        "Agree on an environment, schedule and alert handling."
+      ],
+      "licensing": "Technology and interface coverage must be validated. Dynamic scanning does not replace code review, penetration testing or a secure development process."
+    }
+  },
+  {
+    "id": "asm",
+    "name": "Tenable Attack Surface Management",
+    "category": "web",
+    "url": "https://www.tenable.com/products/tenable-attack-surface-management",
+    "fr": {
+      "label": "Votre exposition vue de l’extérieur",
+      "text": "Améliorez la connaissance des actifs accessibles depuis Internet et des expositions à investiguer.",
+      "tags": ["Exposition externe", "Découverte", "Attribution des actifs"],
+      "best": "Les organisations qui souhaitent mieux connaître leur empreinte numérique externe.",
+      "overview": "Les actifs exposés évoluent : domaines, sous-domaines, services et infrastructures peuvent dépendre de plusieurs équipes ou prestataires. Une démarche de gestion de surface d’attaque externe cherche à retrouver cette empreinte et à clarifier les responsabilités. Tenable Attack Surface Management est présenté pour cette famille de besoin. Les résultats de découverte doivent être validés, car une association technique ne prouve pas toujours la propriété d’un actif.",
+      "capabilities": [
+        "Découvrir des actifs externes potentiellement associés à l’organisation.",
+        "Examiner les services et expositions observables depuis Internet.",
+        "Attribuer les actifs confirmés à leurs propriétaires pour organiser le traitement."
+      ],
+      "example": "Une organisation répartie sur plusieurs filiales veut retrouver des services oubliés et vérifier qui en assure l’exploitation.",
+      "prerequisites": [
+        "Fournir les domaines et éléments de départ autorisés.",
+        "Définir une procédure de validation de propriété et de périmètre.",
+        "Associer les équipes internes et les prestataires concernés."
+      ],
+      "licensing": "Les méthodes, fréquences, fonctionnalités et conditions commerciales doivent être confirmées. La découverte externe ne vaut pas autorisation de tester un système tiers."
+    },
+    "en": {
+      "label": "See your external footprint",
+      "text": "Improve awareness of Internet-facing assets and exposures that deserve investigation.",
+      "tags": ["External exposure", "Discovery", "Asset attribution"],
+      "best": "Organizations seeking a clearer understanding of their external digital footprint.",
+      "overview": "Exposed assets change: domains, subdomains, services and infrastructure may be owned by different teams or providers. External attack surface management seeks to discover this footprint and clarify ownership. Tenable Attack Surface Management is presented for this type of need. Discovery results require validation because a technical association does not always establish asset ownership.",
+      "capabilities": [
+        "Discover external assets potentially associated with an organization.",
+        "Review Internet-observable services and exposures.",
+        "Assign confirmed assets to owners to organize follow-up."
+      ],
+      "example": "An organization with several subsidiaries wants to find forgotten services and confirm who operates them.",
+      "prerequisites": [
+        "Provide authorized seed domains and starting information.",
+        "Define a process for ownership and scope validation.",
+        "Involve internal teams and relevant providers."
+      ],
+      "licensing": "Methods, frequency, features and commercial terms require confirmation. External discovery is not authorization to test a third-party system."
+    }
+  }
+]

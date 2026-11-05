@@ -1,0 +1,57 @@
+{
+  "name": "ALYAD-DEVELOPPEMENT",
+  "brand": "ALYAD",
+  "brandDescriptor": "DÉVELOPPEMENT",
+  "legalName": "ALYAD-DEVELOPPEMENT « AD » SUARL",
+  "acronym": "AD",
+  "legalForm": "Société unipersonnelle à responsabilité limitée (SUARL)",
+  "location": "Dakar, Sénégal",
+  "address": "N° 72, Ngor Virage, Dakar, Sénégal",
+  "streetAddress": "N° 72, Ngor Virage",
+  "city": "Dakar",
+  "countryCode": "SN",
+  "phone": "+221 78 291 21 11",
+  "phoneHref": "+221782912111",
+  "email": "",
+  "whatsapp": "",
+  "registration": "SN DKR 2023 B 34040",
+  "ninea": "010526210",
+  "manager": "Younouss YADE",
+  "team": [
+    {
+      "name": "Younouss YADE",
+      "roleFr": "Gérant statutaire & Directeur général",
+      "roleEn": "Statutory manager & Chief Executive Officer",
+      "missionFr": "Direction générale et supervision de la société.",
+      "missionEn": "Overall management and supervision of the company."
+    },
+    {
+      "name": "Abou KONATÉ",
+      "roleFr": "Direction des projets",
+      "roleEn": "Project management",
+      "missionFr": "Pilotage, conception et suivi des projets logistiques, industriels et opérationnels.",
+      "missionEn": "Planning, design and oversight of logistics, industrial and operational projects."
+    },
+    {
+      "name": "Awa Gogo BA",
+      "roleFr": "Direction des affaires juridiques",
+      "roleEn": "Legal affairs",
+      "missionFr": "Sécurisation juridique des opérations, gestion des contrats et conformité réglementaire.",
+      "missionEn": "Legal oversight of operations, contract management and regulatory compliance."
+    },
+    {
+      "name": "Pape Saer GUEYE",
+      "roleFr": "Relations institutionnelles & secteur privé",
+      "roleEn": "Institutional relations & private sector",
+      "missionFr": "Partenariats institutionnels, relations publiques et liaison avec le secteur privé national et international.",
+      "missionEn": "Institutional partnerships, public relations and liaison with domestic and international private-sector organizations."
+    },
+    {
+      "name": "Awa NDIAYE",
+      "roleFr": "Direction administrative & financière (DAF)",
+      "roleEn": "Administration & finance",
+      "missionFr": "Gestion administrative, comptabilité et pilotage financier de la société.",
+      "missionEn": "Administrative management, accounting and financial oversight."
+    }
+  ]
+}
