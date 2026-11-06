@@ -53,3 +53,11 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e
 ```
 
 Avec les navigateurs Playwright installés, `npm run test:e2e` suffit. La configuration Vercel conserve `/api/contact` et réécrit explicitement `/solutions`, `/ressources` et `/societe` vers l’application. Les accès directs ont été testés avec Vite ; la publication et sa vérification dans Vercel restent à effectuer. L’accès au domaine public communiqué est bloqué par la politique réseau de cet environnement : aucun résultat local n’est présenté comme une vérification du déploiement public.
+
+## Mise à jour contact et Resend — 6 novembre 2026
+
+L’adresse `contact@alyad-development.com` fournie par le propriétaire apparaît dans les contacts, les mentions légales et les données structurées. L’API l’utilise par défaut comme destinataire et expéditeur (`ALYAD-DEVELOPPEMENT <contact@alyad-development.com>`), tout en conservant la priorité des variables `MAIL_FROM` et `CONTACT_EMAIL`.
+
+Vérifications de cette mise à jour : build TypeScript/Vite réussi, 13 tests Node réussis et 8 scénarios navigateur ciblés réussis (formulaire, identité, lien e-mail, métadonnées, mobile et accessibilité anglaise). La configuration locale se charge correctement ; la clé est absente des fichiers suivis par Git et des fichiers compilés destinés au navigateur. Les envois du fournisseur sont simulés. Aucun e-mail réel, aucune vérification Resend du domaine et aucun déploiement Vercel n’ont été effectués par l’assistant.
+
+La recette complète de 34 scénarios navigateur ci-dessus correspond à la version précédente du 5 novembre ; la mise à jour du 6 novembre a été vérifiée avec les 8 scénarios ciblés pertinents. Voir `CONTACT-RESEND.md` pour l’activation côté Vercel.

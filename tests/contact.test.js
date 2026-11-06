@@ -115,6 +115,8 @@ test("API : succès et échec du fournisseur correctement propagés", async () =
       globalThis.fetch = async (url, options) => {
         assert.equal(url, "https://api.resend.com/emails");
         const payload = JSON.parse(options.body);
+        assert.equal(payload.from, "test@example.sn");
+        assert.deepEqual(payload.to, ["sales@example.sn"]);
         assert.equal(payload.reply_to, valid.email);
         assert.match(payload.text, /Awa Diop/);
         return { ok };
@@ -135,6 +137,51 @@ test("API : succès et échec du fournisseur correctement propagés", async () =
     for (const [k, v] of Object.entries(old)) {
       v === undefined ? delete process.env[k] : (process.env[k] = v);
     }
+  }
+});
+
+test("API : les coordonnées ALYAD sont utilisées sans variables d’adresse", async () => {
+  const originalFetch = globalThis.fetch;
+  const keys = ["RESEND_API_KEY", "MAIL_FROM", "CONTACT_EMAIL"];
+  const previous = Object.fromEntries(
+    keys.map((key) => [key, process.env[key]]),
+  );
+  process.env.RESEND_API_KEY = "test-only";
+  delete process.env.MAIL_FROM;
+  delete process.env.CONTACT_EMAIL;
+  let calls = 0;
+  try {
+    globalThis.fetch = async (url, options) => {
+      calls += 1;
+      assert.equal(url, "https://api.resend.com/emails");
+      assert.equal(options.method, "POST");
+      const payload = JSON.parse(options.body);
+      assert.equal(
+        payload.from,
+        "ALYAD-DEVELOPPEMENT <contact@alyad-development.com>",
+      );
+      assert.deepEqual(payload.to, ["contact@alyad-development.com"]);
+      assert.equal(payload.reply_to, valid.email);
+      return { ok: true };
+    };
+    const res = response();
+    await handler(
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: valid,
+      },
+      res,
+    );
+    assert.equal(calls, 1);
+    assert.equal(res.code, 200);
+    assert.deepEqual(res.body, { ok: true });
+  } finally {
+    globalThis.fetch = originalFetch;
+    for (const [key, value] of Object.entries(previous))
+      value === undefined
+        ? delete process.env[key]
+        : (process.env[key] = value);
   }
 });
 

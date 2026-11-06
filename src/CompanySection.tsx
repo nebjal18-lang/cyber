@@ -277,6 +277,14 @@ export function CompanyLegal({ language }: { language: Language }) {
           <dt>{en ? "Phone" : "Téléphone"}</dt>
           <dd>{company.phone}</dd>
         </div>
+        {company.email && (
+          <div>
+            <dt>{en ? "Email" : "E-mail"}</dt>
+            <dd>
+              <a href={`mailto:${company.email}`}>{company.email}</a>
+            </dd>
+          </div>
+        )}
       </dl>
       <p>
         {en

@@ -21,7 +21,7 @@ La présentation d’entreprise résume les activités de négoce, conseil, tran
 
 Le positionnement cybersécurité, data centers et télécommunications est ajouté à la demande explicite du propriétaire. Les textes présentent le cadrage des besoins, l’orientation vers les solutions et la coordination des projets, sans inventer une certification, une expérience client, un effectif technique, un SOC ni un agrément de l’éditeur. Le site public ne mentionne pas les démarches de partenariat, conformément à la dernière consigne du propriétaire.
 
-Aucune adresse e-mail n’est fournie dans le PDF. Le numéro de téléphone n’est pas présenté comme numéro WhatsApp sans confirmation. Les liens d’appel sont actifs ; le formulaire e-mail reste soumis à la configuration Resend/Vercel. Aucun destinataire e-mail n’a été inventé.
+Aucune adresse e-mail n’est fournie dans le PDF. Le propriétaire a ensuite communiqué `contact@alyad-development.com` dans la conversation ; cette adresse est affichée dans les contacts et utilisée comme destinataire et adresse d’expédition par défaut du formulaire. Le numéro de téléphone n’est pas présenté comme numéro WhatsApp sans confirmation. Les liens d’appel sont actifs ; le formulaire e-mail reste soumis à la configuration Resend/Vercel. Aucun destinataire e-mail n’a été inventé.
 
 L’identité est centralisée dans `src/company.json`. Les composants d’en-tête, pied de page, présentation, mentions légales, métadonnées, données structurées et objets des e-mails utilisent cette source. La version anglaise conserve la dénomination et les identifiants légaux français.
 

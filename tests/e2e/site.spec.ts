@@ -259,6 +259,9 @@ test("identité ALYAD, présentation institutionnelle et contacts dans les deux 
       "tel:+221782912111",
     );
     await expect(page.locator("#contact")).toContainText("+221 78 291 21 11");
+    await expect(
+      page.locator('#contact a[href="mailto:contact@alyad-development.com"]'),
+    ).toBeVisible();
     await expect(profile).toBeVisible();
     await expect(page.locator("body")).not.toContainText("Teranga");
     expect(await page.locator("body").innerText()).not.toMatch(
@@ -280,6 +283,7 @@ test("identité ALYAD, présentation institutionnelle et contacts dans les deux 
     );
     expect(structured.legalName).toBe("ALYAD-DEVELOPPEMENT « AD » SUARL");
     expect(structured.telephone).toBe("+221 78 291 21 11");
+    expect(structured.email).toBe("contact@alyad-development.com");
     await page.setViewportSize({ width: 320, height: 900 });
     expect(
       await page.evaluate(

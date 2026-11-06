@@ -90,7 +90,11 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Demande invalide." });
   const error = validate(body);
   if (error) return res.status(400).json({ error });
-  const { RESEND_API_KEY, MAIL_FROM, CONTACT_EMAIL } = process.env;
+  const { RESEND_API_KEY } = process.env;
+  const CONTACT_EMAIL = process.env.CONTACT_EMAIL?.trim() || company.email;
+  const MAIL_FROM =
+    process.env.MAIL_FROM?.trim() ||
+    (company.email ? `${company.name} <${company.email}>` : "");
   if (!RESEND_API_KEY || !MAIL_FROM || !CONTACT_EMAIL)
     return res
       .status(503)

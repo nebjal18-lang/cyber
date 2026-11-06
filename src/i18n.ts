@@ -53,6 +53,7 @@ export function updateCompanyStructuredData() {
     name: company.name,
     legalName: company.legalName,
     telephone: company.phone,
+    ...(company.email ? { email: company.email } : {}),
     address: {
       "@type": "PostalAddress",
       streetAddress: company.streetAddress,

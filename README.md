@@ -27,14 +27,14 @@ Les coordonnées et informations de société sont centralisées dans `src/compa
 
 Le catalogue bilingue et ses 21 fiches sont dans `src/catalog.json`. La présentation de la société, de ses activités et de sa gouvernance, ainsi que les trois domaines, sont dans `src/CompanySection.tsx`. Les textes publics ne mentionnent pas les démarches de partenariat et ne prétendent pas à un statut agréé.
 
-L’e-mail et WhatsApp restent vides car ces données ne sont pas fournies. Pour le formulaire, configurez un destinataire commercial réel dans Vercel. Les conditions de traitement et la durée de conservation restent à valider avant activation de l’envoi.
+Le propriétaire a communiqué `contact@alyad-development.com` : cette adresse est affichée dans les contacts et utilisée par défaut pour recevoir les demandes et les expédier sous le nom ALYAD-DEVELOPPEMENT. Le numéro WhatsApp reste vide faute de confirmation. Les conditions de traitement et la durée de conservation restent à valider avant activation de l’envoi.
 
 ## Déployer manuellement sur Vercel
 
 1. Dans Vercel, importez le dépôt GitHub `nebjal18-lang/cyber`, branche `main`.
 2. La configuration `vercel.json` sélectionne **Vite**, l’installation `npm ci`, le build `npm run build` et la sortie `dist`. Laissez la racine du projet sur `.` (le dossier contenant `package.json`). Le runtime est fixé à Node 24.x.
 3. Cliquez sur **Deploy**. Vercel déploie les fichiers compilés et la fonction `api/contact.js`. La configuration inclut les en-têtes de sécurité, les fichiers d’identité et de catalogue nécessaires à la fonction et un délai maximal de 15 secondes pour celle-ci.
-4. Pour activer les demandes e-mail, créez un compte Resend, vérifiez votre domaine d’expédition et ajoutez **dans les variables serveur Vercel** : `RESEND_API_KEY`, `MAIL_FROM` (expéditeur autorisé), `CONTACT_EMAIL` (destinataire commercial). N’utilisez jamais un préfixe `VITE_` pour ces secrets. Redéployez après modification.
+4. Pour activer les demandes e-mail, vérifiez `alyad-development.com` dans Resend et ajoutez **dans les variables serveur Vercel** la clé `RESEND_API_KEY`. Le serveur utilise par défaut `ALYAD-DEVELOPPEMENT <contact@alyad-development.com>` comme expéditeur et `contact@alyad-development.com` comme destinataire. Les variables facultatives `MAIL_FROM` et `CONTACT_EMAIL` permettent de remplacer ces valeurs. N’utilisez jamais un préfixe `VITE_` pour la clé. Redéployez après modification. Voir [Configuration Resend](docs/CONTACT-RESEND.md).
 5. Activez une règle de limitation de débit pour `/api/contact` dans Vercel Firewall, selon les capacités du compte. Pour un trafic exposé, ajoutez au besoin un challenge anti-robot avant ouverture commerciale.
 6. Effectuez une vraie demande et contrôlez la réception, le Reply-To, le rendu mobile et les liens. Les tests locaux du fournisseur sont simulés et ne prouvent pas la délivrabilité.
 7. Rattachez votre domaine dans Vercel puis configurez les DNS indiqués par Vercel. Ajoutez ensuite URL canonique, image de partage et sitemap avec votre domaine réel.
@@ -65,7 +65,7 @@ Les formulaires transmettent `language: fr/en` et un identifiant de solution sta
 
 L’offre publique est présentée sous l’identité ALYAD. Aucun fabricant ni lien vers un produit tiers n’apparaît dans le catalogue. Les critères de choix et les références techniques consultées sont documentés dans `docs/ANALYSE-SOLUTIONS.md` et `docs/REFERENCES-TECHNIQUES.md`. Les prestations, les capacités et les niveaux de service sont définis sur devis.
 
-La connexion du dépôt à votre compte Vercel et l’entrée des variables serveur restent à effectuer dans Vercel. La préconfiguration du dépôt ne crée pas de projet Vercel et ne prouve pas qu’un déploiement a abouti.
+L’association du projet à votre compte Vercel et la présence de la clé serveur doivent être vérifiées dans Vercel. La préconfiguration du dépôt ne crée pas de projet Vercel et ne prouve pas qu’un déploiement a abouti.
 
 ## Identité visuelle, interactions et animations
 
